@@ -41,9 +41,9 @@
       "status": "active",
       "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
       "has_biometrics": true,
-      "password_hash": "$2b$10$SWbXaZqJHfoC2JBz4ASl1eJcV1QES2SDYfZQfpXgai7kAmNVWPlZ6",
+      "password_hash": "$2b$10$Tx0d3t0AbzyQGtc2Hkbv7Oym5dRVIR0xQ2EzFDijLthifVppdxuGm",
       "created_at": "2026-08-20T22:52:12.088Z",
-      "updated_at": "2026-09-15T16:32:32.654Z"
+      "updated_at": "2026-09-15T17:22:22.915Z"
     },
     {
       "id": "usr-admin-pending-002",
@@ -59,21 +59,6 @@
       "password_hash": "$2b$10$fxbNjAeBz1X9svAF1eBTVOQproGuM89xgnLgpQhdjRWbGeg2oc0/m",
       "created_at": "2026-09-12T22:52:12.088Z",
       "updated_at": "2026-09-14T22:52:12.088Z"
-    },
-    {
-      "id": "usr-1789426625167-213",
-      "email": "divyanshurajdear@gmail.com",
-      "full_name": "D",
-      "role": "trainee",
-      "phone": "773968456",
-      "organization": "moes",
-      "department": "ss",
-      "status": "active",
-      "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=D",
-      "password_hash": "$2b$10$osIKPjDC345H.V55wdp5U.dtWsrYCtzr47PFLywx54AnDJDvGZRsa",
-      "has_biometrics": true,
-      "created_at": "2026-09-14T22:57:05.168Z",
-      "updated_at": "2026-09-15T10:26:22.657Z"
     },
     {
       "id": "usr-test-1789428799819",
@@ -326,6 +311,48 @@
       "has_biometrics": false,
       "created_at": "2026-09-15T16:32:32.353Z",
       "updated_at": "2026-09-15T16:32:32.354Z"
+    },
+    {
+      "id": "usr-test-1789492942389",
+      "email": "test.trainee.1789492942276@capacityconnect.org",
+      "full_name": "Test Trainee Automation",
+      "role": "trainee",
+      "phone": "+91 9876543210",
+      "organization": "National Skill Development Corp",
+      "department": "Cloud Computing",
+      "status": "active",
+      "password_hash": "$2b$10$N6SfEUf3RdeOLSo/05fBEuAwfOIlf49.3XTAUoXPOkkCj89HW6djK",
+      "has_biometrics": false,
+      "created_at": "2026-09-15T17:22:22.389Z",
+      "updated_at": "2026-09-15T17:22:22.389Z"
+    },
+    {
+      "id": "usr-trainer-1789492942491",
+      "email": "test.trainer.1789492942391@capacityconnect.org",
+      "full_name": "Test Senior Trainer",
+      "role": "trainer",
+      "phone": "+91 9876543211",
+      "organization": "Indian Institute of Technology",
+      "department": "Distributed Systems",
+      "status": "active",
+      "password_hash": "$2b$10$QEXcbrC4grIc6Ez4Q9bYouW.GDgQ4ie7lLNKpPgkpU6xPNCfLiNNK",
+      "has_biometrics": false,
+      "created_at": "2026-09-15T17:22:22.491Z",
+      "updated_at": "2026-09-15T17:22:22.491Z"
+    },
+    {
+      "id": "usr-admin-1789492942601",
+      "email": "test.admin.1789492942492@capacityconnect.org",
+      "full_name": "Pending Admin Applicant",
+      "role": "admin",
+      "phone": "+91 9876543212",
+      "organization": "Ministry of Skill Development",
+      "department": "Central Administration",
+      "status": "active",
+      "password_hash": "$2b$10$s.AZ.kA1TSO0flo4omfy1u0jZnxE1zVq99vptDcw1IBzPRB0DKc/.",
+      "has_biometrics": false,
+      "created_at": "2026-09-15T17:22:22.601Z",
+      "updated_at": "2026-09-15T17:22:22.604Z"
     }
   ],
   "trainees": [
@@ -443,6 +470,20 @@
       "enrolled_count": 0,
       "completed_count": 0,
       "id": "trn-1789489952153"
+    },
+    {
+      "user_id": "usr-test-1789492942389",
+      "skills_interests": [
+        "Cloud Architecture",
+        "Security"
+      ],
+      "education_level": "B.Tech Computer Science",
+      "target_certifications": [
+        "Cloud Professional"
+      ],
+      "enrolled_count": 0,
+      "completed_count": 0,
+      "id": "trn-1789492942390"
     }
   ],
   "trainers": [
@@ -531,6 +572,18 @@
       "qualifications": "Ph.D. in Computer Science",
       "active_batches": 2,
       "id": "t-1789489952252"
+    },
+    {
+      "user_id": "usr-trainer-1789492942491",
+      "expertise_areas": [
+        "Distributed Computing",
+        "Microservices"
+      ],
+      "years_experience": 12,
+      "bio": "Lead architect and technical trainer.",
+      "qualifications": "Ph.D. in Computer Science",
+      "active_batches": 2,
+      "id": "t-1789492942492"
     }
   ],
   "admin_approvals": [
@@ -626,6 +679,20 @@
       "reviewed_by": "usr-master-admin",
       "reviewer_name": "Chief System Administrator",
       "reviewed_at": "2026-09-15T16:32:32.354Z",
+      "review_notes": "Verified official credentials and authorization."
+    },
+    {
+      "id": "appr-1789492942603",
+      "user_id": "usr-admin-1789492942601",
+      "user_name": "Pending Admin Applicant",
+      "user_email": "test.admin.1789492942492@capacityconnect.org",
+      "organization": "Ministry of Skill Development",
+      "requested_at": "2026-09-15T17:22:22.603Z",
+      "status": "approved",
+      "justification": "Requested administrative oversight for SIH 2026 challenge review.",
+      "reviewed_by": "usr-master-admin",
+      "reviewer_name": "Chief System Administrator",
+      "reviewed_at": "2026-09-15T17:22:22.604Z",
       "review_notes": "Verified official credentials and authorization."
     }
   ],
@@ -1569,6 +1636,36 @@
   ],
   "audit_logs": [
     {
+      "id": "aud-1789492942916-273",
+      "actor_id": "usr-admin-001",
+      "actor_name": "Sarah Chen",
+      "actor_role": "admin",
+      "action": "SYSTEM_DIAGNOSTIC_VERIFIED",
+      "target_type": "SYSTEM",
+      "target_id": "core-engine",
+      "details": {
+        "environment": "production",
+        "check": "all"
+      },
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-15T17:22:22.916Z"
+    },
+    {
+      "id": "aud-1789492863293-731",
+      "actor_id": "usr-trainee-001",
+      "actor_name": "Alex Rivera",
+      "actor_role": "trainee",
+      "action": "DEMO_LOGIN_ACCESSED",
+      "target_type": "SESSION",
+      "target_id": "usr-trainee-001",
+      "details": {
+        "role": "trainee",
+        "is_demo": true
+      },
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-15T17:21:03.293Z"
+    },
+    {
       "id": "aud-1789489952654-520",
       "actor_id": "usr-admin-001",
       "actor_name": "Sarah Chen",
@@ -1993,6 +2090,13 @@
       "code": "291728",
       "expires_at": 1789490852458,
       "used": true
+    },
+    {
+      "id": "rst-1789492942715",
+      "email": "alex.trainee@capacityconnect.org",
+      "code": "906870",
+      "expires_at": 1789493842715,
+      "used": true
     }
   ],
   "otp_tokens": [
@@ -2083,6 +2187,16 @@
       "attempts": 0,
       "used": true,
       "created_at": "2026-09-15T16:32:32.457Z"
+    },
+    {
+      "id": "otp-1789492942713-452",
+      "user_id": "usr-alex",
+      "identifier": "alex.trainee@capacityconnect.org",
+      "code": "652420",
+      "expires_at": 1789493242713,
+      "attempts": 0,
+      "used": true,
+      "created_at": "2026-09-15T17:22:22.713Z"
     }
   ]
 }
