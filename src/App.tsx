@@ -10,7 +10,6 @@ import { TraineeDashboard } from './components/trainee/TraineeDashboard';
 import { TrainerDashboard } from './components/trainer/TrainerDashboard';
 import { AdminDashboard } from './components/admin/AdminDashboard';
 import { CertificateVerifyModal } from './components/common/CertificateVerifyModal';
-import { SupabaseConnectionTest } from './components/common/SupabaseConnectionTest';
 import { NotificationItem } from './types';
 import { api } from './lib/api';
 import { Loader2, ShieldCheck, Sparkles } from 'lucide-react';
@@ -22,7 +21,6 @@ const MainApp: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('my-courses');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const [showVerifyModal, setShowVerifyModal] = useState<boolean>(false);
-  const [showSupabaseTest, setShowSupabaseTest] = useState<boolean>(true);
   const [notifications, setNotifications] = useState<NotificationItem[]>([]);
   const [pendingApprovalsCount, setPendingApprovalsCount] = useState<number>(0);
 
@@ -127,10 +125,6 @@ const MainApp: React.FC = () => {
         {showVerifyModal && (
           <CertificateVerifyModal onClose={() => setShowVerifyModal(false)} />
         )}
-
-        {showSupabaseTest && (
-          <SupabaseConnectionTest onClose={() => setShowSupabaseTest(false)} />
-        )}
       </div>
     );
   }
@@ -150,9 +144,6 @@ const MainApp: React.FC = () => {
         </main>
         {showVerifyModal && (
           <CertificateVerifyModal onClose={() => setShowVerifyModal(false)} />
-        )}
-        {showSupabaseTest && (
-          <SupabaseConnectionTest onClose={() => setShowSupabaseTest(false)} />
         )}
       </div>
     );
@@ -216,11 +207,6 @@ const MainApp: React.FC = () => {
       {/* Global Certificate Verification Modal */}
       {showVerifyModal && (
         <CertificateVerifyModal onClose={() => setShowVerifyModal(false)} />
-      )}
-
-      {/* Temporary Supabase Connection Test & Audit Widget */}
-      {showSupabaseTest && (
-        <SupabaseConnectionTest onClose={() => setShowSupabaseTest(false)} />
       )}
     </div>
   );

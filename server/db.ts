@@ -68,7 +68,12 @@ interface DatabaseSchema {
 }
 
 const DATA_DIR = path.join(process.cwd(), 'data');
-const DB_FILE = path.join(DATA_DIR, 'database.json');
+const DB_FILES = [
+  path.join(DATA_DIR, 'database.jason'),
+  path.join(process.cwd(), 'database.jason'),
+  path.join(DATA_DIR, 'database.json'),
+  path.join(process.cwd(), 'database.json')
+];
 
 // Default initial password hash for "Password123!"
 const DEFAULT_PASSWORD_HASH = bcrypt.hashSync('Password123!', 10);
@@ -627,18 +632,20 @@ class Database {
   }
 
   private loadDatabase(): DatabaseSchema {
-    try {
-      if (fs.existsSync(DB_FILE)) {
-        const raw = fs.readFileSync(DB_FILE, 'utf-8');
-        const parsed = JSON.parse(raw);
-        if (parsed.users && parsed.courses && parsed.admin_approvals) {
-          if (!parsed.otp_tokens) parsed.otp_tokens = [];
-          if (!parsed.password_resets) parsed.password_resets = [];
-          return parsed;
+    for (const filePath of DB_FILES) {
+      try {
+        if (fs.existsSync(filePath)) {
+          const raw = fs.readFileSync(filePath, 'utf-8');
+          const parsed = JSON.parse(raw);
+          if (parsed.users && parsed.courses && parsed.admin_approvals) {
+            if (!parsed.otp_tokens) parsed.otp_tokens = [];
+            if (!parsed.password_resets) parsed.password_resets = [];
+            return parsed;
+          }
         }
+      } catch (err) {
+        console.warn(`Could not read database from ${filePath}:`, err);
       }
-    } catch (err) {
-      console.warn('Could not read existing database, reinitializing seed data:', err);
     }
 
     const init = getInitialDatabase();
@@ -649,7 +656,14 @@ class Database {
   private persist(dataToSave?: DatabaseSchema) {
     try {
       this.ensureDataDir();
-      fs.writeFileSync(DB_FILE, JSON.stringify(dataToSave || this.data, null, 2), 'utf-8');
+      const content = JSON.stringify(dataToSave || this.data, null, 2);
+      for (const filePath of DB_FILES) {
+        try {
+          fs.writeFileSync(filePath, content, 'utf-8');
+        } catch (fileErr) {
+          console.warn(`Could not sync to ${filePath}:`, fileErr);
+        }
+      }
     } catch (err) {
       console.error('Error persisting database:', err);
     }
@@ -1161,7 +1175,11 @@ class Database {
     return { code, expires_in_seconds: 300 };
   }
 
-  public verifyOtp(identifier: string, submittedCode: string): { success: boolean; error?: string; user?: StoredUser } {
+  public verifyOtp(
+    identifier: string, 
+    submittedCode: string, 
+    requireExistingUser: boolean = true
+  ): { success: boolean; error?: string; user?: StoredUser } {
     const cleanId = identifier.trim().toLowerCase();
     const token = (this.data.otp_tokens || []).find(
       t => t.identifier === cleanId && !t.used && t.expires_at > Date.now()
@@ -1207,10 +1225,14 @@ class Database {
     }
 
     if (!user) {
-      return { 
-        success: false, 
-        error: 'Registered account matching this verification contact was not found.' 
-      };
+      if (requireExistingUser) {
+        return { 
+          success: false, 
+          error: 'Registered account matching this verification contact was not found.' 
+        };
+      }
+      // Verification successful for non-existing user (e.g. registration proof of ownership)
+      return { success: true };
     }
 
     if (user.status === 'suspended') {

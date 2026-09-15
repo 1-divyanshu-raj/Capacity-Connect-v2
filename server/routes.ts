@@ -12,28 +12,9 @@ import {
   verifyRegistrationOtpToken
 } from './authMiddleware';
 import { matchBiometricEmbedding } from './biometricService';
-import { 
-  syncProfileToSupabase, 
-  syncBiometricToSupabase, 
-  syncAuditLogToSupabase, 
-  syncAdminApprovalToSupabase,
-  syncEnrollmentToSupabase,
-  syncEnrollmentProgressToSupabase,
-  syncCertificateToSupabase,
-  syncCourseToSupabase,
-  fetchSupabaseCourses,
-  fetchSupabaseCourseById,
-  getSupabaseDiagnostics 
-} from './supabase';
 import { UserRole, AccountStatus, Course, Assessment } from '../src/types';
 
 const router = Router();
-
-// Supabase Real-time System Diagnostics Endpoint
-router.get('/supabase/diagnostics', async (_req: Request, res: Response) => {
-  const diagnostics = await getSupabaseDiagnostics();
-  return res.json(diagnostics);
-});
 
 // ===================================================
 // 1. AUTHENTICATION & SESSIONS
@@ -112,7 +93,7 @@ router.post('/auth/register/otp/verify', async (req: Request, res: Response) => 
     }
 
     const cleanId = identifier.trim().toLowerCase();
-    const verification = db.verifyOtp(cleanId, code);
+    const verification = db.verifyOtp(cleanId, code, false);
 
     if (!verification.success) {
       return res.status(401).json({
@@ -218,10 +199,6 @@ router.post('/auth/register', async (req: Request, res: Response) => {
 
     // Save biometric template
     db.saveBiometric(userId, biometric_vector, Number(liveness_score) >= 0.4);
-    await syncBiometricToSupabase(userId, biometric_vector, Number(liveness_score) >= 0.4);
-
-    // Mirror to Supabase PostgreSQL profiles if configured
-    await syncProfileToSupabase(newUser);
 
     // Save role-specific details
     if (role === 'trainee') {
@@ -621,8 +598,6 @@ router.post('/auth/login/step3', async (req: Request, res: Response) => {
       clientIp
     );
 
-    await syncProfileToSupabase(sanitized);
-
     return res.json({
       message: `All 3 verification factors validated! Welcome back, ${user.full_name}.`,
       token,
@@ -828,9 +803,6 @@ router.post('/auth/otp/verify', async (req: Request, res: Response) => {
       clientIp
     );
 
-    // Sync profile to Supabase if connected
-    await syncProfileToSupabase(sanitized);
-
     return res.json({
       message: `Identity verified via secure OTP! Welcome back, ${user.full_name}.`,
       token,
@@ -945,9 +917,6 @@ router.post('/auth/face-login', async (req: Request, res: Response) => {
 
     const sanitized = db.sanitizeUser(match.user);
     const token = generateToken(sanitized);
-
-    // Sync profile to Supabase if connected
-    await syncProfileToSupabase(sanitized);
 
     db.logAuditEvent(
       sanitized,
@@ -1118,20 +1087,10 @@ router.post('/auth/reset-password', async (req: Request, res: Response) => {
 // 2. COURSES & CAPACITY TRAINING PROGRAMS
 // ===================================================
 
-router.get('/courses', async (req: Request, res: Response) => {
+router.get('/courses', (req: Request, res: Response) => {
   const { category, level, search } = req.query;
   
-  // Query real Supabase courses table
-  const supabaseCourses = await fetchSupabaseCourses();
-  
-  let courses: Course[];
-  if (supabaseCourses !== null && supabaseCourses.length > 0) {
-    courses = supabaseCourses;
-  } else {
-    // If Supabase courses table is currently empty, provide initial catalog seamlessly
-    // Note: Does not insert duplicate records or recreate the table
-    courses = db.getCourses();
-  }
+  let courses = db.getCourses();
 
   if (category && category !== 'All') {
     courses = courses.filter(c => c.category === category);
@@ -1151,11 +1110,8 @@ router.get('/courses', async (req: Request, res: Response) => {
   return res.json({ courses });
 });
 
-router.get('/courses/:id', async (req: Request, res: Response) => {
-  let course: Course | null = await fetchSupabaseCourseById(req.params.id);
-  if (!course) {
-    course = db.getCourseById(req.params.id) || null;
-  }
+router.get('/courses/:id', (req: Request, res: Response) => {
+  const course = db.getCourseById(req.params.id);
   if (!course) return res.status(404).json({ error: 'Course not found.' });
 
   const assessment = db.getAssessmentById(`asm-${course.id.slice(-2)}`) || db.getAssessments(course.id)[0];
@@ -1189,7 +1145,6 @@ router.post('/courses', authenticate, requireRole('trainer', 'admin'), async (re
   };
 
   db.createCourse(newCourse);
-  await syncCourseToSupabase(newCourse);
 
   const auditEvent = db.logAuditEvent(
     req.user!,
@@ -1199,7 +1154,6 @@ router.post('/courses', authenticate, requireRole('trainer', 'admin'), async (re
     { title: newCourse.title, category: newCourse.category },
     req.ip || '127.0.0.1'
   );
-  await syncAuditLogToSupabase(auditEvent);
 
   return res.status(201).json({ course: newCourse });
 });
@@ -1214,9 +1168,6 @@ router.put('/courses/:id', authenticate, requireRole('trainer', 'admin'), async 
   }
 
   const updated = db.updateCourse(req.params.id, req.body);
-  if (updated) {
-    await syncCourseToSupabase(updated);
-  }
   return res.json({ course: updated });
 });
 
@@ -1256,9 +1207,6 @@ router.post('/enrollments', authenticate, async (req: AuthenticatedRequest, res:
     return res.status(404).json({ error: 'Course not found or enrollment failed.' });
   }
 
-  // Persist enrollment to Supabase
-  await syncEnrollmentToSupabase(enrollment);
-
   db.createNotification({
     id: `notif-${Date.now()}`,
     user_id: req.user!.id,
@@ -1281,22 +1229,6 @@ router.post('/enrollments/progress', authenticate, async (req: AuthenticatedRequ
   const result = db.updateEnrollmentProgress(req.user!.id, course_id, module_id);
   if (!result) {
     return res.status(404).json({ error: 'Enrollment record not found.' });
-  }
-
-  // Persist progress update directly to Supabase enrollments table
-  await syncEnrollmentProgressToSupabase(
-    req.user!.id,
-    course_id,
-    result.enrollment.progress_percentage,
-    result.enrollment.completed_modules,
-    result.enrollment.status,
-    result.enrollment.completion_date,
-    result.certificate?.id
-  );
-
-  // If a certificate was generated, persist to Supabase certificates table
-  if (result.certificate) {
-    await syncCertificateToSupabase(result.certificate);
   }
 
   return res.json(result);
@@ -1465,8 +1397,6 @@ router.post('/admin/approvals/:id/review', authenticate, requireRole('admin'), a
     { targetEmail: updatedApproval.user_email, notes: review_notes },
     req.ip || '127.0.0.1'
   );
-  await syncAuditLogToSupabase(auditEvent);
-  await syncAdminApprovalToSupabase(updatedApproval.id, updatedApproval.user_id, status, req.user!.id, review_notes);
 
   // Notify the user
   db.createNotification({

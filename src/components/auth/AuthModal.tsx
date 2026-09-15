@@ -123,7 +123,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess, defaultTab = 't
             <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-3.5 text-xs text-slate-700">
               <span className="font-bold text-slate-900 block mb-0.5">Password Verification</span>
               <p className="text-[11px] text-slate-500">
-                Authenticate with your official Capacity Connect credentials and secure Supabase-persisted session.
+                Authenticate with your official Capacity Connect credentials and secure database session.
               </p>
             </div>
 
@@ -184,7 +184,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess, defaultTab = 't
               {loading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>Authenticating via Supabase...</span>
+                  <span>Authenticating...</span>
                 </>
               ) : (
                 <>
@@ -259,7 +259,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess, defaultTab = 't
       <div className="px-6 py-3 bg-slate-50/70 dark:bg-black/40 border-t border-slate-200/80 dark:border-white/10 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
         <div className="flex items-center gap-1.5">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="font-medium text-slate-600 dark:text-slate-300">Supabase Auth & Biometric Cluster Online</span>
+          <span className="font-medium text-slate-600 dark:text-slate-300">Database & Biometric Engine Online</span>
         </div>
         <div className="flex items-center gap-2">
           {activeTab !== 'demo' && (
