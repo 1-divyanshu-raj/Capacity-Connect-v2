@@ -207,8 +207,8 @@ export const TraineeDashboard: React.FC<TraineeDashboardProps> = ({ activeTab, o
   return (
     <div className="space-y-6">
       {/* 1. Trainee Overview Header & Metric Cards */}
-      <div className="bg-white rounded-3xl border border-slate-200/80 p-6 shadow-xs">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+      <div className="liquid-glass-card rounded-3xl border border-slate-200/80 dark:border-white/10 p-6 shadow-xs">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-white/10">
           <div>
             <div className="flex items-center gap-2">
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 font-display">

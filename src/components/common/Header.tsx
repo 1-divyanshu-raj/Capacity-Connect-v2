@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { NotificationItem } from '../../types';
 import { api } from '../../lib/api';
+import { ThemeToggle } from './ThemeToggle';
 
 interface HeaderProps {
   onOpenMobileMenu: () => void;
@@ -67,14 +68,14 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all">
+    <header className="sticky top-0 z-30 liquid-glass border-b border-slate-200/80 dark:border-white/10 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left: Mobile hamburger & Logo */}
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenMobileMenu}
-              className="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors focus:outline-hidden"
+              className="lg:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/70 dark:hover:bg-white/10 transition-colors focus:outline-hidden"
               aria-label="Toggle navigation menu"
             >
               <Menu className="w-5 h-5" />
@@ -86,14 +87,14 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-lg font-bold tracking-tight text-slate-900 font-display">
-                    Capacity<span className="text-blue-600">Connect</span>
+                  <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white font-display">
+                    Capacity<span className="text-blue-600 dark:text-blue-400">Connect</span>
                   </span>
-                  <span className="hidden sm:inline-block text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">
+                  <span className="hidden sm:inline-block text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-700/40">
                     Enterprise
                   </span>
                 </div>
-                <p className="text-[11px] text-slate-500 hidden sm:block leading-none">
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:block leading-none">
                   National Skill & Capacity Governance Platform
                 </p>
               </div>
@@ -101,12 +102,12 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Center/Right: Actions */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-2.5 sm:gap-3">
             {/* Verify Certificate Link */}
             {onOpenVerifyModal && (
               <button
                 onClick={onOpenVerifyModal}
-                className="hidden md:inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50/70 px-3 py-1.5 rounded-lg border border-slate-200 transition-colors"
+                className="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 liquid-glass-pill px-3 py-1.5 rounded-xl transition-all hover:scale-102 active:scale-98"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
                 Verify Certificate
@@ -122,18 +123,24 @@ export const Header: React.FC<HeaderProps> = ({
             {user?.has_biometrics && (
               <div 
                 title="Biometric Face ID Enrolled & Active" 
-                className="hidden lg:flex items-center gap-1 text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md border border-emerald-200"
+                className="hidden lg:flex items-center gap-1 text-[11px] font-medium text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-1 rounded-xl border border-emerald-200 dark:border-emerald-700/40"
               >
-                <ScanFace className="w-3.5 h-3.5 text-emerald-600" />
+                <ScanFace className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                 <span>Face ID Ready</span>
               </div>
             )}
+
+            {/* Theme Toggle Button (Pill on sm+, compact on xs) */}
+            <div className="flex items-center">
+              <ThemeToggle variant="pill" className="hidden sm:inline-flex" />
+              <ThemeToggle variant="compact" className="sm:hidden" />
+            </div>
 
             {/* Notifications Popover */}
             <div className="relative">
               <button
                 onClick={() => setShowNotifications(!showNotifications)}
-                className="relative p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+                className="relative p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/70 dark:hover:bg-white/10 transition-colors"
                 aria-label="View notifications"
               >
                 <Bell className="w-5 h-5" />
@@ -146,15 +153,15 @@ export const Header: React.FC<HeaderProps> = ({
 
               {showNotifications && (
                 <div 
-                  className="absolute right-0 mt-2 w-80 sm:w-96 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in zoom-in-95 duration-100"
+                  className="absolute right-0 mt-2 w-80 sm:w-96 liquid-glass rounded-2xl shadow-2xl border border-slate-200/80 dark:border-white/15 py-2 z-50 animate-in fade-in zoom-in-95 duration-100"
                 >
-                  <div className="px-4 py-2 border-b border-slate-100 flex items-center justify-between">
-                    <h4 className="text-sm font-semibold text-slate-900">Notifications</h4>
-                    <span className="text-xs text-slate-500 font-medium">{notifications.length} total</span>
+                  <div className="px-4 py-2 border-b border-slate-100 dark:border-white/10 flex items-center justify-between">
+                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Notifications</h4>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">{notifications.length} total</span>
                   </div>
-                  <div className="max-h-80 overflow-y-auto divide-y divide-slate-100">
+                  <div className="max-h-80 overflow-y-auto divide-y divide-slate-100 dark:divide-white/10">
                     {notifications.length === 0 ? (
-                      <div className="p-6 text-center text-sm text-slate-400">
+                      <div className="p-6 text-center text-sm text-slate-400 dark:text-slate-500">
                         No notifications at this time.
                       </div>
                     ) : (
@@ -162,16 +169,16 @@ export const Header: React.FC<HeaderProps> = ({
                         <div 
                           key={notif.id}
                           onClick={() => handleMarkAsRead(notif.id)}
-                          className={`p-3.5 hover:bg-slate-50 cursor-pointer transition-colors ${!notif.is_read ? 'bg-blue-50/40' : ''}`}
+                          className={`p-3.5 hover:bg-slate-50/70 dark:hover:bg-white/5 cursor-pointer transition-colors ${!notif.is_read ? 'bg-blue-50/40 dark:bg-blue-900/20' : ''}`}
                         >
                           <div className="flex items-start justify-between gap-2">
-                            <p className="text-xs font-semibold text-slate-800">{notif.title}</p>
+                            <p className="text-xs font-semibold text-slate-800 dark:text-slate-200">{notif.title}</p>
                             {!notif.is_read && (
                               <span className="w-2 h-2 rounded-full bg-blue-600 shrink-0 mt-1" />
                             )}
                           </div>
-                          <p className="text-xs text-slate-600 mt-1 leading-relaxed">{notif.message}</p>
-                          <span className="text-[10px] text-slate-400 mt-1.5 block">
+                          <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">{notif.message}</p>
+                          <span className="text-[10px] text-slate-400 dark:text-slate-500 mt-1.5 block">
                             {new Date(notif.created_at).toLocaleDateString()} at {new Date(notif.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                           </span>
                         </div>
@@ -186,18 +193,18 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="relative">
               <button
                 onClick={() => setShowUserMenu(!showUserMenu)}
-                className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-slate-100 transition-colors focus:outline-hidden"
+                className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-slate-100/70 dark:hover:bg-white/10 transition-colors focus:outline-hidden"
               >
                 <img
                   src={user?.avatar_url || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.full_name || 'User'}`}
                   alt={user?.full_name}
-                  className="w-8 h-8 rounded-full border border-slate-200 object-cover bg-slate-100"
+                  className="w-8 h-8 rounded-full border border-slate-200 dark:border-white/20 object-cover bg-slate-100 dark:bg-slate-800"
                 />
                 <div className="hidden md:block text-left">
-                  <p className="text-xs font-semibold text-slate-900 leading-tight truncate max-w-[120px]">
+                  <p className="text-xs font-semibold text-slate-900 dark:text-white leading-tight truncate max-w-[120px]">
                     {user?.full_name}
                   </p>
-                  <p className="text-[10px] text-slate-500 capitalize leading-tight">
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 capitalize leading-tight">
                     {user?.role}
                   </p>
                 </div>
@@ -205,11 +212,11 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               {showUserMenu && (
-                <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in zoom-in-95 duration-100">
-                  <div className="px-4 py-2 border-b border-slate-100">
-                    <p className="text-xs font-bold text-slate-900">{user?.full_name}</p>
-                    <p className="text-xs text-slate-500 truncate">{user?.email}</p>
-                    <p className="text-[11px] text-slate-400 mt-0.5 truncate">{user?.organization}</p>
+                <div className="absolute right-0 mt-2 w-64 liquid-glass rounded-2xl shadow-2xl border border-slate-200/80 dark:border-white/15 py-2 z-50 animate-in fade-in zoom-in-95 duration-100">
+                  <div className="px-4 py-2 border-b border-slate-100 dark:border-white/10">
+                    <p className="text-xs font-bold text-slate-900 dark:text-white">{user?.full_name}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{user?.email}</p>
+                    <p className="text-[11px] text-slate-400 dark:text-slate-500 mt-0.5 truncate">{user?.organization}</p>
                   </div>
                   <div className="px-2 py-1 sm:hidden">
                     <div className="py-1 px-2">{getRoleBadge()}</div>
@@ -219,7 +226,7 @@ export const Header: React.FC<HeaderProps> = ({
                       setShowUserMenu(false);
                       logout();
                     }}
-                    className="w-full px-4 py-2 text-left text-xs font-medium text-red-600 hover:bg-red-50 flex items-center gap-2 transition-colors"
+                    className="w-full px-4 py-2 text-left text-xs font-medium text-red-600 dark:text-red-400 hover:bg-red-50/60 dark:hover:bg-red-950/30 flex items-center gap-2 transition-colors"
                   >
                     <LogOut className="w-4 h-4" />
                     Sign Out

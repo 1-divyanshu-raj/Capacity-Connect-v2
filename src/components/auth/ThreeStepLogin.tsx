@@ -347,9 +347,9 @@ export const ThreeStepLogin: React.FC<ThreeStepLoginProps> = ({
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto bg-white rounded-2xl shadow-2xl border border-slate-200/80 overflow-hidden">
+    <div className="w-full max-w-xl mx-auto liquid-glass-card rounded-2xl shadow-xl border border-slate-200/80 dark:border-white/10 overflow-hidden">
       {/* Header & Step Progression Breadcrumbs */}
-      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-blue-950 p-5 sm:p-6 text-white">
+      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-blue-950 dark:from-black dark:via-neutral-950 dark:to-blue-950 p-5 sm:p-6 text-white border-b border-white/10">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-xl bg-blue-600/30 border border-blue-400/40 flex items-center justify-center text-blue-400">

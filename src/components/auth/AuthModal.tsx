@@ -57,14 +57,14 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess, defaultTab = 't
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-2xl overflow-hidden transition-all duration-300">
+    <div className="w-full max-w-xl mx-auto liquid-glass rounded-3xl border border-slate-200/80 dark:border-white/15 shadow-2xl overflow-hidden transition-all duration-300">
       {/* Header Banner */}
-      <div className="p-6 bg-gradient-to-r from-blue-700 via-indigo-700 to-slate-900 text-white relative overflow-hidden">
+      <div className="p-6 bg-gradient-to-r from-blue-700 via-indigo-700 to-slate-900 dark:from-slate-950 dark:via-neutral-950 dark:to-blue-950 text-white relative overflow-hidden border-b border-white/10">
         <div className="relative z-10 flex items-start justify-between">
           <div>
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-white/20 text-white backdrop-blur-xs">
-                Enterprise Portal
+              <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-md bg-white/20 dark:bg-white/10 text-white backdrop-blur-xs">
+                Portal
               </span>
               <span className="text-[10px] font-semibold text-blue-200 flex items-center gap-1">
                 <ShieldCheck className="w-3 h-3 text-blue-300" />
@@ -93,7 +93,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess, defaultTab = 't
               <button
                 type="button"
                 onClick={() => { setActiveTab('register'); setError(null); }}
-                className="px-3 py-1.5 rounded-xl bg-white text-blue-900 hover:bg-blue-50 text-xs font-bold shadow-md transition-all flex items-center gap-1.5"
+                className="px-3.5 py-1.5 rounded-xl bg-white text-blue-900 hover:bg-blue-50 text-xs font-bold shadow-md transition-all flex items-center gap-1.5"
               >
                 <UserPlus className="w-3.5 h-3.5 text-blue-700" />
                 <span>Register</span>
@@ -256,19 +256,19 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onSuccess, defaultTab = 't
       </div>
 
       {/* Footer System Status Badge */}
-      <div className="px-6 py-3 bg-slate-50 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500">
+      <div className="px-6 py-3 bg-slate-50/70 dark:bg-black/40 border-t border-slate-200/80 dark:border-white/10 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
         <div className="flex items-center gap-1.5">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="font-medium text-slate-600">Supabase Auth & Biometric Cluster Online</span>
+          <span className="font-medium text-slate-600 dark:text-slate-300">Supabase Auth & Biometric Cluster Online</span>
         </div>
         <div className="flex items-center gap-2">
           {activeTab !== 'demo' && (
             <button
               type="button"
               onClick={() => setActiveTab('demo')}
-              className="text-amber-700 hover:text-amber-900 font-bold hover:underline inline-flex items-center gap-1"
+              className="text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 font-bold hover:underline inline-flex items-center gap-1"
             >
-              <Sparkles className="w-3 h-3" />
+              <Sparkles className="w-3 h-3 text-amber-500" />
               <span>Demo Accounts</span>
             </button>
           )}
