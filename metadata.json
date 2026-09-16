@@ -1,6 +1,6 @@
 {
   "name": "Capacity Connect",
-  "description": "Enterprise capacity building and training platform with multi-role access (Trainee, Trainer, Admin), course catalog, assignments, interactive quizzes, video experiment lab, AI-automated grader reports, trainer experiment reviews, trainee and trainer profiles with grade progress, and India regional skill gap analytics.",
+  "description": "Ministry of Earth Sciences (MoES), Govt. of India - Enterprise earth sciences capacity building and training platform with multi-role access (Trainee, Trainer, Admin), operational oceanography, deep ocean mission, numerical weather prediction, polar sciences, seismology, climate change curricula, open dataset portals, and protected biometric authentication.",
   "requestFramePermissions": ["camera"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

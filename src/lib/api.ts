@@ -217,6 +217,37 @@ export const api = {
     return handleResponse(res);
   },
 
+  async verifyPassword(password: string): Promise<{ success: boolean; message: string }> {
+    const res = await fetch(`${BASE_URL}/auth/verify-password`, {
+      method: 'POST',
+      headers: getAuthHeaders(),
+      body: JSON.stringify({ password })
+    });
+    return handleResponse<{ success: boolean; message: string }>(res);
+  },
+
+  async updateProfile(profileData: Partial<UserProfile> & {
+    education_level?: string;
+    skills_interests?: string[];
+    target_certifications?: string[];
+    bio?: string;
+    qualifications?: string;
+    expertise_areas?: string[];
+  }): Promise<{
+    success: boolean;
+    message: string;
+    user: UserProfile;
+    trainee_details?: any;
+    trainer_details?: any;
+  }> {
+    const res = await fetch(`${BASE_URL}/auth/profile`, {
+      method: 'PUT',
+      headers: getAuthHeaders(),
+      body: JSON.stringify(profileData)
+    });
+    return handleResponse(res);
+  },
+
   async forgotPassword(email: string): Promise<{ message: string; verification_code?: string }> {
     const res = await fetch(`${BASE_URL}/auth/forgot-password`, {
       method: 'POST',

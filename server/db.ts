@@ -2079,189 +2079,172 @@ class Database {
     });
   }
 
-  // India Regional & Field Skill Gap Analytics
+  // India Regional & Field Skill Gap Analytics (MoES Earth System Science Focus)
   public getIndiaSkillGapData(): SkillGapData {
     return {
       national_summary: {
-        total_talent_demand: 2090000,
-        current_workforce: 1290000,
-        average_gap_percentage: 43,
-        highest_deficit_sector: 'Semiconductor & Microelectronics (58% Gap)',
-        fastest_growing_sector: 'Autonomous Drone Systems & Aerial GIS (+64% YoY)'
+        total_talent_demand: 148000,
+        current_workforce: 74200,
+        average_gap_percentage: 50,
+        highest_deficit_sector: 'Deep Ocean Submersible & Benthic Engineering (62% Gap)',
+        fastest_growing_sector: 'Operational Oceanography & High-Resolution NWP (+58% YoY)'
       },
       fields: [
         {
-          field: 'Semiconductor Fabrication & Packaging',
-          category: 'Microelectronics',
-          demand_index: 94,
-          supply_index: 36,
-          gap_percentage: 58,
-          priority_level: 'Critical',
-          annual_talent_deficit: 85000,
-          growth_rate: 52
-        },
-        {
-          field: 'Applied Generative AI & Deep Learning',
-          category: 'Artificial Intelligence',
+          field: 'Deep Ocean Submersible & Benthic Robotics',
+          category: 'Deep Ocean Mission',
           demand_index: 96,
-          supply_index: 51,
-          gap_percentage: 45,
+          supply_index: 36,
+          gap_percentage: 62,
           priority_level: 'Critical',
-          annual_talent_deficit: 140000,
-          growth_rate: 68
-        },
-        {
-          field: 'EV Powertrain & Battery Management (BMS)',
-          category: 'Clean Mobility',
-          demand_index: 88,
-          supply_index: 44,
-          gap_percentage: 48,
-          priority_level: 'High',
-          annual_talent_deficit: 72000,
-          growth_rate: 44
-        },
-        {
-          field: 'Autonomous Drone Systems & Aerial GIS',
-          category: 'Aviation & Remote Sensing',
-          demand_index: 82,
-          supply_index: 38,
-          gap_percentage: 53,
-          priority_level: 'High',
-          annual_talent_deficit: 48000,
+          annual_talent_deficit: 14200,
           growth_rate: 64
         },
         {
-          field: 'Critical SCADA, PLC & Industrial Defense',
-          category: 'Cybersecurity & OT',
-          demand_index: 90,
-          supply_index: 42,
+          field: 'Operational Oceanography & Inundation Early Warning',
+          category: 'Ocean Sciences',
+          demand_index: 94,
+          supply_index: 44,
           gap_percentage: 53,
           priority_level: 'Critical',
-          annual_talent_deficit: 62000,
+          annual_talent_deficit: 18500,
+          growth_rate: 58
+        },
+        {
+          field: 'Numerical Weather Prediction & Doppler Radar Ingestion',
+          category: 'Atmospheric Sciences',
+          demand_index: 92,
+          supply_index: 48,
+          gap_percentage: 48,
+          priority_level: 'Critical',
+          annual_talent_deficit: 22000,
+          growth_rate: 52
+        },
+        {
+          field: 'Polar Glaciology & Cryospheric Mass Balance',
+          category: 'Polar Sciences',
+          demand_index: 85,
+          supply_index: 38,
+          gap_percentage: 55,
+          priority_level: 'High',
+          annual_talent_deficit: 8400,
+          growth_rate: 46
+        },
+        {
+          field: 'Seismological Telemetry & Tsunami Wave Modeling',
+          category: 'Geosciences',
+          demand_index: 89,
+          supply_index: 45,
+          gap_percentage: 49,
+          priority_level: 'High',
+          annual_talent_deficit: 12600,
+          growth_rate: 42
+        },
+        {
+          field: 'Coupled Earth System Climate Modeling (AOGCM)',
+          category: 'Climate Sciences',
+          demand_index: 86,
+          supply_index: 46,
+          gap_percentage: 46,
+          priority_level: 'Moderate',
+          annual_talent_deficit: 11200,
           growth_rate: 39
         },
         {
-          field: 'Precision Agri-Tech & Hydrology Telemetry',
-          category: 'Agritech & Biosystems',
-          demand_index: 75,
-          supply_index: 42,
+          field: 'Coastal Resilience & Marine Bio-resources',
+          category: 'Marine Ecosystems',
+          demand_index: 78,
+          supply_index: 44,
           gap_percentage: 44,
           priority_level: 'Moderate',
-          annual_talent_deficit: 38000,
-          growth_rate: 35
-        },
-        {
-          field: 'Digital Health Tele-Informatics (FHIR/HL7)',
-          category: 'HealthTech',
-          demand_index: 80,
-          supply_index: 48,
-          gap_percentage: 40,
-          priority_level: 'Moderate',
-          annual_talent_deficit: 54000,
-          growth_rate: 31
+          annual_talent_deficit: 9500,
+          growth_rate: 34
         }
       ],
       regions: [
         {
-          region_id: 'reg-north',
-          region_name: 'Northern Region (NCR, Punjab, Haryana, UP, Rajasthan)',
-          states_covered: ['Delhi NCR', 'Uttar Pradesh', 'Haryana', 'Punjab', 'Rajasthan'],
-          primary_hubs: ['Noida', 'Gurugram', 'Chandigarh', 'Jaipur'],
-          overall_gap_index: 41,
-          total_talent_demand: 480000,
-          current_certified_workforce: 283000,
-          top_deficit_field: 'Applied Generative AI & Cloud Infrastructure',
-          training_centers_count: 142,
+          region_id: 'reg-south',
+          region_name: 'Southern Zone (INCOIS Hyderabad, NIOT Chennai, NCCR, CMFRI)',
+          states_covered: ['Telangana', 'Tamil Nadu', 'Andhra Pradesh', 'Kerala', 'Karnataka'],
+          primary_hubs: ['Hyderabad INCOIS', 'Chennai NIOT', 'Kochi CMLRE', 'Bengaluru'],
+          overall_gap_index: 44,
+          total_talent_demand: 46000,
+          current_certified_workforce: 25800,
+          top_deficit_field: 'Deep Ocean Mission Submersible Engineering',
+          training_centers_count: 38,
           field_breakdowns: [
-            { field: 'AI & Data Systems', demand: 95, supply: 55, gap: 42 },
-            { field: 'Drone Systems & GIS', demand: 82, supply: 40, gap: 51 },
-            { field: 'EV Powertrain & BMS', demand: 86, supply: 50, gap: 42 },
-            { field: 'Semiconductor Packaging', demand: 75, supply: 25, gap: 67 }
+            { field: 'Deep Ocean Robotics', demand: 98, supply: 38, gap: 61 },
+            { field: 'Operational Oceanography', demand: 95, supply: 48, gap: 49 },
+            { field: 'Tsunami Early Warning', demand: 91, supply: 50, gap: 45 },
+            { field: 'Coastal Marine Ecology', demand: 82, supply: 48, gap: 41 }
           ]
         },
         {
-          region_id: 'reg-south',
-          region_name: 'Southern Region (Karnataka, TN, Telangana, Kerala, AP)',
-          states_covered: ['Karnataka', 'Tamil Nadu', 'Telangana', 'Kerala', 'Andhra Pradesh'],
-          primary_hubs: ['Bengaluru', 'Hyderabad', 'Chennai', 'Kochi'],
-          overall_gap_index: 34,
-          total_talent_demand: 720000,
-          current_certified_workforce: 475000,
-          top_deficit_field: 'Semiconductor Fabrication & Chiplet Packaging',
-          training_centers_count: 215,
+          region_id: 'reg-north',
+          region_name: 'Northern Zone (IMD HQ New Delhi, NCMRWF Noida, WIHG Dehradun)',
+          states_covered: ['Delhi NCR', 'Uttar Pradesh', 'Uttarakhand', 'Himachal Pradesh', 'Punjab'],
+          primary_hubs: ['New Delhi IMD', 'Noida NCMRWF', 'Dehradun Glaciology', 'Shimla'],
+          overall_gap_index: 46,
+          total_talent_demand: 38000,
+          current_certified_workforce: 20500,
+          top_deficit_field: 'Unified Model (NCUM) Data Assimilation & HPC',
+          training_centers_count: 32,
           field_breakdowns: [
-            { field: 'Semiconductor Packaging', demand: 98, supply: 42, gap: 57 },
-            { field: 'AI & Data Systems', demand: 97, supply: 65, gap: 33 },
-            { field: 'EV Powertrain & BMS', demand: 91, supply: 62, gap: 32 },
-            { field: 'Digital Health FHIR', demand: 85, supply: 56, gap: 34 }
+            { field: 'Numerical Weather Prediction', demand: 96, supply: 46, gap: 52 },
+            { field: 'Himalayan Glacial Runoff', demand: 88, supply: 38, gap: 57 },
+            { field: 'Satellite Meteorology', demand: 90, supply: 52, gap: 42 },
+            { field: 'Severe Storm Nowcasting', demand: 85, supply: 46, gap: 46 }
           ]
         },
         {
           region_id: 'reg-west',
-          region_name: 'Western Region (Maharashtra, Gujarat, Goa)',
-          states_covered: ['Maharashtra', 'Gujarat', 'Goa'],
-          primary_hubs: ['Pune', 'Mumbai', 'Ahmedabad', 'Surat'],
-          overall_gap_index: 38,
-          total_talent_demand: 520000,
-          current_certified_workforce: 322000,
-          top_deficit_field: 'Electric Vehicle Powertrain & Battery Tech',
-          training_centers_count: 168,
+          region_name: 'Western & Central Zone (IITM Pune, NCPOR Goa, IMD Mumbai/Bhopal)',
+          states_covered: ['Maharashtra', 'Goa', 'Gujarat', 'Madhya Pradesh'],
+          primary_hubs: ['Pune IITM / CCCR', 'Vasco NCPOR', 'Mumbai IMD', 'Bhopal DWR'],
+          overall_gap_index: 42,
+          total_talent_demand: 34000,
+          current_certified_workforce: 19700,
+          top_deficit_field: 'Polar & Cryospheric Ice-Core Paleoclimatology',
+          training_centers_count: 28,
           field_breakdowns: [
-            { field: 'EV Powertrain & BMS', demand: 96, supply: 54, gap: 44 },
-            { field: 'Critical SCADA & OT', demand: 89, supply: 48, gap: 46 },
-            { field: 'Semiconductor Packaging', demand: 88, supply: 35, gap: 60 },
-            { field: 'AI & Cloud Systems', demand: 90, supply: 58, gap: 36 }
+            { field: 'Polar Cryosphere Sciences', demand: 92, supply: 40, gap: 56 },
+            { field: 'Earth System Modeling', demand: 94, supply: 54, gap: 42 },
+            { field: 'Monsoon Dynamic Modeling', demand: 95, supply: 58, gap: 39 },
+            { field: 'Doppler Radar Profiling', demand: 86, supply: 50, gap: 42 }
           ]
         },
         {
           region_id: 'reg-east',
-          region_name: 'Eastern Region (West Bengal, Odisha, Bihar, Jharkhand)',
-          states_covered: ['West Bengal', 'Odisha', 'Bihar', 'Jharkhand'],
-          primary_hubs: ['Kolkata', 'Bhubaneswar', 'Patna', 'Ranchi'],
-          overall_gap_index: 49,
-          total_talent_demand: 340000,
-          current_certified_workforce: 173000,
-          top_deficit_field: 'Critical SCADA, Smart Grid & Industrial OT',
-          training_centers_count: 94,
+          region_name: 'Eastern & Island Zone (Kolkata Cyclone Center, Bhubaneswar, Port Blair)',
+          states_covered: ['West Bengal', 'Odisha', 'Andaman & Nicobar Islands', 'Bihar'],
+          primary_hubs: ['Kolkata RMC', 'Bhubaneswar DWR', 'Port Blair Tsunami Hub'],
+          overall_gap_index: 54,
+          total_talent_demand: 20000,
+          current_certified_workforce: 9200,
+          top_deficit_field: 'Bay of Bengal Tropical Cyclone Genesis & Storm Surge',
+          training_centers_count: 18,
           field_breakdowns: [
-            { field: 'Critical SCADA & OT', demand: 92, supply: 38, gap: 59 },
-            { field: 'Drone Systems & GIS', demand: 80, supply: 32, gap: 60 },
-            { field: 'AI & Data Systems', demand: 84, supply: 44, gap: 48 },
-            { field: 'Agri-Tech Hydrology', demand: 85, supply: 46, gap: 46 }
-          ]
-        },
-        {
-          region_id: 'reg-central',
-          region_name: 'Central Region (Madhya Pradesh, Chhattisgarh)',
-          states_covered: ['Madhya Pradesh', 'Chhattisgarh'],
-          primary_hubs: ['Indore', 'Bhopal', 'Raipur'],
-          overall_gap_index: 52,
-          total_talent_demand: 240000,
-          current_certified_workforce: 115000,
-          top_deficit_field: 'Precision Agri-Tech & Renewable Energy Grids',
-          training_centers_count: 72,
-          field_breakdowns: [
-            { field: 'Agri-Tech Hydrology', demand: 91, supply: 39, gap: 57 },
-            { field: 'Drone Systems & GIS', demand: 83, supply: 34, gap: 59 },
-            { field: 'EV Powertrain & BMS', demand: 79, supply: 35, gap: 56 },
-            { field: 'AI & Data Systems', demand: 76, supply: 38, gap: 50 }
+            { field: 'Tropical Cyclone Modeling', demand: 97, supply: 42, gap: 57 },
+            { field: 'Tsunami Coastal Hazard', demand: 90, supply: 36, gap: 60 },
+            { field: 'Ocean State Buoy Telemetry', demand: 84, supply: 38, gap: 55 },
+            { field: 'Estuarine Coastal Dynamics', demand: 80, supply: 40, gap: 50 }
           ]
         },
         {
           region_id: 'reg-ne',
-          region_name: 'North-Eastern Region (Assam, Meghalaya, Sikkim & NE States)',
-          states_covered: ['Assam', 'Meghalaya', 'Sikkim', 'Tripura', 'Manipur', 'Nagaland', 'Arunachal', 'Mizoram'],
-          primary_hubs: ['Guwahati', 'Shillong', 'Gangtok'],
-          overall_gap_index: 56,
-          total_talent_demand: 160000,
-          current_certified_workforce: 70000,
-          top_deficit_field: 'Autonomous Drone GIS & Remote Digital Healthcare',
-          training_centers_count: 48,
+          region_name: 'North-Eastern Zone (NESAC Umiam, Guwahati, Gangtok High-Altitude)',
+          states_covered: ['Meghalaya', 'Assam', 'Arunachal Pradesh', 'Sikkim', 'Nagaland'],
+          primary_hubs: ['Shillong / Umiam', 'Guwahati Met', 'Gangtok GLOF Center'],
+          overall_gap_index: 62,
+          total_talent_demand: 10000,
+          current_certified_workforce: 3800,
+          top_deficit_field: 'High-Altitude Cloud Burst & GLOF Early Warning',
+          training_centers_count: 12,
           field_breakdowns: [
-            { field: 'Drone Systems & GIS', demand: 94, supply: 32, gap: 66 },
-            { field: 'Digital Health FHIR', demand: 88, supply: 35, gap: 60 },
-            { field: 'Agri-Tech Hydrology', demand: 86, supply: 38, gap: 56 },
-            { field: 'AI & Cloud Systems', demand: 74, supply: 30, gap: 59 }
+            { field: 'GLOF Lake Monitoring', demand: 96, supply: 30, gap: 69 },
+            { field: 'Mountain Seismology', demand: 91, supply: 34, gap: 63 },
+            { field: 'Flash Flood Nowcasting', demand: 89, supply: 36, gap: 60 },
+            { field: 'Rainfall Microphysics', demand: 82, supply: 32, gap: 61 }
           ]
         }
       ]

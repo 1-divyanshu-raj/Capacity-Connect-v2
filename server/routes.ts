@@ -1044,6 +1044,146 @@ router.get('/auth/me', authenticate, async (req: AuthenticatedRequest, res: Resp
   });
 });
 
+// Re-Authentication for Protected Profile Editing
+router.post('/auth/verify-password', authenticate, async (req: AuthenticatedRequest, res: Response) => {
+  try {
+    const { password } = req.body;
+    if (!password || typeof password !== 'string') {
+      return res.status(400).json({ error: 'Account password is required for verification.' });
+    }
+
+    const user = db.getUserById(req.user!.id);
+    if (!user) {
+      return res.status(404).json({ error: 'User account not found.' });
+    }
+
+    const isValid = await bcrypt.compare(password, user.password_hash);
+    if (!isValid) {
+      db.logAuditEvent(
+        db.sanitizeUser(user),
+        'PROFILE_REAUTH_FAILED',
+        'AUTH',
+        user.id,
+        { reason: 'Incorrect password attempt' },
+        req.ip || '127.0.0.1'
+      );
+      return res.status(401).json({ error: 'Incorrect password. Verification failed.' });
+    }
+
+    db.logAuditEvent(
+      db.sanitizeUser(user),
+      'PROFILE_REAUTH_SUCCESS',
+      'AUTH',
+      user.id,
+      { details: 'Profile editing unlocked' },
+      req.ip || '127.0.0.1'
+    );
+
+    return res.json({
+      success: true,
+      message: 'Identity verified. Profile editing unlocked.'
+    });
+  } catch (error: any) {
+    console.error('Password verify error:', error);
+    return res.status(500).json({ error: 'Failed to verify account password.' });
+  }
+});
+
+// Update Profile Details (After Protected Re-Authentication)
+router.put('/auth/profile', authenticate, async (req: AuthenticatedRequest, res: Response) => {
+  try {
+    const userId = req.user!.id;
+    const {
+      full_name,
+      phone,
+      organization,
+      department,
+      // Trainee specific
+      education_level,
+      skills_interests,
+      target_certifications,
+      // Trainer specific
+      bio,
+      qualifications,
+      expertise_areas
+    } = req.body;
+
+    const existingUser = db.getUserById(userId);
+    if (!existingUser) {
+      return res.status(404).json({ error: 'User account not found.' });
+    }
+
+    const updatedUser = db.updateUser(userId, {
+      full_name: full_name?.trim() || existingUser.full_name,
+      phone: phone?.trim() || existingUser.phone,
+      organization: organization?.trim() || existingUser.organization,
+      department: department?.trim() || existingUser.department
+    });
+
+    if (existingUser.role === 'trainee') {
+      const existingTrainee = db.getTraineeDetails(userId) || {
+        id: `trn-${userId}`,
+        user_id: userId,
+        skills_interests: [],
+        education_level: '',
+        target_certifications: [],
+        enrolled_count: 0,
+        completed_count: 0
+      };
+
+      db.saveTraineeDetails({
+        ...existingTrainee,
+        education_level: education_level !== undefined ? education_level : existingTrainee.education_level,
+        skills_interests: Array.isArray(skills_interests) ? skills_interests : existingTrainee.skills_interests,
+        target_certifications: Array.isArray(target_certifications) ? target_certifications : existingTrainee.target_certifications
+      });
+    }
+
+    if (existingUser.role === 'trainer') {
+      const existingTrainer = db.getTrainerDetails(userId) || {
+        id: `t-${userId}`,
+        user_id: userId,
+        expertise_areas: [],
+        years_experience: 5,
+        bio: '',
+        qualifications: '',
+        active_batches: 1
+      };
+
+      db.saveTrainerDetails({
+        ...existingTrainer,
+        bio: bio !== undefined ? bio : existingTrainer.bio,
+        qualifications: qualifications !== undefined ? qualifications : existingTrainer.qualifications,
+        expertise_areas: Array.isArray(expertise_areas) ? expertise_areas : existingTrainer.expertise_areas
+      });
+    }
+
+    db.logAuditEvent(
+      updatedUser || db.sanitizeUser(existingUser),
+      'PROFILE_UPDATED',
+      'USER',
+      userId,
+      {
+        full_name,
+        organization,
+        department
+      },
+      req.ip || '127.0.0.1'
+    );
+
+    return res.json({
+      success: true,
+      message: 'Profile details saved successfully.',
+      user: updatedUser,
+      trainee_details: existingUser.role === 'trainee' ? db.getTraineeDetails(userId) : undefined,
+      trainer_details: existingUser.role === 'trainer' ? db.getTrainerDetails(userId) : undefined
+    });
+  } catch (error: any) {
+    console.error('Update profile error:', error);
+    return res.status(500).json({ error: 'Failed to update profile.' });
+  }
+});
+
 // Forgot & Reset Password
 router.post('/auth/forgot-password', async (req: Request, res: Response) => {
   const { email } = req.body;

@@ -6,29 +6,29 @@
       "full_name": "Sarah Chen",
       "role": "admin",
       "phone": "+91 98765 43210",
-      "organization": "National Capacity & Skills Mission",
-      "department": "Governance & Platform Administration",
+      "organization": "Ministry of Earth Sciences (MoES), Govt. of India",
+      "department": "Directorate of Capacity Building & Human Resource Development",
       "status": "active",
       "avatar_url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
       "has_biometrics": true,
-      "password_hash": "$2b$10$fxbNjAeBz1X9svAF1eBTVOQproGuM89xgnLgpQhdjRWbGeg2oc0/m",
-      "created_at": "2026-07-16T22:52:12.088Z",
-      "updated_at": "2026-09-14T22:52:12.088Z"
+      "password_hash": "$2b$10$7DYw8QhCWWTJkWkrivYk4e2/5.fOyxqcQfl9nUw50mkDBfp.v.0Du",
+      "created_at": "2026-07-18T20:23:40.646Z",
+      "updated_at": "2026-09-16T20:23:40.646Z"
     },
     {
       "id": "usr-trainer-001",
       "email": "dr.sharma@capacityconnect.org",
-      "full_name": "Dr. Rajesh Sharma",
+      "full_name": "Dr. Priya Sharma",
       "role": "trainer",
       "phone": "+91 98111 22334",
-      "organization": "Center for Advanced Technology & Research",
-      "department": "Cloud Systems & AI Division",
+      "organization": "Indian National Centre for Ocean Information Services (INCOIS), MoES",
+      "department": "Operational Oceanography & Advisory Services Division",
       "status": "active",
-      "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      "avatar_url": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200&auto=format&fit=crop",
       "has_biometrics": true,
-      "password_hash": "$2b$10$fxbNjAeBz1X9svAF1eBTVOQproGuM89xgnLgpQhdjRWbGeg2oc0/m",
-      "created_at": "2026-07-31T22:52:12.088Z",
-      "updated_at": "2026-09-14T22:52:12.088Z"
+      "password_hash": "$2b$10$ZemF9cJaAGYeKVId3TBBaOqFXZw9YqbrrtPOQz7ya0by1bKe4GCE6",
+      "created_at": "2026-08-02T20:23:40.646Z",
+      "updated_at": "2026-09-16T20:23:40.646Z"
     },
     {
       "id": "usr-trainee-001",
@@ -36,14 +36,44 @@
       "full_name": "Alex Rivera",
       "role": "trainee",
       "phone": "+91 99555 66778",
-      "organization": "State Digital Talent Consortium",
-      "department": "Software Engineering Trainee Wing",
+      "organization": "Indian National Centre for Ocean Information Services (INCOIS), MoES",
+      "department": "Ocean Observation & Computational Modeling Wing",
       "status": "active",
       "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
       "has_biometrics": true,
-      "password_hash": "$2b$10$Tx0d3t0AbzyQGtc2Hkbv7Oym5dRVIR0xQ2EzFDijLthifVppdxuGm",
-      "created_at": "2026-08-20T22:52:12.088Z",
-      "updated_at": "2026-09-15T17:22:22.915Z"
+      "password_hash": "$2b$10$WTGc6GI.HdwkPdGw..m9fOXhVgbTtMxgHCV4WvP.BcLBYgLjmCNl6",
+      "created_at": "2026-08-22T20:23:40.646Z",
+      "updated_at": "2026-09-16T20:23:40.646Z"
+    },
+    {
+      "id": "usr-trainee-priya",
+      "email": "priya.patel@capacityconnect.org",
+      "full_name": "Priya Patel",
+      "role": "trainee",
+      "phone": "+91 98222 33445",
+      "organization": "India Meteorological Department (IMD), MoES",
+      "department": "Numerical Weather Prediction & Doppler Radar Division",
+      "status": "active",
+      "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
+      "has_biometrics": true,
+      "password_hash": "$2b$10$WTGc6GI.HdwkPdGw..m9fOXhVgbTtMxgHCV4WvP.BcLBYgLjmCNl6",
+      "created_at": "2026-08-27T20:23:40.646Z",
+      "updated_at": "2026-09-16T20:23:40.646Z"
+    },
+    {
+      "id": "usr-trainee-vikram",
+      "email": "vikram.rao@capacityconnect.org",
+      "full_name": "Vikramaditya Rao",
+      "role": "trainee",
+      "phone": "+91 97333 44556",
+      "organization": "National Centre for Medium Range Weather Forecasting (NCMRWF), MoES",
+      "department": "Global Unified Modeling & Data Assimilation Lab",
+      "status": "active",
+      "avatar_url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop",
+      "has_biometrics": true,
+      "password_hash": "$2b$10$WTGc6GI.HdwkPdGw..m9fOXhVgbTtMxgHCV4WvP.BcLBYgLjmCNl6",
+      "created_at": "2026-09-01T20:23:40.646Z",
+      "updated_at": "2026-09-16T20:23:40.646Z"
     },
     {
       "id": "usr-admin-pending-002",
@@ -51,308 +81,14 @@
       "full_name": "Marcus Vance",
       "role": "admin",
       "phone": "+91 94333 88990",
-      "organization": "Regional Skill Directorate",
-      "department": "Regional Operations Monitoring",
+      "organization": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "department": "Antarctic Logistics & Cryospheric Operations",
       "status": "pending",
       "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
       "has_biometrics": false,
-      "password_hash": "$2b$10$fxbNjAeBz1X9svAF1eBTVOQproGuM89xgnLgpQhdjRWbGeg2oc0/m",
-      "created_at": "2026-09-12T22:52:12.088Z",
-      "updated_at": "2026-09-14T22:52:12.088Z"
-    },
-    {
-      "id": "usr-test-1789428799819",
-      "email": "test.trainee.1789428799724@capacityconnect.org",
-      "full_name": "Test Trainee Automation",
-      "role": "trainee",
-      "phone": "+91 9876543210",
-      "organization": "National Skill Development Corp",
-      "department": "Cloud Computing",
-      "status": "active",
-      "password_hash": "$2b$10$gzZX80A6mJiEo2LhH0oe1OxqbuogDV2ors0S1/kp0fpyinJPoqfWe",
-      "has_biometrics": false,
-      "created_at": "2026-09-14T23:33:19.819Z",
-      "updated_at": "2026-09-14T23:33:19.819Z"
-    },
-    {
-      "id": "usr-trainer-1789428799910",
-      "email": "test.trainer.1789428799820@capacityconnect.org",
-      "full_name": "Test Senior Trainer",
-      "role": "trainer",
-      "phone": "+91 9876543211",
-      "organization": "Indian Institute of Technology",
-      "department": "Distributed Systems",
-      "status": "active",
-      "password_hash": "$2b$10$0EoBnwgtpDE.92DQ2oo6FezLQSbP9S3qmPXR5i/.4LJKtQ7e.CX3i",
-      "has_biometrics": false,
-      "created_at": "2026-09-14T23:33:19.910Z",
-      "updated_at": "2026-09-14T23:33:19.910Z"
-    },
-    {
-      "id": "usr-admin-1789428799999",
-      "email": "test.admin.1789428799911@capacityconnect.org",
-      "full_name": "Pending Admin Applicant",
-      "role": "admin",
-      "phone": "+91 9876543212",
-      "organization": "Ministry of Skill Development",
-      "department": "Central Administration",
-      "status": "active",
-      "password_hash": "$2b$10$tt5ID1M.qAIrJAYoggUkGOG.qpWNJs9feKfsGcqhgsBN8D1PXUJyG",
-      "has_biometrics": false,
-      "created_at": "2026-09-14T23:33:19.999Z",
-      "updated_at": "2026-09-14T23:33:20.000Z"
-    },
-    {
-      "id": "usr-test-1789469247812",
-      "email": "test.trainee.1789469247649@capacityconnect.org",
-      "full_name": "Test Trainee Automation",
-      "role": "trainee",
-      "phone": "+91 9876543210",
-      "organization": "National Skill Development Corp",
-      "department": "Cloud Computing",
-      "status": "active",
-      "password_hash": "$2b$10$uP1CqUozh1ZpD6k91gkE.u8VWExoOsS8Towwfw0sqKBmJgI00wH6C",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T10:47:27.812Z",
-      "updated_at": "2026-09-15T10:47:27.813Z"
-    },
-    {
-      "id": "usr-trainer-1789469247912",
-      "email": "test.trainer.1789469247814@capacityconnect.org",
-      "full_name": "Test Senior Trainer",
-      "role": "trainer",
-      "phone": "+91 9876543211",
-      "organization": "Indian Institute of Technology",
-      "department": "Distributed Systems",
-      "status": "active",
-      "password_hash": "$2b$10$EvcuNa69t4BwAnoflW42JOvRqvuXyyNDoot.iuCxuu.8dkPqD0GRm",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T10:47:27.912Z",
-      "updated_at": "2026-09-15T10:47:27.912Z"
-    },
-    {
-      "id": "usr-admin-1789469248010",
-      "email": "test.admin.1789469247913@capacityconnect.org",
-      "full_name": "Pending Admin Applicant",
-      "role": "admin",
-      "phone": "+91 9876543212",
-      "organization": "Ministry of Skill Development",
-      "department": "Central Administration",
-      "status": "active",
-      "password_hash": "$2b$10$xZn0WR3GRXtncnNTudj3i.ooQDgriixdceKZLLmu70n.oDFVJwZm6",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T10:47:28.010Z",
-      "updated_at": "2026-09-15T10:47:28.011Z"
-    },
-    {
-      "id": "usr-test-1789469419983",
-      "email": "test.trainee.1789469419847@capacityconnect.org",
-      "full_name": "Test Trainee Automation",
-      "role": "trainee",
-      "phone": "+91 9876543210",
-      "organization": "National Skill Development Corp",
-      "department": "Cloud Computing",
-      "status": "active",
-      "password_hash": "$2b$10$Kdt8vaoyIj.DHbY5RmDoweX2YLcf8GWd0uQiT75dlz35YR6jVcUVu",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T10:50:19.983Z",
-      "updated_at": "2026-09-15T10:50:19.983Z"
-    },
-    {
-      "id": "usr-trainer-1789469420086",
-      "email": "test.trainer.1789469419984@capacityconnect.org",
-      "full_name": "Test Senior Trainer",
-      "role": "trainer",
-      "phone": "+91 9876543211",
-      "organization": "Indian Institute of Technology",
-      "department": "Distributed Systems",
-      "status": "active",
-      "password_hash": "$2b$10$pLglkr74DbKxvLphTzNbSOOaEcUOflGY189YvDLHaDCk07LOpaHa2",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T10:50:20.086Z",
-      "updated_at": "2026-09-15T10:50:20.086Z"
-    },
-    {
-      "id": "usr-admin-1789469420189",
-      "email": "test.admin.1789469420087@capacityconnect.org",
-      "full_name": "Pending Admin Applicant",
-      "role": "admin",
-      "phone": "+91 9876543212",
-      "organization": "Ministry of Skill Development",
-      "department": "Central Administration",
-      "status": "active",
-      "password_hash": "$2b$10$Ixa0p.chdl237f.0AfbKQ.d/3ze2OtMMLJRkUAGaWTojCFSV.xLqK",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T10:50:20.189Z",
-      "updated_at": "2026-09-15T10:50:20.190Z"
-    },
-    {
-      "id": "usr-test-1789469457947",
-      "email": "test.trainee.1789469457830@capacityconnect.org",
-      "full_name": "Test Trainee Automation",
-      "role": "trainee",
-      "phone": "+91 9876543210",
-      "organization": "National Skill Development Corp",
-      "department": "Cloud Computing",
-      "status": "active",
-      "password_hash": "$2b$10$yTZbtTz/jMMT2bBDo5TslekEotyDzN2dGWad/YzTu1hmzsrea1r7u",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T10:50:57.947Z",
-      "updated_at": "2026-09-15T10:50:57.948Z"
-    },
-    {
-      "id": "usr-trainer-1789469458048",
-      "email": "test.trainer.1789469457949@capacityconnect.org",
-      "full_name": "Test Senior Trainer",
-      "role": "trainer",
-      "phone": "+91 9876543211",
-      "organization": "Indian Institute of Technology",
-      "department": "Distributed Systems",
-      "status": "active",
-      "password_hash": "$2b$10$jzK6mCmFD8XUVlb6Arcmh.BHiexihKJXxmNyvE0QS1ZIsMqdeDuMC",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T10:50:58.048Z",
-      "updated_at": "2026-09-15T10:50:58.048Z"
-    },
-    {
-      "id": "usr-admin-1789469458152",
-      "email": "test.admin.1789469458050@capacityconnect.org",
-      "full_name": "Pending Admin Applicant",
-      "role": "admin",
-      "phone": "+91 9876543212",
-      "organization": "Ministry of Skill Development",
-      "department": "Central Administration",
-      "status": "active",
-      "password_hash": "$2b$10$2bv9xe5wHskKlGHHsloT1uZHtZKKA1PUcAcKypOOnrPm3NMj8wz1C",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T10:50:58.152Z",
-      "updated_at": "2026-09-15T10:50:58.153Z"
-    },
-    {
-      "id": "usr-test-1789488787453",
-      "email": "test.trainee.1789488787340@capacityconnect.org",
-      "full_name": "Test Trainee Automation",
-      "role": "trainee",
-      "phone": "+91 9876543210",
-      "organization": "National Skill Development Corp",
-      "department": "Cloud Computing",
-      "status": "active",
-      "password_hash": "$2b$10$34dWlThrFasu6pEW.JcfJegvJV2uMGaMcIG0xYqD9Nf4cVkwBitE6",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T16:13:07.453Z",
-      "updated_at": "2026-09-15T16:13:07.453Z"
-    },
-    {
-      "id": "usr-trainer-1789488787553",
-      "email": "test.trainer.1789488787455@capacityconnect.org",
-      "full_name": "Test Senior Trainer",
-      "role": "trainer",
-      "phone": "+91 9876543211",
-      "organization": "Indian Institute of Technology",
-      "department": "Distributed Systems",
-      "status": "active",
-      "password_hash": "$2b$10$pt7dAJgPNfhYgqM4TdpsQeiCnoDhMayrBAiaRXCn8azwBdyCzV36q",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T16:13:07.553Z",
-      "updated_at": "2026-09-15T16:13:07.553Z"
-    },
-    {
-      "id": "usr-admin-1789488787658",
-      "email": "test.admin.1789488787554@capacityconnect.org",
-      "full_name": "Pending Admin Applicant",
-      "role": "admin",
-      "phone": "+91 9876543212",
-      "organization": "Ministry of Skill Development",
-      "department": "Central Administration",
-      "status": "active",
-      "password_hash": "$2b$10$MdMZOjxKmLJQy0jcLZgjL.EawrL9VZrkcKypaRUZynDT/SRnVP1hW",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T16:13:07.658Z",
-      "updated_at": "2026-09-15T16:13:07.659Z"
-    },
-    {
-      "id": "usr-test-1789489952151",
-      "email": "test.trainee.1789489952037@capacityconnect.org",
-      "full_name": "Test Trainee Automation",
-      "role": "trainee",
-      "phone": "+91 9876543210",
-      "organization": "National Skill Development Corp",
-      "department": "Cloud Computing",
-      "status": "active",
-      "password_hash": "$2b$10$00GuYrVFNjPo.TZgaQyBVecD1Rp5YdcmAWknlTpLWJF5vGyDzVxYa",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T16:32:32.151Z",
-      "updated_at": "2026-09-15T16:32:32.151Z"
-    },
-    {
-      "id": "usr-trainer-1789489952251",
-      "email": "test.trainer.1789489952153@capacityconnect.org",
-      "full_name": "Test Senior Trainer",
-      "role": "trainer",
-      "phone": "+91 9876543211",
-      "organization": "Indian Institute of Technology",
-      "department": "Distributed Systems",
-      "status": "active",
-      "password_hash": "$2b$10$yyVX/8bp9wFdZn35Y5v4HOxvjVfH5Y2fnAMbLV/cNw1w7OLgZ25zy",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T16:32:32.251Z",
-      "updated_at": "2026-09-15T16:32:32.251Z"
-    },
-    {
-      "id": "usr-admin-1789489952353",
-      "email": "test.admin.1789489952253@capacityconnect.org",
-      "full_name": "Pending Admin Applicant",
-      "role": "admin",
-      "phone": "+91 9876543212",
-      "organization": "Ministry of Skill Development",
-      "department": "Central Administration",
-      "status": "active",
-      "password_hash": "$2b$10$BlTWXry0S7aX19SiojQxBeH3DZZ27U3dtHnltXbrAO9eUwZ9oVEyu",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T16:32:32.353Z",
-      "updated_at": "2026-09-15T16:32:32.354Z"
-    },
-    {
-      "id": "usr-test-1789492942389",
-      "email": "test.trainee.1789492942276@capacityconnect.org",
-      "full_name": "Test Trainee Automation",
-      "role": "trainee",
-      "phone": "+91 9876543210",
-      "organization": "National Skill Development Corp",
-      "department": "Cloud Computing",
-      "status": "active",
-      "password_hash": "$2b$10$N6SfEUf3RdeOLSo/05fBEuAwfOIlf49.3XTAUoXPOkkCj89HW6djK",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T17:22:22.389Z",
-      "updated_at": "2026-09-15T17:22:22.389Z"
-    },
-    {
-      "id": "usr-trainer-1789492942491",
-      "email": "test.trainer.1789492942391@capacityconnect.org",
-      "full_name": "Test Senior Trainer",
-      "role": "trainer",
-      "phone": "+91 9876543211",
-      "organization": "Indian Institute of Technology",
-      "department": "Distributed Systems",
-      "status": "active",
-      "password_hash": "$2b$10$QEXcbrC4grIc6Ez4Q9bYouW.GDgQ4ie7lLNKpPgkpU6xPNCfLiNNK",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T17:22:22.491Z",
-      "updated_at": "2026-09-15T17:22:22.491Z"
-    },
-    {
-      "id": "usr-admin-1789492942601",
-      "email": "test.admin.1789492942492@capacityconnect.org",
-      "full_name": "Pending Admin Applicant",
-      "role": "admin",
-      "phone": "+91 9876543212",
-      "organization": "Ministry of Skill Development",
-      "department": "Central Administration",
-      "status": "active",
-      "password_hash": "$2b$10$s.AZ.kA1TSO0flo4omfy1u0jZnxE1zVq99vptDcw1IBzPRB0DKc/.",
-      "has_biometrics": false,
-      "created_at": "2026-09-15T17:22:22.601Z",
-      "updated_at": "2026-09-15T17:22:22.604Z"
+      "password_hash": "$2b$10$7DYw8QhCWWTJkWkrivYk4e2/5.fOyxqcQfl9nUw50mkDBfp.v.0Du",
+      "created_at": "2026-09-14T20:23:40.646Z",
+      "updated_at": "2026-09-16T20:23:40.646Z"
     }
   ],
   "trainees": [
@@ -360,130 +96,53 @@
       "id": "trn-001",
       "user_id": "usr-trainee-001",
       "skills_interests": [
-        "Cloud Architecture",
-        "DevOps",
-        "Distributed Systems",
-        "Python",
-        "Kubernetes"
+        "Operational Oceanography",
+        "Argo Float Telemetry",
+        "Tsunami Warning Systems",
+        "Numerical Ocean Modeling",
+        "Python/GIS"
       ],
-      "education_level": "B.Tech in Computer Science & Engineering",
+      "education_level": "M.Sc. in Oceanography & Marine Geosciences",
       "target_certifications": [
-        "Certified Kubernetes Administrator (CKA)",
-        "Cloud Solutions Architect"
+        "INCOIS Ocean State Forecaster",
+        "Deep Ocean Mission Submersible Systems Specialist"
       ],
       "enrolled_count": 2,
       "completed_count": 1
     },
     {
-      "user_id": "usr-1789426625167-213",
+      "id": "trn-002",
+      "user_id": "usr-trainee-priya",
       "skills_interests": [
-        "mm"
+        "Doppler Radar",
+        "NCUM Models",
+        "Monsoon Dynamics",
+        "Satellite Meteorology",
+        "WRF Modeling"
       ],
-      "education_level": "Undergraduate Degree",
+      "education_level": "M.Tech in Atmospheric & Oceanic Sciences",
       "target_certifications": [
-        "cka"
+        "IMD Certified Weather Forecaster",
+        "Severe Storm Nowcaster"
       ],
-      "enrolled_count": 0,
-      "completed_count": 0,
-      "id": "trn-1789426625168"
+      "enrolled_count": 2,
+      "completed_count": 0
     },
     {
-      "user_id": "usr-test-1789428799819",
+      "id": "trn-003",
+      "user_id": "usr-trainee-vikram",
       "skills_interests": [
-        "Cloud Architecture",
-        "Security"
+        "Global Atmospheric Models",
+        "Data Assimilation",
+        "HPC Cluster Scaling",
+        "Ocean-Atmosphere Coupling"
       ],
-      "education_level": "B.Tech Computer Science",
+      "education_level": "Ph.D. Candidate in Computational Earth Sciences",
       "target_certifications": [
-        "Cloud Professional"
+        "NCMRWF High-Performance NWP Specialist"
       ],
-      "enrolled_count": 0,
-      "completed_count": 0,
-      "id": "trn-1789428799820"
-    },
-    {
-      "user_id": "usr-test-1789469247812",
-      "skills_interests": [
-        "Cloud Architecture",
-        "Security"
-      ],
-      "education_level": "B.Tech Computer Science",
-      "target_certifications": [
-        "Cloud Professional"
-      ],
-      "enrolled_count": 0,
-      "completed_count": 0,
-      "id": "trn-1789469247813"
-    },
-    {
-      "user_id": "usr-test-1789469419983",
-      "skills_interests": [
-        "Cloud Architecture",
-        "Security"
-      ],
-      "education_level": "B.Tech Computer Science",
-      "target_certifications": [
-        "Cloud Professional"
-      ],
-      "enrolled_count": 0,
-      "completed_count": 0,
-      "id": "trn-1789469419984"
-    },
-    {
-      "user_id": "usr-test-1789469457947",
-      "skills_interests": [
-        "Cloud Architecture",
-        "Security"
-      ],
-      "education_level": "B.Tech Computer Science",
-      "target_certifications": [
-        "Cloud Professional"
-      ],
-      "enrolled_count": 0,
-      "completed_count": 0,
-      "id": "trn-1789469457948"
-    },
-    {
-      "user_id": "usr-test-1789488787453",
-      "skills_interests": [
-        "Cloud Architecture",
-        "Security"
-      ],
-      "education_level": "B.Tech Computer Science",
-      "target_certifications": [
-        "Cloud Professional"
-      ],
-      "enrolled_count": 0,
-      "completed_count": 0,
-      "id": "trn-1789488787454"
-    },
-    {
-      "user_id": "usr-test-1789489952151",
-      "skills_interests": [
-        "Cloud Architecture",
-        "Security"
-      ],
-      "education_level": "B.Tech Computer Science",
-      "target_certifications": [
-        "Cloud Professional"
-      ],
-      "enrolled_count": 0,
-      "completed_count": 0,
-      "id": "trn-1789489952153"
-    },
-    {
-      "user_id": "usr-test-1789492942389",
-      "skills_interests": [
-        "Cloud Architecture",
-        "Security"
-      ],
-      "education_level": "B.Tech Computer Science",
-      "target_certifications": [
-        "Cloud Professional"
-      ],
-      "enrolled_count": 0,
-      "completed_count": 0,
-      "id": "trn-1789492942390"
+      "enrolled_count": 1,
+      "completed_count": 0
     }
   ],
   "trainers": [
@@ -491,209 +150,27 @@
       "id": "t-001",
       "user_id": "usr-trainer-001",
       "expertise_areas": [
-        "Cloud Native Computing",
-        "Kubernetes Ecosystem",
-        "Deep Learning & LLMs",
-        "Cyber Defense"
+        "Operational Oceanography",
+        "Deep Ocean Mission Engineering",
+        "Numerical Weather Prediction",
+        "Cryosphere Dynamics"
       ],
-      "years_experience": 14,
-      "bio": "Distinguished Fellow in Distributed Systems with over a decade of hands-on architectural experience leading capacity development programs for government and enterprise initiatives.",
-      "qualifications": "Ph.D. in Computer Science, CKA/CKS, AWS Certified Solutions Architect Professional",
-      "active_batches": 3
-    },
-    {
-      "user_id": "usr-trainer-1789428799910",
-      "expertise_areas": [
-        "Distributed Computing",
-        "Microservices"
-      ],
-      "years_experience": 12,
-      "bio": "Lead architect and technical trainer.",
-      "qualifications": "Ph.D. in Computer Science",
-      "active_batches": 2,
-      "id": "t-1789428799910"
-    },
-    {
-      "user_id": "usr-trainer-1789469247912",
-      "expertise_areas": [
-        "Distributed Computing",
-        "Microservices"
-      ],
-      "years_experience": 12,
-      "bio": "Lead architect and technical trainer.",
-      "qualifications": "Ph.D. in Computer Science",
-      "active_batches": 2,
-      "id": "t-1789469247913"
-    },
-    {
-      "user_id": "usr-trainer-1789469420086",
-      "expertise_areas": [
-        "Distributed Computing",
-        "Microservices"
-      ],
-      "years_experience": 12,
-      "bio": "Lead architect and technical trainer.",
-      "qualifications": "Ph.D. in Computer Science",
-      "active_batches": 2,
-      "id": "t-1789469420087"
-    },
-    {
-      "user_id": "usr-trainer-1789469458048",
-      "expertise_areas": [
-        "Distributed Computing",
-        "Microservices"
-      ],
-      "years_experience": 12,
-      "bio": "Lead architect and technical trainer.",
-      "qualifications": "Ph.D. in Computer Science",
-      "active_batches": 2,
-      "id": "t-1789469458049"
-    },
-    {
-      "user_id": "usr-trainer-1789488787553",
-      "expertise_areas": [
-        "Distributed Computing",
-        "Microservices"
-      ],
-      "years_experience": 12,
-      "bio": "Lead architect and technical trainer.",
-      "qualifications": "Ph.D. in Computer Science",
-      "active_batches": 2,
-      "id": "t-1789488787554"
-    },
-    {
-      "user_id": "usr-trainer-1789489952251",
-      "expertise_areas": [
-        "Distributed Computing",
-        "Microservices"
-      ],
-      "years_experience": 12,
-      "bio": "Lead architect and technical trainer.",
-      "qualifications": "Ph.D. in Computer Science",
-      "active_batches": 2,
-      "id": "t-1789489952252"
-    },
-    {
-      "user_id": "usr-trainer-1789492942491",
-      "expertise_areas": [
-        "Distributed Computing",
-        "Microservices"
-      ],
-      "years_experience": 12,
-      "bio": "Lead architect and technical trainer.",
-      "qualifications": "Ph.D. in Computer Science",
-      "active_batches": 2,
-      "id": "t-1789492942492"
+      "years_experience": 16,
+      "bio": "Scientist-G & Program Director with over 16 years of earth sciences research experience leading ocean observation networks, deep-sea exploration campaigns, and advanced atmospheric modeling for MoES institutions.",
+      "qualifications": "Ph.D. in Physical Oceanography, Senior Fellow (Indian Academy of Sciences), Principal Investigator - Deep Ocean Mission",
+      "active_batches": 4
     }
   ],
   "admin_approvals": [
     {
       "id": "appr-001",
       "user_id": "usr-admin-pending-002",
-      "requested_at": "2026-09-12T22:52:12.088Z",
+      "requested_at": "2026-09-14T20:23:40.647Z",
       "status": "pending",
-      "justification": "Requested administrative oversight for Regional Skill Directorate audit compliance and batch authorization.",
+      "justification": "Requested administrative oversight for NCPOR Polar & Cryospheric Operations capacity tracking and scientific expediting oversight.",
       "user_email": "marcus.pending@capacityconnect.org",
       "user_name": "Marcus Vance",
-      "organization": "Regional Skill Directorate"
-    },
-    {
-      "id": "appr-1789428800000",
-      "user_id": "usr-admin-1789428799999",
-      "user_name": "Pending Admin Applicant",
-      "user_email": "test.admin.1789428799911@capacityconnect.org",
-      "organization": "Ministry of Skill Development",
-      "requested_at": "2026-09-14T23:33:20.000Z",
-      "status": "approved",
-      "justification": "Requested administrative oversight for SIH 2026 challenge review.",
-      "reviewed_by": "usr-master-admin",
-      "reviewer_name": "Chief System Administrator",
-      "reviewed_at": "2026-09-14T23:33:20.000Z",
-      "review_notes": "Verified official credentials and authorization."
-    },
-    {
-      "id": "appr-1789469248010",
-      "user_id": "usr-admin-1789469248010",
-      "user_name": "Pending Admin Applicant",
-      "user_email": "test.admin.1789469247913@capacityconnect.org",
-      "organization": "Ministry of Skill Development",
-      "requested_at": "2026-09-15T10:47:28.010Z",
-      "status": "approved",
-      "justification": "Requested administrative oversight for SIH 2026 challenge review.",
-      "reviewed_by": "usr-master-admin",
-      "reviewer_name": "Chief System Administrator",
-      "reviewed_at": "2026-09-15T10:47:28.011Z",
-      "review_notes": "Verified official credentials and authorization."
-    },
-    {
-      "id": "appr-1789469420189",
-      "user_id": "usr-admin-1789469420189",
-      "user_name": "Pending Admin Applicant",
-      "user_email": "test.admin.1789469420087@capacityconnect.org",
-      "organization": "Ministry of Skill Development",
-      "requested_at": "2026-09-15T10:50:20.189Z",
-      "status": "approved",
-      "justification": "Requested administrative oversight for SIH 2026 challenge review.",
-      "reviewed_by": "usr-master-admin",
-      "reviewer_name": "Chief System Administrator",
-      "reviewed_at": "2026-09-15T10:50:20.190Z",
-      "review_notes": "Verified official credentials and authorization."
-    },
-    {
-      "id": "appr-1789469458152",
-      "user_id": "usr-admin-1789469458152",
-      "user_name": "Pending Admin Applicant",
-      "user_email": "test.admin.1789469458050@capacityconnect.org",
-      "organization": "Ministry of Skill Development",
-      "requested_at": "2026-09-15T10:50:58.152Z",
-      "status": "approved",
-      "justification": "Requested administrative oversight for SIH 2026 challenge review.",
-      "reviewed_by": "usr-master-admin",
-      "reviewer_name": "Chief System Administrator",
-      "reviewed_at": "2026-09-15T10:50:58.153Z",
-      "review_notes": "Verified official credentials and authorization."
-    },
-    {
-      "id": "appr-1789488787658",
-      "user_id": "usr-admin-1789488787658",
-      "user_name": "Pending Admin Applicant",
-      "user_email": "test.admin.1789488787554@capacityconnect.org",
-      "organization": "Ministry of Skill Development",
-      "requested_at": "2026-09-15T16:13:07.658Z",
-      "status": "approved",
-      "justification": "Requested administrative oversight for SIH 2026 challenge review.",
-      "reviewed_by": "usr-master-admin",
-      "reviewer_name": "Chief System Administrator",
-      "reviewed_at": "2026-09-15T16:13:07.659Z",
-      "review_notes": "Verified official credentials and authorization."
-    },
-    {
-      "id": "appr-1789489952353",
-      "user_id": "usr-admin-1789489952353",
-      "user_name": "Pending Admin Applicant",
-      "user_email": "test.admin.1789489952253@capacityconnect.org",
-      "organization": "Ministry of Skill Development",
-      "requested_at": "2026-09-15T16:32:32.353Z",
-      "status": "approved",
-      "justification": "Requested administrative oversight for SIH 2026 challenge review.",
-      "reviewed_by": "usr-master-admin",
-      "reviewer_name": "Chief System Administrator",
-      "reviewed_at": "2026-09-15T16:32:32.354Z",
-      "review_notes": "Verified official credentials and authorization."
-    },
-    {
-      "id": "appr-1789492942603",
-      "user_id": "usr-admin-1789492942601",
-      "user_name": "Pending Admin Applicant",
-      "user_email": "test.admin.1789492942492@capacityconnect.org",
-      "organization": "Ministry of Skill Development",
-      "requested_at": "2026-09-15T17:22:22.603Z",
-      "status": "approved",
-      "justification": "Requested administrative oversight for SIH 2026 challenge review.",
-      "reviewed_by": "usr-master-admin",
-      "reviewer_name": "Chief System Administrator",
-      "reviewed_at": "2026-09-15T17:22:22.604Z",
-      "review_notes": "Verified official credentials and authorization."
+      "organization": "National Centre for Polar and Ocean Research (NCPOR), MoES"
     }
   ],
   "biometrics": [
@@ -701,137 +178,137 @@
       "id": "bio-alex-001",
       "user_id": "usr-trainee-001",
       "template_vector": [
-        0,
-        0.029552020666133955,
-        0.05646424733950354,
-        0.07833269096274834,
-        0.09320390859672263,
-        0.09974949866040544,
-        0.09738476308781953,
-        0.08632093666488738,
-        0.0675463180551151,
-        0.04273798802338302,
-        0.014112000805986721,
-        -0.015774569414324823,
-        -0.04425204432948521,
-        -0.06877661591839739,
-        -0.08715757724135882,
-        -0.0977530117665097,
-        -0.09961646088358407,
-        -0.09258146823277325,
-        -0.07727644875559878,
-        -0.05506855425976376,
-        -0.027941549819892587,
-        0.0016813900484349714,
-        0.031154136351337788,
-        0.057843976438819944,
-        0.07936678638491527,
-        0.09379999767747389,
-        0.09985433453746051,
-        0.09698898108450864,
-        0.08545989080882806,
-        0.06629692300821834,
-        0.041211848524175664,
-        0.012445442350706347,
-        -0.017432678122297967,
-        -0.04575358937753214,
-        -0.06998746875935423,
-        -0.08796957599716701,
-        -0.09809362300664913,
-        -0.09945525882039892,
-        -0.09193285256646758,
-        -0.07619835839190334,
-        -0.0536572918000435,
-        -0.026323179136580267,
-        0.0033623047221136696,
-        0.032747443913769304,
-        0.05920735147072231,
-        0.0803784426551621,
-        0.09436956694441043,
-        0.09993093887479176,
-        0.0965657776549278,
-        0.08457468311429343,
-        0.06502878401571169,
-        0.03967405731306137,
-        0.010775365229944406,
-        -0.019085858137418768,
-        -0.04724219863984662,
-        -0.07117853423691231,
-        -0.08875670335815046,
-        -0.09840650050816428,
-        -0.09926593804706332,
-        -0.09125824497911846,
-        -0.07509872467716762,
-        -0.052230858962673155,
-        -0.024697366173662434,
-        0.005042268780681123,
-        0.03433149288198954,
-        0.06055398697196011,
-        0.08136737375071054,
-        0.09491245536478936,
-        0.09997929001426692,
-        0.09611527245021166,
-        0.08366556385360562,
-        0.06374225961502389,
-        0.03812504916549435,
-        0.009102241619984788,
-        -0.020733642060675878,
-        -0.04871745124605095,
-        -0.07234947560442449,
-        -0.08951873678196803,
-        -0.09869155581206489,
-        -0.09904855208971565,
-        -0.09055783620066238,
-        -0.07397785850778935,
-        -0.05078965903906252,
-        -0.02306457059273957,
-        0.006720807252547492,
-        0.03590583540221683,
-        0.06188350221200393,
-        0.08233330007380796,
-        0.0954285094492697,
-        0.09999937428570208,
-        0.09563759284045031,
-        0.08273279005953788,
-        0.06243771354163942,
-        0.03656526202826214,
-        0.007426544558436131,
-        -0.02237556401867964,
-        -0.05017893010205711,
-        -0.07349996180487753,
-        -0.09025546082101854,
-        -0.09894870832545352,
-        -0.09880316240928619,
-        -0.08983182425573563,
-        -0.07283607678315959,
-        -0.04933409949567783,
-        -0.02142525402958877,
-        0.008397445569174683,
-        0.037470026364945876,
-        0.06319552130068849,
-        0.08327594853077798,
-        0.09591758329530785,
-        0.09999118601072672,
-        0.09513287387867828,
-        0.08177662545264419,
-        0.06111551462625961,
-        0.03499513689566688,
-        0.005748747810492456,
-        -0.02401115979537745,
-        -0.051626222007992696,
-        -0.07462966756449163,
-        -0.09096666718335253,
-        -0.09917788534431159,
-        -0.09852983838412038,
-        -0.08908041440768615,
-        -0.07167370231606575,
-        -0.04786459185884212,
-        -0.01977987996364623,
-        0.010071709699250054,
-        0.03902362353079462
+        0.007763,
+        0.094234,
+        0.048975,
+        -0.155551,
+        0.002846,
+        -0.056363,
+        0.055969,
+        0.149225,
+        -0.072307,
+        0.003321,
+        -0.102687,
+        -0.062963,
+        0.144302,
+        0.001673,
+        0.074172,
+        -0.04712,
+        -0.151977,
+        0.056618,
+        -0.016575,
+        0.108289,
+        0.076203,
+        -0.130905,
+        -0.003366,
+        -0.091054,
+        0.036319,
+        0.151762,
+        -0.041933,
+        0.031601,
+        -0.110929,
+        -0.088184,
+        0.115778,
+        0.002151,
+        0.106507,
+        -0.024003,
+        -0.148534,
+        0.028741,
+        -0.047939,
+        0.110591,
+        0.098435,
+        -0.099399,
+        0.001949,
+        -0.120075,
+        0.010662,
+        0.142348,
+        -0.017476,
+        0.065085,
+        -0.10736,
+        -0.106542,
+        0.082282,
+        -0.008816,
+        0.131364,
+        0.00318,
+        -0.133356,
+        0.008509,
+        -0.082503,
+        0.101416,
+        0.112163,
+        -0.064969,
+        0.018235,
+        -0.140055,
+        -0.016983,
+        0.121804,
+        -0.002129,
+        0.099651,
+        -0.093033,
+        -0.115038,
+        0.048003,
+        -0.029905,
+        0.145916,
+        0.030207,
+        -0.10802,
+        -0.001463,
+        -0.11599,
+        0.082562,
+        0.115,
+        -0.031914,
+        0.043447,
+        -0.148807,
+        -0.042333,
+        0.092409,
+        0.002161,
+        0.131009,
+        -0.070425,
+        -0.111977,
+        0.017203,
+        -0.058417,
+        0.148689,
+        0.052878,
+        -0.075433,
+        0.000041,
+        -0.144238,
+        0.057101,
+        0.105998,
+        -0.00432,
+        0.074321,
+        -0.145619,
+        -0.061411,
+        0.057601,
+        -0.005052,
+        0.155267,
+        -0.043105,
+        -0.09719,
+        -0.006344,
+        -0.090631,
+        0.139755,
+        0.067571,
+        -0.039448,
+        0.012681,
+        -0.163756,
+        0.028976,
+        0.085774,
+        0.014478,
+        0.106806,
+        -0.131346,
+        -0.071075,
+        0.021519,
+        -0.022652,
+        0.169449,
+        -0.015255,
+        -0.07206,
+        -0.019855,
+        -0.122304,
+        0.120724,
+        0.07173,
+        -0.004352,
+        0.034603,
+        -0.172183,
+        0.002469
       ],
-      "enrolled_at": "2026-09-14T23:14:26.834Z",
-      "last_used_at": "2026-09-14T23:14:26.834Z",
+      "enrolled_at": "2026-08-27T20:23:40.646Z",
+      "last_used_at": "2026-09-15T20:23:40.646Z",
       "liveness_verified": true,
       "is_active": true
     },
@@ -968,8 +445,8 @@
         0.00245,
         0.08776
       ],
-      "enrolled_at": "2026-09-14T23:14:26.815Z",
-      "last_used_at": "2026-09-14T23:14:26.815Z",
+      "enrolled_at": "2026-08-12T20:23:40.646Z",
+      "last_used_at": "2026-09-13T20:23:40.646Z",
       "liveness_verified": true,
       "is_active": true
     },
@@ -1106,320 +583,563 @@
         0.05948,
         0.022108
       ],
-      "enrolled_at": "2026-09-14T23:14:26.822Z",
-      "last_used_at": "2026-09-14T23:14:26.822Z",
+      "enrolled_at": "2026-07-28T20:23:40.647Z",
+      "last_used_at": "2026-09-14T20:23:40.647Z",
       "liveness_verified": true,
       "is_active": true
     },
     {
-      "id": "bio-1789467982657",
-      "user_id": "usr-1789426625167-213",
+      "id": "bio-priya-001",
+      "user_id": "usr-trainee-priya",
       "template_vector": [
-        0,
-        0,
-        0,
-        0.055281,
-        0.155511,
-        0.149524,
-        0.14678,
-        0.145681,
-        0.139048,
-        0.131153,
-        0.126613,
-        0.183696,
-        0.071361,
-        0.00046,
-        0.00046,
-        0.00046,
-        0,
-        0,
-        0,
-        0.057137,
-        0.123622,
-        0.048436,
-        0.045963,
-        0.049469,
-        0.064022,
-        0.093023,
-        0.134615,
-        0.188785,
-        0.071483,
-        0.00046,
-        0.00046,
-        0.00046,
-        0,
-        0,
-        0,
-        0.055299,
-        0.065529,
-        0.040884,
-        0.052146,
-        0.064052,
-        0.063239,
-        0.06393,
-        0.133992,
-        0.190718,
-        0.071484,
-        0.00046,
-        0.00046,
-        0.00046,
-        0,
-        0,
-        0,
-        0.028051,
-        0.068475,
-        0.070133,
-        0.092578,
-        0.114149,
-        0.115438,
-        0.11995,
-        0.125602,
-        0.193228,
-        0.071484,
-        0.00046,
-        0.00046,
-        0.00046,
-        0,
-        0,
-        0,
-        0.03347,
-        0.052318,
-        0.092053,
-        0.103292,
-        0.123996,
-        0.128679,
-        0.095256,
-        0.122917,
-        0.173499,
-        0.070489,
-        0.000425,
-        0.000425,
-        0.000425,
-        0,
-        0,
-        0,
-        0.057076,
-        0.164522,
-        0.124365,
-        0.087229,
-        0.10689,
-        0.15242,
-        0.172806,
-        0.159773,
-        0.148365,
-        0.066461,
-        0.000252,
-        0.000179,
-        0.000179,
-        0,
-        0,
-        0,
-        0.052514,
-        0.133233,
-        0.093826,
-        0.062913,
-        0.078667,
-        0.113212,
-        0.145957,
-        0.134881,
-        0.134273,
-        0.051656,
-        0.000235,
-        0.000179,
-        0.000179,
-        0,
-        0,
-        0,
-        0.058307,
-        0.140327,
-        0.133989,
-        0.099301,
-        0.093843,
-        0.109496,
-        0.13784,
-        0.115775,
-        0.124088,
-        0.042624,
-        0.000454,
-        0.000472,
-        0.000472
+        0.066773,
+        0.057421,
+        -0.030005,
+        -0.0172,
+        -0.120248,
+        -0.039676,
+        -0.123401,
+        0.029386,
+        -0.050608,
+        0.129641,
+        0.007743,
+        0.165099,
+        -0.020802,
+        0.106438,
+        -0.11286,
+        0.022076,
+        -0.173976,
+        0.004745,
+        -0.139561,
+        0.072164,
+        -0.043982,
+        0.148108,
+        0.016128,
+        0.144127,
+        -0.014924,
+        0.054463,
+        -0.092598,
+        -0.037424,
+        -0.120197,
+        -0.047724,
+        -0.052842,
+        0.01856,
+        0.053949,
+        0.073544,
+        0.103072,
+        0.041128,
+        0.059135,
+        -0.060941,
+        -0.014285,
+        -0.139449,
+        -0.023285,
+        -0.124888,
+        0.055324,
+        -0.045321,
+        0.148706,
+        0.004105,
+        0.16554,
+        -0.036659,
+        0.093439,
+        -0.128038,
+        0.012002,
+        -0.173045,
+        0.007539,
+        -0.121038,
+        0.080739,
+        -0.02201,
+        0.146077,
+        0.026709,
+        0.123602,
+        -0.0157,
+        0.02486,
+        -0.090272,
+        -0.059008,
+        -0.101853,
+        -0.054281,
+        -0.021482,
+        0.017033,
+        0.082011,
+        0.061357,
+        0.115049,
+        0.014315,
+        0.058827,
+        -0.089761,
+        -0.011161,
+        -0.153996,
+        -0.006467,
+        -0.122118,
+        0.079165,
+        -0.038229,
+        0.162698,
+        0.000754,
+        0.160353,
+        -0.050927,
+        0.077065,
+        -0.138754,
+        0.001113,
+        -0.166248,
+        0.009679,
+        -0.098311,
+        0.086396,
+        0.001012,
+        0.139125,
+        0.036755,
+        0.098923,
+        -0.015744,
+        -0.005725,
+        -0.084948,
+        -0.078863,
+        -0.080226,
+        -0.059174,
+        0.010552,
+        0.015013,
+        0.107413,
+        0.047367,
+        0.123248,
+        -0.012745,
+        0.056432,
+        -0.115488,
+        -0.00799,
+        -0.163372,
+        0.010195,
+        -0.115129,
+        0.100118,
+        -0.029518,
+        0.171151,
+        -0.002184,
+        0.149688,
+        -0.063156,
+        0.057833,
+        -0.144683,
+        -0.010226,
+        -0.153829,
+        0.011134,
+        -0.072138,
+        0.089006,
+        0.024305,
+        0.12753,
+        0.045884
       ],
-      "enrolled_at": "2026-09-15T10:26:22.657Z",
-      "last_used_at": "2026-09-15T10:26:22.657Z",
+      "enrolled_at": "2026-08-29T20:23:40.647Z",
+      "last_used_at": "2026-09-15T20:23:40.647Z",
+      "liveness_verified": true,
+      "is_active": true
+    },
+    {
+      "id": "bio-vikram-001",
+      "user_id": "usr-trainee-vikram",
+      "template_vector": [
+        0.02367,
+        -0.154365,
+        0.151552,
+        -0.026341,
+        -0.064452,
+        0.03742,
+        0.012281,
+        0.033094,
+        -0.128513,
+        0.12466,
+        0.012239,
+        -0.138728,
+        0.124049,
+        -0.022456,
+        -0.016064,
+        -0.036097,
+        0.053344,
+        0.045003,
+        -0.159787,
+        0.141544,
+        -0.001484,
+        -0.099803,
+        0.071161,
+        -0.004831,
+        0.026395,
+        -0.103344,
+        0.092566,
+        0.042137,
+        -0.160807,
+        0.13209,
+        -0.010283,
+        -0.047416,
+        0.002298,
+        0.024375,
+        0.05488,
+        -0.15122,
+        0.119699,
+        0.029082,
+        -0.132947,
+        0.095667,
+        -0.008703,
+        0.006599,
+        -0.069363,
+        0.058902,
+        0.06569,
+        -0.170691,
+        0.126212,
+        0.012923,
+        -0.083449,
+        0.037653,
+        0.005213,
+        0.051199,
+        -0.129687,
+        0.08983,
+        0.059989,
+        -0.158699,
+        0.107619,
+        0.00103,
+        -0.023588,
+        -0.031467,
+        0.029158,
+        0.078597,
+        -0.166659,
+        0.107832,
+        0.043065,
+        -0.118709,
+        0.064932,
+        -0.001167,
+        0.034013,
+        -0.098246,
+        0.057001,
+        0.085806,
+        -0.173021,
+        0.105682,
+        0.022559,
+        -0.059793,
+        0.004837,
+        0.00818,
+        0.078245,
+        -0.149171,
+        0.08033,
+        0.07493,
+        -0.147842,
+        0.080381,
+        0.006162,
+        0.005524,
+        -0.061507,
+        0.026727,
+        0.101902,
+        -0.17366,
+        0.090717,
+        0.052184,
+        -0.096677,
+        0.034309,
+        -0.000598,
+        0.064121,
+        -0.120796,
+        0.048521,
+        0.10302,
+        -0.166442,
+        0.082122,
+        0.025934,
+        -0.030267,
+        -0.024899,
+        0.004096,
+        0.105177,
+        -0.160507,
+        0.06564,
+        0.084904,
+        -0.128775,
+        0.052798,
+        0.004305,
+        0.037893,
+        -0.085802,
+        0.017885,
+        0.122418,
+        -0.17175,
+        0.070449,
+        0.054889,
+        -0.068191,
+        0.006186,
+        -0.007032,
+        0.094555,
+        -0.135611,
+        0.034958,
+        0.115209,
+        -0.15136,
+        0.057903
+      ],
+      "enrolled_at": "2026-09-04T20:23:40.647Z",
+      "last_used_at": "2026-09-14T20:23:40.647Z",
       "liveness_verified": true,
       "is_active": true
     }
   ],
   "courses": [
     {
-      "id": "crs-cloud-001",
-      "title": "Enterprise Cloud Infrastructure & Kubernetes Orchestration",
-      "description": "Master high-availability microservices deployment, VPC networking, Istio service mesh, and infrastructure automation using Terraform and Kubernetes on multi-cloud environments.",
-      "category": "Cloud & DevOps",
+      "id": "crs-ocean-001",
+      "title": "Operational Oceanography & Coastal Dynamics",
+      "description": "Master real-time ocean state forecasting, coastal storm surge modeling, Argo float telemetry, tsunami propagation physics, and INCOIS coastal advisory and high-wave alerting systems.",
+      "category": "Ocean Sciences & INCOIS",
       "level": "Intermediate",
       "trainer_id": "usr-trainer-001",
-      "trainer_name": "Dr. Rajesh Sharma",
+      "trainer_name": "Dr. Priya Sharma",
       "duration_hours": 36,
       "capacity": 60,
-      "enrolled_count": 24,
+      "enrolled_count": 28,
       "status": "published",
-      "cover_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+      "cover_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop",
       "skills_acquired": [
-        "Kubernetes",
-        "Docker",
-        "CI/CD Pipelines",
-        "Terraform",
-        "Observability (Prometheus)"
+        "INCOIS Advisory Systems",
+        "Argo Float Telemetry",
+        "Storm Surge Modeling",
+        "Tidal Harmonics",
+        "Satellite Altimetry"
       ],
-      "created_at": "2026-08-31T22:52:12.087Z",
+      "created_at": "2026-09-02T20:23:40.645Z",
       "modules": [
         {
           "id": "mod-c1-1",
-          "title": "Containerization Fundamentals & OCI Standards",
+          "title": "Ocean State Forecasting & Coastal Hazard Early Warning",
           "duration_minutes": 90,
           "type": "video",
-          "content": "Deep dive into cgroups, namespaces, image layers, multi-stage builds, and container runtime security practices."
+          "content": "Overview of INCOIS multi-hazard coastal early warning architecture, significant wave height (SWH) buoy telemetry, and swell surge prediction along Indian shorelines."
         },
         {
           "id": "mod-c1-2",
-          "title": "Kubernetes Architecture: Control Plane & Worker Nodes",
-          "duration_minutes": 120,
+          "title": "Argo Float Profiling, CTD Sensors & Telemetry Networks",
+          "duration_minutes": 110,
           "type": "reading",
-          "content": "Detailed breakdown of kube-apiserver, etcd quorum consensus, kube-controller-manager, and kube-proxy IPVS load balancing."
+          "content": "Autonomous buoyancy engines, CTD (Conductivity, Temperature, Depth) calibrations, Iridium satellite telemetry transmission, and global Argo quality control pipelines."
         },
         {
           "id": "mod-c1-3",
-          "title": "Hands-on Lab: Deploying Microservices with Helm Charts",
-          "duration_minutes": 150,
+          "title": "Hydrodynamic Wave Modeling & Nearshore Coastal Dynamics",
+          "duration_minutes": 130,
           "type": "practical",
-          "content": "Building configurable templates with values.yaml, dependency management, and release versioning in staging environments."
+          "content": "Simulating nearshore circulation, bathymetric refraction, breaker zone shoaling, and sediment transport using coupled hydrodynamic models."
         },
         {
           "id": "mod-c1-4",
-          "title": "Service Mesh & Zero-Trust Security Policies",
-          "duration_minutes": 110,
+          "title": "Tsunami Propagation Physics & INCOIS Advisory Protocols",
+          "duration_minutes": 95,
           "type": "assignment",
-          "content": "Enforcing mTLS communication between microservices, traffic routing canary deployments, and Calico network policies."
+          "content": "Deep ocean shallow-water wave equations, Bottom Pressure Recorder (BPR) inversion, and standard operating procedures for coastal evacuation bulletins."
         }
       ]
     },
     {
-      "id": "crs-ai-002",
-      "title": "Applied Generative AI & Deep Learning Systems",
-      "description": "Build production-ready LLM agents, vector embeddings search with pgvector, fine-tuning pipelines, and semantic retrieval-augmented generation (RAG) frameworks.",
-      "category": "Artificial Intelligence",
+      "id": "crs-deepsea-002",
+      "title": "Deep Ocean Mission & Marine Resources Exploration",
+      "description": "Engineering and scientific curriculum for Samudrayaan crewed submersible operations, polymetallic nodules surveying, ocean thermal energy conversion (OTEC), and hydrothermal vent biogeochemistry.",
+      "category": "Deep Ocean Mission & NIOT",
       "level": "Advanced",
       "trainer_id": "usr-trainer-001",
-      "trainer_name": "Dr. Rajesh Sharma",
-      "duration_hours": 45,
-      "capacity": 50,
-      "enrolled_count": 38,
+      "trainer_name": "Dr. Priya Sharma",
+      "duration_hours": 42,
+      "capacity": 45,
+      "enrolled_count": 22,
       "status": "published",
-      "cover_image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
+      "cover_image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop",
       "skills_acquired": [
-        "Generative AI",
-        "Vector DBs",
-        "RAG Pipelines",
-        "Prompt Optimization",
-        "Model Evaluation"
+        "Samudrayaan Submersible Systems",
+        "Polymetallic Nodule Survey",
+        "Sub-Bottom Profiling",
+        "Hydrothermal Geochemistry",
+        "Deep Sea Pressure Vessels"
       ],
-      "created_at": "2026-08-24T22:52:12.088Z",
+      "created_at": "2026-08-27T20:23:40.646Z",
       "modules": [
         {
           "id": "mod-c2-1",
-          "title": "Transformer Architecture & Self-Attention Mechanics",
+          "title": "Samudrayaan MATSYA-6000 Submersible System Architecture",
           "duration_minutes": 120,
           "type": "video",
-          "content": "Mathematical formulation of scaled dot-product attention, positional encodings, and multi-head attention blocks."
+          "content": "Titanium personnel sphere structural mechanics, syntactic foam buoyancy, 600 bar hydrostatic life support systems, and underwater acoustic communication."
         },
         {
           "id": "mod-c2-2",
-          "title": "Vector Search, Embeddings, & pgvector Indexing",
+          "title": "Seafloor Bathymetry, Acoustic Multibeam & Sub-Bottom Profiling",
           "duration_minutes": 100,
           "type": "reading",
-          "content": "HNSW vs IVFFlat index strategies, cosine distance metrics, and scaling dense vector search over millions of documents."
+          "content": "Multibeam echo sounder backscatter processing, side-scan sonar interpretation, and high-resolution digital terrain modeling of the Central Indian Basin."
         },
         {
           "id": "mod-c2-3",
-          "title": "End-to-End Enterprise RAG System Engineering",
-          "duration_minutes": 180,
+          "title": "Deep-Sea Mineral Extraction & Polymetallic Nodule Assessment",
+          "duration_minutes": 140,
           "type": "practical",
-          "content": "Document chunking, hybrid keyword-vector retrieval, re-ranking with cross-encoders, and hallucination guardrails."
+          "content": "Resource appraisal methodologies for copper, nickel, and cobalt nodules; tracked underwater seabed collector vehicle robotics; and benthic environmental impact baselines."
         }
       ]
     },
     {
-      "id": "crs-cyber-003",
-      "title": "Cyber Threat Intelligence & Incident Response Defense",
-      "description": "Comprehensive cyber defense training covering MITRE ATT&CK frameworks, SIEM log analysis, digital forensics, reverse engineering basic malware, and automated playbook orchestration.",
-      "category": "Cybersecurity",
-      "level": "Intermediate",
+      "id": "crs-weather-003",
+      "title": "Numerical Weather Prediction & Monsoon Modeling",
+      "description": "High-resolution dynamical forecasting utilizing NCUM models, Doppler weather radar ingestion, cloud microphysics, satellite radiances (INSAT-3D), and extreme precipitation alert systems.",
+      "category": "Atmospheric Sciences & IMD/NCMRWF",
+      "level": "Advanced",
       "trainer_id": "usr-trainer-001",
-      "trainer_name": "Dr. Rajesh Sharma",
-      "duration_hours": 32,
-      "capacity": 40,
-      "enrolled_count": 18,
+      "trainer_name": "Dr. Priya Sharma",
+      "duration_hours": 40,
+      "capacity": 50,
+      "enrolled_count": 32,
       "status": "published",
-      "cover_image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+      "cover_image": "https://images.unsplash.com/photo-1534088568595-a066f410bcda?q=80&w=800&auto=format&fit=crop",
       "skills_acquired": [
-        "Threat Hunting",
-        "SIEM / Splunk",
-        "Network Forensics",
-        "MITRE ATT&CK",
-        "Incident Response"
+        "NCUM Unified Model",
+        "Doppler Weather Radar (DWR)",
+        "INSAT-3D Radiance Data",
+        "Monsoon Dynamics",
+        "Ensemble Forecasts"
       ],
-      "created_at": "2026-08-15T22:52:12.088Z",
+      "created_at": "2026-08-19T20:23:40.646Z",
       "modules": [
         {
           "id": "mod-c3-1",
-          "title": "Threat Actor TTPs & MITRE ATT&CK Matrix Navigation",
+          "title": "Dynamical Atmospheric Thermodynamics & Primitive Equations",
           "duration_minutes": 90,
           "type": "video",
-          "content": "Mapping adversarial techniques across reconnaissance, initial access, privilege escalation, and lateral movement."
+          "content": "Hydrostatic vs non-hydrostatic core equations, convective parameterizations, planetary boundary layer dynamics, and monsoon trough physics."
         },
         {
           "id": "mod-c3-2",
-          "title": "Security Operations Center (SOC) Log Analytics",
-          "duration_minutes": 120,
+          "title": "Doppler Weather Radar Ingestion & Velocity De-aliasing",
+          "duration_minutes": 110,
           "type": "practical",
-          "content": "Correlating Zeek network telemetry, Windows Event IDs (4624, 4688, Sysmon), and Linux auth logs."
+          "content": "Radial velocity nyquist unwrapping, reflectivity attenuation correction, dual-polarization hydrometeor classification, and nowcasting flash flood cells."
+        },
+        {
+          "id": "mod-c3-3",
+          "title": "Satellite Radiance Data Assimilation in NCMRWF Global Models",
+          "duration_minutes": 125,
+          "type": "reading",
+          "content": "4D-Var assimilation cycles, INSAT-3DR sounder radiances, cloud-cleared brightness temperatures, and high-performance computing parallel scaling."
         }
       ]
     },
     {
-      "id": "crs-sdg-004",
-      "title": "Renewable Energy Grid Analytics & Smart Infrastructure",
-      "description": "Capacity building program designed for public sector engineers and sustainability teams on smart grid IoT telemetry, predictive load balancing, and battery storage optimization.",
-      "category": "Sustainable Infrastructure",
-      "level": "Beginner",
+      "id": "crs-polar-004",
+      "title": "Polar Sciences & Cryosphere Research",
+      "description": "Antarctic ice-sheet mass balance, Maitri and Bharati station logistics, Arctic Svalbard sea-ice extent dynamics, and Himalayan third-pole glacial melt telemetry under NCPOR guidance.",
+      "category": "Polar Sciences & NCPOR",
+      "level": "Intermediate",
       "trainer_id": "usr-trainer-001",
-      "trainer_name": "Dr. Rajesh Sharma",
-      "duration_hours": 20,
-      "capacity": 80,
-      "enrolled_count": 45,
+      "trainer_name": "Dr. Priya Sharma",
+      "duration_hours": 32,
+      "capacity": 40,
+      "enrolled_count": 19,
       "status": "published",
-      "cover_image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop",
+      "cover_image": "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=800&auto=format&fit=crop",
       "skills_acquired": [
-        "Smart Grids",
-        "IoT Telemetry",
-        "Energy Storage",
-        "Sustainability Audits"
+        "Cryospheric Mass Balance",
+        "Ice Core Paleoclimatology",
+        "Bharati/Maitri Station Operations",
+        "SAR Sea Ice Mapping",
+        "Himalayan Glacial Runoff"
       ],
-      "created_at": "2026-08-05T22:52:12.088Z",
+      "created_at": "2026-08-17T20:23:40.646Z",
       "modules": [
         {
           "id": "mod-c4-1",
-          "title": "Smart Meter Protocols & SCADA Data Integration",
-          "duration_minutes": 75,
+          "title": "Antarctic Ice Sheet Dynamics & Glaciological Field Stations",
+          "duration_minutes": 85,
           "type": "video",
-          "content": "Modbus TCP, DNP3, and IEC 61850 protocol ingestion architectures for edge substation monitors."
+          "content": "Ice flow velocity interferometry, grounding line migration, operational life support in Larsemann Hills (Bharati) and Schirmacher Oasis (Maitri)."
         },
         {
           "id": "mod-c4-2",
-          "title": "Predictive Load Forecasting with Time-Series Models",
-          "duration_minutes": 110,
+          "title": "Ice Core Stratigraphy & Past Climate Reconstructions",
+          "duration_minutes": 95,
+          "type": "reading",
+          "content": "Stable oxygen isotope ratios (d18O), trapped greenhouse gas atmospheric paleorecords, volcanic aerosol tephra layers, and cryo-chamber analytical protocols."
+        },
+        {
+          "id": "mod-c4-3",
+          "title": "Himalayan Glacial Lake Outburst Flood (GLOF) Monitoring",
+          "duration_minutes": 105,
           "type": "practical",
-          "content": "Forecasting peak demand profiles using seasonal decomposition and neural forecasting algorithms."
+          "content": "Satellite optical and synthetic aperture radar (SAR) monitoring of proglacial lakes, moraine dam stability assessment, and automated early warning sirens."
+        }
+      ]
+    },
+    {
+      "id": "crs-seismo-005",
+      "title": "Seismology & Tsunami Early Warning Systems",
+      "description": "Real-time seismic network monitoring across the Indian subcontinent, moment magnitude calculation, seabed bottom pressure recorder (BPR) telemetry, and coastal inundation warning dissemination.",
+      "category": "Geosciences & NCS/ITEWC",
+      "level": "Intermediate",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Priya Sharma",
+      "duration_hours": 35,
+      "capacity": 50,
+      "enrolled_count": 34,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "Broadband Seismometry",
+        "Moment Magnitude (Mw) Inversion",
+        "Bottom Pressure Recorder Telemetry",
+        "Tsunami Inundation Mapping",
+        "Focal Mechanism Analysis"
+      ],
+      "created_at": "2026-08-12T20:23:40.646Z",
+      "modules": [
+        {
+          "id": "mod-c5-1",
+          "title": "Broadband Seismic Network Operations & Signal Deconvolution",
+          "duration_minutes": 90,
+          "type": "video",
+          "content": "Instrumentation transfer functions, digital telemetry packet transmission via VSAT, and broadband sensor self-noise PSD calculation."
+        },
+        {
+          "id": "mod-c5-2",
+          "title": "Real-Time Hypocenter Location & Moment Magnitude Computation",
+          "duration_minutes": 115,
+          "type": "reading",
+          "content": "Travel-time arrival picking, P-wave first motion polarities, fast centroid moment tensor (W-phase) inversion for megathrust subduction events."
+        },
+        {
+          "id": "mod-c5-3",
+          "title": "Indian Ocean Tsunami Early Warning Centre (ITEWC) Architecture",
+          "duration_minutes": 130,
+          "type": "practical",
+          "content": "Pre-computed scenario database indexing, real-time sea-level gauge assimilation, tsunami travel time calculation, and threat matrix dissemination."
+        }
+      ]
+    },
+    {
+      "id": "crs-climate-006",
+      "title": "Climate Change Science & Earth System Science",
+      "description": "Coupled climate models (IPCC CMIP6 projections), biogeochemical carbon cycles, ocean acidification, sea level rise dynamics, and regional climate vulnerability assessments for the Indian subcontinent.",
+      "category": "Climate Sciences & CCCR/IITM",
+      "level": "Advanced",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Priya Sharma",
+      "duration_hours": 38,
+      "capacity": 50,
+      "enrolled_count": 25,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "Coupled Climate Models (AOGCM)",
+        "IPCC CMIP6 Analysis",
+        "Biogeochemical Carbon Cycles",
+        "Sea Level Rise Projections",
+        "Downscaled Climate Modeling"
+      ],
+      "created_at": "2026-08-07T20:23:40.646Z",
+      "modules": [
+        {
+          "id": "mod-c6-1",
+          "title": "Earth System Feedback Mechanisms & Carbon Cycle Budgets",
+          "duration_minutes": 100,
+          "type": "video",
+          "content": "Air-sea carbon dioxide flux, biological ocean carbon pump, terrestrial biosphere feedbacks, and global radiative forcing calculations."
+        },
+        {
+          "id": "mod-c6-2",
+          "title": "Downscaled Regional Climate Projections for South Asia",
+          "duration_minutes": 120,
+          "type": "practical",
+          "content": "Statistical and dynamical downscaling of CMIP6 models, extremes indices (heatwave days, heavy precipitation frequency), and drought spell modeling."
+        },
+        {
+          "id": "mod-c6-3",
+          "title": "Ocean Acidification, Marine Heatwaves & Coral Bleaching",
+          "duration_minutes": 95,
+          "type": "reading",
+          "content": "Aragonite saturation states, degree heating weeks (DHW) calculation from NOAA/INCOIS satellite telemetry, and Gulf of Mannar coral reef impact assessments."
         }
       ]
     }
@@ -1428,8 +1148,8 @@
     {
       "id": "enr-alex-01",
       "user_id": "usr-trainee-001",
-      "course_id": "crs-cloud-001",
-      "enrolled_at": "2026-09-04T22:52:12.088Z",
+      "course_id": "crs-ocean-001",
+      "enrolled_at": "2026-09-06T20:23:40.646Z",
       "progress_percentage": 75,
       "status": "in_progress",
       "completed_modules": [
@@ -1441,124 +1161,233 @@
     {
       "id": "enr-alex-02",
       "user_id": "usr-trainee-001",
-      "course_id": "crs-sdg-004",
-      "enrolled_at": "2026-08-20T22:52:12.088Z",
+      "course_id": "crs-seismo-005",
+      "enrolled_at": "2026-08-22T20:23:40.646Z",
       "progress_percentage": 100,
       "status": "completed",
       "completed_modules": [
-        "mod-c4-1",
-        "mod-c4-2"
+        "mod-c5-1",
+        "mod-c5-2",
+        "mod-c5-3"
       ],
-      "completion_date": "2026-09-09T22:52:12.088Z",
-      "certificate_id": "cert-alex-sdg-001"
+      "completion_date": "2026-03-01",
+      "certificate_id": "cert-alex-moes-001"
     }
   ],
   "assessments": [
     {
-      "id": "asm-c1",
-      "course_id": "crs-cloud-001",
-      "course_title": "Enterprise Cloud Infrastructure & Kubernetes Orchestration",
-      "title": "Cloud & Kubernetes Technical Certification Assessment",
-      "description": "Evaluate your understanding of container orchestration, network policies, declarative configuration, and distributed fault tolerance.",
-      "time_limit_minutes": 15,
+      "id": "asm-ocean-01",
+      "course_id": "crs-ocean-001",
+      "course_title": "Operational Oceanography & Coastal Dynamics",
+      "title": "Operational Oceanography & INCOIS Advisory Certification Assessment",
+      "description": "Evaluate your understanding of ocean state forecasting, coastal high-wave alerts, CTD profiling, and tsunami physics.",
+      "time_limit_minutes": 20,
       "passing_score": 75,
-      "created_at": "2026-09-04T22:52:12.088Z",
+      "created_at": "2026-09-06T20:23:40.646Z",
       "questions": [
         {
           "id": "q1",
-          "question": "In Kubernetes, which component is the only one that communicates directly with the etcd key-value datastore?",
+          "question": "Which sensor package on an Argo float measures salinity indirectly via electrical conductivity?",
           "options": [
-            "kube-scheduler",
-            "kube-controller-manager",
-            "kube-apiserver",
-            "kubelet"
+            "Doppler Current Profiler",
+            "CTD (Conductivity, Temperature, Depth) sensor",
+            "Transmissometer",
+            "Pyranometer"
           ],
-          "correct_index": 2,
-          "explanation": "The kube-apiserver acts as the gateway and single source of truth; all other control plane components query and update state through it."
+          "correct_index": 1,
+          "explanation": "CTD instruments measure electrolytic conductivity, temperature, and pressure, from which seawater salinity and density are derived via the TEOS-10 equation of state."
         },
         {
           "id": "q2",
-          "question": "What is the primary function of a Pod Readiness Probe?",
+          "question": "In deep water, what governs the phase velocity of a tsunami wave?",
           "options": [
-            "To restart a crashed container immediately",
-            "To determine whether a container is ready to accept user network traffic",
-            "To monitor CPU throttling limits",
-            "To encrypt container root filesystems at rest"
+            "Wave amplitude and surface wind stress",
+            "Square root of the product of gravitational acceleration and ocean depth (sqrt(g*d))",
+            "Coriolis parameter and sea surface temperature",
+            "Atmospheric pressure differential across the storm center"
           ],
           "correct_index": 1,
-          "explanation": "Readiness probes indicate when a container is ready to receive traffic from Kubernetes Services. If it fails, the pod is removed from Service endpoints."
+          "explanation": "Because tsunami wavelengths (100-500 km) vastly exceed ocean depth (4-5 km), tsunamis act as shallow-water waves where c = sqrt(g*d), traveling at ~700-800 km/h in the open ocean."
         },
         {
           "id": "q3",
-          "question": "Which deployment strategy brings up a complete new identical environment alongside the old one before shifting 100% of traffic?",
+          "question": "What is the primary indicator used by INCOIS to issue High Wave Alerts for coastal fishermen?",
           "options": [
-            "Rolling Update",
-            "Blue/Green Deployment",
-            "Canary Deployment",
-            "Shadow Deployment"
-          ],
-          "correct_index": 1,
-          "explanation": "Blue/Green deployment provisions an identical secondary environment and switches DNS or load balancer routing instantaneously."
-        },
-        {
-          "id": "q4",
-          "question": "Under what circumstances does Kubernetes evict pods based on Node Pressure?",
-          "options": [
-            "When node disk space or memory breaches defined eviction thresholds",
-            "When a pod runs for longer than 24 continuous hours",
-            "When the ingress controller receives high HTTP 404 responses",
-            "When secret tokens expire in etcd"
+            "Significant Wave Height (SWH) exceeding critical operational thresholds",
+            "Barometric pressure drop below 1013 hPa",
+            "Surface water chlorophyll-a concentration",
+            "Subsurface acoustic attenuation"
           ],
           "correct_index": 0,
-          "explanation": "Kubelet constantly checks system memory and disk thresholds (e.g. imagefs.available < 15%) and proactively evicts best-effort or burstable pods."
+          "explanation": "Significant Wave Height (SWH), defined as the mean height of the highest third of waves, is the core metric for maritime high wave advisories."
         }
       ]
     },
     {
-      "id": "asm-c2",
-      "course_id": "crs-ai-002",
-      "course_title": "Applied Generative AI & Deep Learning Systems",
-      "title": "Generative AI & LLM Systems Competency Exam",
-      "description": "Test your understanding of vector similarity metrics, retrieval architectures, and agentic tool-use protocols.",
+      "id": "asm-deepsea-02",
+      "course_id": "crs-deepsea-002",
+      "course_title": "Deep Ocean Mission & Marine Resources Exploration",
+      "title": "Deep Ocean Mission & Submersible Engineering Exam",
+      "description": "Assessment covering Samudrayaan MATSYA-6000 systems, polymetallic nodule bathymetry, and benthic ecosystems.",
       "time_limit_minutes": 20,
-      "passing_score": 80,
-      "created_at": "2026-08-30T22:52:12.088Z",
+      "passing_score": 75,
+      "created_at": "2026-09-01T20:23:40.646Z",
       "questions": [
         {
-          "id": "q2-1",
-          "question": "Which mathematical metric is most commonly used to measure semantic similarity between two normalized text embeddings?",
+          "id": "q1",
+          "question": "What material is primarily used to construct the personnel sphere of the MATSYA-6000 crewed submersible to resist 600 bar hydrostatic pressure?",
           "options": [
-            "Manhattan distance",
-            "Cosine similarity",
-            "Levenshtein edit distance",
-            "Hamming weight"
+            "Aerospace grade Titanium alloy (Ti-6Al-4V)",
+            "Reinforced Carbon Fiber",
+            "Austenitic Stainless Steel 316L",
+            "High-Density Polyethylene"
           ],
-          "correct_index": 1,
-          "explanation": "Cosine similarity computes the dot product of normalized vectors, evaluating the cosine of the angle between them regardless of magnitude."
+          "correct_index": 0,
+          "explanation": "High-strength titanium alloy (Ti-6Al-4V) provides the critical strength-to-weight ratio and corrosion resistance required to withstand extreme pressure at 6,000 meters depth."
         },
         {
-          "id": "q2-2",
-          "question": "What is the primary benefit of Hierarchical Navigable Small World (HNSW) graphs in vector search?",
+          "id": "q2",
+          "question": "Polymetallic nodules in the Central Indian Ocean Basin are predominantly rich in which key strategic minerals?",
           "options": [
-            "Zero disk space consumption",
-            "Logarithmic time complexity O(log N) approximate nearest neighbor lookups",
-            "Guaranteed 100% exact brute force retrieval",
-            "Direct token decompression into prompt memory"
+            "Nickel, Copper, Cobalt, and Manganese",
+            "Uranium and Thorium",
+            "Gold and Platinum group elements only",
+            "Bauxite and Aluminum silicates"
           ],
-          "correct_index": 1,
-          "explanation": "HNSW builds multi-layer skip graphs to achieve fast sub-linear approximate nearest neighbor queries at scale."
+          "correct_index": 0,
+          "explanation": "Polymetallic nodules are authigenic deposits exceptionally rich in manganese, iron, nickel, copper, and cobalt essential for green transition batteries and electronics."
+        }
+      ]
+    },
+    {
+      "id": "asm-weather-03",
+      "course_id": "crs-weather-003",
+      "course_title": "Numerical Weather Prediction & Monsoon Modeling",
+      "title": "Numerical Weather Prediction & Doppler Radar Assessment",
+      "description": "Exam on NCUM dynamics, Doppler radar reflectivity, velocity de-aliasing, and monsoon forecasting.",
+      "time_limit_minutes": 25,
+      "passing_score": 75,
+      "created_at": "2026-09-04T20:23:40.646Z",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "Why must Doppler Weather Radar (DWR) data undergo velocity de-aliasing before assimilation into numerical models?",
+          "options": [
+            "To resolve Doppler dilemma ambiguous velocities exceeding the Nyquist velocity interval",
+            "To convert radar frequency from S-band to X-band",
+            "To remove rain gauge calibration drift",
+            "To align radar beams with geostationary satellite longitude"
+          ],
+          "correct_index": 0,
+          "explanation": "The Doppler dilemma limits maximum unambiguous velocity (Vmax = lambda * PRF / 4); radial velocities exceeding this wrap around and must be unwrapped (de-aliased)."
         },
         {
-          "id": "q2-3",
-          "question": "In a RAG system, what is the role of a cross-encoder re-ranker?",
+          "id": "q2",
+          "question": "In India Meteorological Department (IMD) cyclone forecasting, what is the primary diagnostic used to estimate central core pressure and sustained wind speed from satellite images?",
           "options": [
-            "To translate SQL queries into English",
-            "To rescore top-K retrieved candidate chunks jointly with the user query for higher precision",
-            "To compress PDF files before vectorization",
-            "To eliminate duplicate user database accounts"
+            "Dvorak Technique using infrared cloud pattern analysis",
+            "Surface soil moisture microwave radiometry",
+            "Tide gauge anomaly subtraction",
+            "Upper tropospheric ozone concentration"
           ],
-          "correct_index": 1,
-          "explanation": "Re-rankers evaluate query and document simultaneously with deep cross-attention, boosting the most pertinent passages into the context window."
+          "correct_index": 0,
+          "explanation": "The Dvorak technique relates satellite cloud system patterns (curved banding, central dense overcast, eye temperature) to tropical cyclone T-numbers and maximum sustained wind speeds."
+        }
+      ]
+    },
+    {
+      "id": "asm-polar-04",
+      "course_id": "crs-polar-004",
+      "course_title": "Polar Sciences & Cryosphere Research",
+      "title": "Polar Sciences & Cryospheric Dynamics Assessment",
+      "description": "Assessment on Antarctic ice sheet dynamics, Bharati/Maitri station operations, and Himalayan glaciology.",
+      "time_limit_minutes": 20,
+      "passing_score": 75,
+      "created_at": "2026-08-29T20:23:40.646Z",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "India operates two year-round permanent scientific research stations in Antarctica named:",
+          "options": [
+            "Maitri and Bharati",
+            "Dakshin Gangotri and Himadri",
+            "IndARC and IndOOS",
+            "Sagar Nidhi and Sagar Kanya"
+          ],
+          "correct_index": 0,
+          "explanation": "Maitri (established 1989 in Schirmacher Oasis) and Bharati (commissioned 2012 in Larsemann Hills) are Indias active overwintering Antarctic stations. (Himadri is in the Arctic)."
+        },
+        {
+          "id": "q2",
+          "question": "In ice core paleoclimatology, how does the ratio of stable oxygen isotopes (d18O) correlate with past temperatures at the time of precipitation?",
+          "options": [
+            "More negative d18O values indicate colder atmospheric condensation temperatures",
+            "d18O values are completely independent of temperature",
+            "Higher d18O always correlates directly with glacial maximum cold spells",
+            "d18O only measures oceanic salinity, not temperature"
+          ],
+          "correct_index": 0,
+          "explanation": "Preferential rainout of heavier 18O isotopes during Rayleigh distillation causes snow condensing in colder polar air masses to be progressively depleted in 18O (more negative d18O)."
+        }
+      ]
+    },
+    {
+      "id": "asm-seismo-05",
+      "course_id": "crs-seismo-005",
+      "course_title": "Seismology & Tsunami Early Warning Systems",
+      "title": "Seismology & Tsunami Warning Operations Assessment",
+      "description": "Test your proficiency in broadband seismogram interpretation, Mw calculation, and ITEWC warning protocols.",
+      "time_limit_minutes": 20,
+      "passing_score": 75,
+      "created_at": "2026-09-08T20:23:40.646Z",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "Why does Moment Magnitude (Mw) not saturate for giant megathrust earthquakes like the Gutenberg-Richter local magnitude (ML) does?",
+          "options": [
+            "Because Mw is directly proportional to the physical seismic moment (M0 = shear modulus * rupture area * slip distance)",
+            "Because Mw only measures high-frequency P-wave acceleration",
+            "Because Mw is calculated from air pressure shockwaves",
+            "Because Mw ignores deep rupture geometries"
+          ],
+          "correct_index": 0,
+          "explanation": "Moment magnitude is based on the physical seismic moment (M0), accounting for the full spectral energy across the entire physical rupture surface without peak-amplitude saturation."
+        },
+        {
+          "id": "q2",
+          "question": "At the Indian National Tsunami Early Warning Centre (ITEWC) in INCOIS, within how many minutes of an undersea earthquake must the first advisory bulletin be issued?",
+          "options": [
+            "10 minutes",
+            "60 minutes",
+            "45 minutes",
+            "120 minutes"
+          ],
+          "correct_index": 0,
+          "explanation": "ITEWC SOP mandates preliminary earthquake detection, epicenter determination, magnitude estimation, and initial threat assessment bulletin issuance within 10 minutes of occurrence."
+        }
+      ]
+    },
+    {
+      "id": "asm-climate-06",
+      "course_id": "crs-climate-006",
+      "course_title": "Climate Change Science & Earth System Science",
+      "title": "Climate Change Science & Earth System Science Assessment",
+      "description": "Exam on coupled climate models, IPCC CMIP6 scenarios, and marine climate impacts.",
+      "time_limit_minutes": 20,
+      "passing_score": 75,
+      "created_at": "2026-09-02T20:23:40.646Z",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is the chemical mechanism causing ocean acidification due to anthropogenic carbon dioxide emissions?",
+          "options": [
+            "CO2 dissolves in seawater forming carbonic acid (H2CO3), releasing H+ ions and reducing carbonate ion (CO3 2-) concentration",
+            "CO2 reacts with sea salt to produce hydrochloric acid",
+            "Atmospheric ozone depletion allows ultraviolet rays to acidify surface currents",
+            "Underwater geothermal vents releasing sulfur dioxide"
+          ],
+          "correct_index": 0,
+          "explanation": "CO2 + H2O <-> H2CO3 <-> H+ + HCO3-. The excess H+ ions bind with carbonate ions (CO3 2-), reducing aragonite saturation needed for calcifying marine organisms."
         }
       ]
     }
@@ -1566,679 +1395,335 @@
   "assessment_results": [
     {
       "id": "res-alex-001",
-      "assessment_id": "asm-c1",
-      "course_id": "crs-cloud-001",
-      "course_title": "Enterprise Cloud Infrastructure & Kubernetes Orchestration",
+      "assessment_id": "asm-ocean-01",
+      "course_id": "crs-ocean-001",
+      "course_title": "Operational Oceanography & Coastal Dynamics",
       "user_id": "usr-trainee-001",
       "score": 100,
-      "total_questions": 4,
+      "total_questions": 3,
       "passed": true,
-      "submitted_at": "2026-09-10T22:52:12.088Z",
-      "answers": {
-        "q1": 2,
-        "q2": 1,
-        "q3": 1,
-        "q4": 0
-      }
+      "completed_at": "2026-09-14T20:23:40.646Z"
+    },
+    {
+      "id": "res-alex-002",
+      "assessment_id": "asm-seismo-05",
+      "course_id": "crs-seismo-005",
+      "course_title": "Seismology & Tsunami Early Warning Systems",
+      "user_id": "usr-trainee-001",
+      "score": 96,
+      "total_questions": 2,
+      "passed": true,
+      "completed_at": "2026-03-01"
     }
   ],
   "certificates": [
     {
-      "id": "cert-alex-sdg-001",
-      "certificate_number": "CAP-2026-SDG-88219",
+      "id": "cert-alex-moes-001",
       "user_id": "usr-trainee-001",
       "user_name": "Alex Rivera",
-      "course_id": "crs-sdg-004",
-      "course_title": "Renewable Energy Grid Analytics & Smart Infrastructure",
-      "issue_date": "September 9, 2026",
-      "grade": "Distinction (Grade A+)",
-      "verification_code": "VERIFY-CC-77A91-04",
-      "trainer_name": "Dr. Rajesh Sharma"
+      "course_id": "crs-seismo-005",
+      "course_title": "Seismology & Tsunami Early Warning Systems",
+      "issue_date": "2026-03-01",
+      "verification_code": "MOES-SEIS-2026-AR01",
+      "grade": "Distinction (96%)",
+      "issuer": "Ministry of Earth Sciences (MoES), Govt. of India"
     }
   ],
   "notifications": [
     {
-      "id": "notif-001",
+      "id": "notif-1",
       "user_id": "usr-trainee-001",
-      "title": "Assessment Result Available",
-      "message": "Congratulations! You passed the Cloud & Kubernetes Technical Certification Assessment with 100%.",
+      "title": "New Ocean State Advisory Published",
+      "message": "INCOIS has updated the Bay of Bengal wave forecast and coastal swell alerting model.",
+      "type": "info",
+      "is_read": false,
+      "created_at": "2026-09-16T19:23:40.647Z"
+    },
+    {
+      "id": "notif-2",
+      "user_id": "usr-trainee-001",
+      "title": "Assignment 1 Graded with AI Report",
+      "message": "Your validation report on INCOIS wave telemetry received a score of 95/100.",
       "type": "success",
-      "is_read": true,
-      "created_at": "2026-09-10T22:52:12.110Z"
+      "is_read": false,
+      "created_at": "2026-09-16T08:23:40.647Z"
     },
     {
-      "id": "notif-002",
+      "id": "notif-3",
       "user_id": "usr-trainee-001",
-      "title": "Certificate Issued",
-      "message": "Your official completion certificate for \"Renewable Energy Grid Analytics\" is ready for download.",
-      "type": "info",
+      "title": "Official Certification Issued",
+      "message": "Your certificate for Seismology & Tsunami Early Warning Systems is available to print.",
+      "type": "certificate",
       "is_read": true,
-      "created_at": "2026-09-09T22:52:12.110Z"
-    },
-    {
-      "id": "notif-003",
-      "user_id": "usr-admin-001",
-      "title": "Pending Administrator Approval Request",
-      "message": "Marcus Vance has submitted an administrator registration request awaiting your review.",
-      "type": "alert",
-      "is_read": false,
-      "created_at": "2026-09-12T22:52:12.110Z"
-    },
-    {
-      "id": "notif-004",
-      "user_id": "usr-trainer-001",
-      "title": "New Trainee Enrollments",
-      "message": "24 new trainees registered for your Enterprise Cloud Infrastructure training cohort.",
-      "type": "info",
-      "is_read": false,
-      "created_at": "2026-09-13T22:52:12.110Z"
+      "created_at": "2026-09-11T20:23:40.647Z"
     }
   ],
   "audit_logs": [
     {
-      "id": "aud-1789503422457-443",
+      "id": "log-001",
+      "timestamp": "2026-09-16T20:23:40.647Z",
       "actor_id": "usr-trainee-001",
-      "actor_name": "Alex Rivera",
+      "actor_email": "alex.trainee@capacityconnect.org",
       "actor_role": "trainee",
-      "action": "DEMO_LOGIN_ACCESSED",
-      "target_type": "SESSION",
-      "target_id": "usr-trainee-001",
-      "details": {
-        "role": "trainee",
-        "is_demo": true
-      },
+      "action": "SESSION_AUTHENTICATED",
+      "details": "User authenticated via 3-Factor Biometric Verification (Password + OTP + Face ID).",
       "ip_address": "127.0.0.1",
-      "created_at": "2026-09-15T20:17:02.457Z"
+      "status": "success"
     },
     {
-      "id": "aud-1789492942916-273",
-      "actor_id": "usr-admin-001",
-      "actor_name": "Sarah Chen",
-      "actor_role": "admin",
-      "action": "SYSTEM_DIAGNOSTIC_VERIFIED",
-      "target_type": "SYSTEM",
-      "target_id": "core-engine",
-      "details": {
-        "environment": "production",
-        "check": "all"
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-15T17:22:22.916Z"
-    },
-    {
-      "id": "aud-1789492863293-731",
+      "id": "log-002",
+      "timestamp": "2026-09-14T20:23:40.647Z",
       "actor_id": "usr-trainee-001",
-      "actor_name": "Alex Rivera",
+      "actor_email": "alex.trainee@capacityconnect.org",
       "actor_role": "trainee",
-      "action": "DEMO_LOGIN_ACCESSED",
-      "target_type": "SESSION",
-      "target_id": "usr-trainee-001",
-      "details": {
-        "role": "trainee",
-        "is_demo": true
-      },
+      "action": "ASSIGNMENT_SUBMITTED",
+      "details": "Submitted assignment: incois_wave_validation_analysis.py",
       "ip_address": "127.0.0.1",
-      "created_at": "2026-09-15T17:21:03.293Z"
-    },
-    {
-      "id": "aud-1789489952654-520",
-      "actor_id": "usr-admin-001",
-      "actor_name": "Sarah Chen",
-      "actor_role": "admin",
-      "action": "SYSTEM_DIAGNOSTIC_VERIFIED",
-      "target_type": "SYSTEM",
-      "target_id": "core-engine",
-      "details": {
-        "environment": "production",
-        "check": "all"
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-15T16:32:32.654Z"
-    },
-    {
-      "id": "aud-1789488787973-549",
-      "actor_id": "usr-admin-001",
-      "actor_name": "Sarah Chen",
-      "actor_role": "admin",
-      "action": "SYSTEM_DIAGNOSTIC_VERIFIED",
-      "target_type": "SYSTEM",
-      "target_id": "core-engine",
-      "details": {
-        "environment": "production",
-        "check": "all"
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-15T16:13:07.973Z"
-    },
-    {
-      "id": "aud-1789469458471-279",
-      "actor_id": "usr-admin-001",
-      "actor_name": "Sarah Chen",
-      "actor_role": "admin",
-      "action": "SYSTEM_DIAGNOSTIC_VERIFIED",
-      "target_type": "SYSTEM",
-      "target_id": "core-engine",
-      "details": {
-        "environment": "production",
-        "check": "all"
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-15T10:50:58.471Z"
-    },
-    {
-      "id": "aud-1789469420503-147",
-      "actor_id": "usr-admin-001",
-      "actor_name": "Sarah Chen",
-      "actor_role": "admin",
-      "action": "SYSTEM_DIAGNOSTIC_VERIFIED",
-      "target_type": "SYSTEM",
-      "target_id": "core-engine",
-      "details": {
-        "environment": "production",
-        "check": "all"
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-15T10:50:20.503Z"
-    },
-    {
-      "id": "aud-1789469248314-971",
-      "actor_id": "usr-admin-001",
-      "actor_name": "Sarah Chen",
-      "actor_role": "admin",
-      "action": "SYSTEM_DIAGNOSTIC_VERIFIED",
-      "target_type": "SYSTEM",
-      "target_id": "core-engine",
-      "details": {
-        "environment": "production",
-        "check": "all"
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-15T10:47:28.314Z"
-    },
-    {
-      "id": "aud-1789467982658-846",
-      "actor_id": "usr-1789426625167-213",
-      "actor_name": "D",
-      "actor_role": "trainee",
-      "action": "THREE_FACTOR_LOGIN_SUCCESS",
-      "target_type": "SESSION",
-      "target_id": "usr-1789426625167-213",
-      "details": {
-        "role": "trainee",
-        "similarity": 0.95,
-        "stages": [
-          "credentials",
-          "otp",
-          "biometrics"
-        ]
-      },
-      "ip_address": "2401:4900:d165:fd52:8de3:eacb:d114:162e, 169.254.169.126",
-      "created_at": "2026-09-15T10:26:22.658Z"
-    },
-    {
-      "id": "aud-1789467969180-380",
-      "actor_id": "usr-1789426625167-213",
-      "actor_name": "D",
-      "actor_role": "trainee",
-      "action": "LOGIN_STEP2_VERIFIED",
-      "target_type": "AUTH",
-      "target_id": "usr-1789426625167-213",
-      "details": {
-        "role": "trainee"
-      },
-      "ip_address": "2401:4900:d165:fd52:8de3:eacb:d114:162e, 169.254.169.126",
-      "created_at": "2026-09-15T10:26:09.180Z"
-    },
-    {
-      "id": "aud-1789467960778-49",
-      "actor_id": "usr-1789426625167-213",
-      "actor_name": "D",
-      "actor_role": "trainee",
-      "action": "LOGIN_STEP1_VERIFIED",
-      "target_type": "AUTH",
-      "target_id": "usr-1789426625167-213",
-      "details": {
-        "selectedRole": "trainee",
-        "destination": "773968456"
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-15T10:26:00.778Z"
-    },
-    {
-      "id": "aud-1789428800275-337",
-      "actor_id": "usr-admin-001",
-      "actor_name": "Sarah Chen",
-      "actor_role": "admin",
-      "action": "SYSTEM_DIAGNOSTIC_VERIFIED",
-      "target_type": "SYSTEM",
-      "target_id": "core-engine",
-      "details": {
-        "environment": "production",
-        "check": "all"
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T23:33:20.275Z"
-    },
-    {
-      "id": "aud-1789428774500-949",
-      "actor_id": "anonymous",
-      "actor_name": "Unknown Biometric Attempt",
-      "actor_role": "trainee",
-      "action": "BIOMETRIC_LOGIN_FAILED",
-      "target_type": "AUTH",
-      "target_id": "face-scanner",
-      "details": {
-        "reason": "No enrolled facial identity matched the biometric signature. Please enroll your camera face or select an identity to link.",
-        "similarity": 0,
-        "clientIp": "2401:4900:b512:19a9:f447:e75b:981b:1e67, 169.254.169.126"
-      },
-      "ip_address": "2401:4900:b512:19a9:f447:e75b:981b:1e67, 169.254.169.126",
-      "created_at": "2026-09-14T23:32:54.500Z"
-    },
-    {
-      "id": "aud-1789428356080-615",
-      "actor_id": "usr-trainee-001",
-      "actor_name": "Alex Rivera",
-      "actor_role": "trainee",
-      "action": "DEMO_LOGIN_ACCESSED",
-      "target_type": "SESSION",
-      "target_id": "usr-trainee-001",
-      "details": {
-        "role": "trainee",
-        "is_demo": true
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T23:25:56.080Z"
-    },
-    {
-      "id": "aud-1789427666834-32",
-      "actor_id": "usr-trainee-001",
-      "actor_name": "Alex Rivera",
-      "actor_role": "trainee",
-      "action": "BIOMETRIC_FACE_LINKED",
-      "target_type": "AUTH",
-      "target_id": "usr-trainee-001",
-      "details": {
-        "email": "alex.trainee@capacityconnect.org",
-        "vector_length": 128,
-        "liveness_score": 0.9
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T23:14:26.834Z"
-    },
-    {
-      "id": "aud-1789427666828-205",
-      "actor_id": "usr-trainee-001",
-      "actor_name": "Alex Rivera",
-      "actor_role": "trainee",
-      "action": "BIOMETRIC_LOGIN_SUCCESS",
-      "target_type": "AUTH",
-      "target_id": "usr-trainee-001",
-      "details": {
-        "similarity": 1.0000000000000002,
-        "frame_count": 1
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T23:14:26.828Z"
-    },
-    {
-      "id": "aud-1789427666823-849",
-      "actor_id": "usr-admin-001",
-      "actor_name": "Sarah Chen",
-      "actor_role": "admin",
-      "action": "BIOMETRIC_LOGIN_SUCCESS",
-      "target_type": "AUTH",
-      "target_id": "usr-admin-001",
-      "details": {
-        "similarity": 0.9999999999999999,
-        "frame_count": 1
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T23:14:26.823Z"
-    },
-    {
-      "id": "aud-1789427666818-171",
-      "actor_id": "usr-trainer-001",
-      "actor_name": "Dr. Rajesh Sharma",
-      "actor_role": "trainer",
-      "action": "BIOMETRIC_LOGIN_SUCCESS",
-      "target_type": "AUTH",
-      "target_id": "usr-trainer-001",
-      "details": {
-        "similarity": 1,
-        "frame_count": 1
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T23:14:26.818Z"
-    },
-    {
-      "id": "aud-1789427666789-819",
-      "actor_id": "usr-trainee-001",
-      "actor_name": "Alex Rivera",
-      "actor_role": "trainee",
-      "action": "BIOMETRIC_LOGIN_SUCCESS",
-      "target_type": "AUTH",
-      "target_id": "usr-trainee-001",
-      "details": {
-        "similarity": 1.0000000000000002,
-        "frame_count": 1
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T23:14:26.789Z"
-    },
-    {
-      "id": "aud-1789426625169-397",
-      "actor_id": "usr-1789426625167-213",
-      "actor_name": "D",
-      "actor_role": "trainee",
-      "action": "USER_REGISTERED",
-      "target_type": "PROFILE",
-      "target_id": "usr-1789426625167-213",
-      "details": {
-        "role": "trainee",
-        "organization": "moes"
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T22:57:05.169Z"
-    },
-    {
-      "id": "aud-1789426550066-912",
-      "actor_id": "anonymous",
-      "actor_name": "Unknown Biometric Attempt",
-      "actor_role": "trainee",
-      "action": "BIOMETRIC_LOGIN_FAILED",
-      "target_type": "AUTH",
-      "target_id": "face-scanner",
-      "details": {
-        "reason": "No enrolled facial identity matched the biometric signature.",
-        "similarity": 0,
-        "clientIp": "2401:4900:b512:19a9:f447:e75b:981b:1e67, 169.254.169.126"
-      },
-      "ip_address": "2401:4900:b512:19a9:f447:e75b:981b:1e67, 169.254.169.126",
-      "created_at": "2026-09-14T22:55:50.066Z"
-    },
-    {
-      "id": "aud-1789426512018-760",
-      "actor_id": "usr-trainer-001",
-      "actor_name": "Dr. Rajesh Sharma",
-      "actor_role": "trainer",
-      "action": "DEMO_LOGIN_ACCESSED",
-      "target_type": "SESSION",
-      "target_id": "usr-trainer-001",
-      "details": {
-        "role": "trainer",
-        "is_demo": true
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T22:55:12.018Z"
-    },
-    {
-      "id": "aud-1789426487320-252",
-      "actor_id": "usr-trainee-001",
-      "actor_name": "Alex Rivera",
-      "actor_role": "trainee",
-      "action": "DEMO_LOGIN_ACCESSED",
-      "target_type": "SESSION",
-      "target_id": "usr-trainee-001",
-      "details": {
-        "role": "trainee",
-        "is_demo": true
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T22:54:47.320Z"
-    },
-    {
-      "id": "aud-1789426342204-520",
-      "actor_id": "usr-admin-001",
-      "actor_name": "Sarah Chen",
-      "actor_role": "admin",
-      "action": "DEMO_LOGIN_ACCESSED",
-      "target_type": "SESSION",
-      "target_id": "usr-admin-001",
-      "details": {
-        "role": "admin",
-        "is_demo": true
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-09-14T22:52:22.204Z"
-    },
-    {
-      "id": "aud-001",
-      "actor_id": "usr-admin-001",
-      "actor_name": "Sarah Chen",
-      "actor_role": "admin",
-      "action": "SYSTEM_INITIALIZATION",
-      "target_type": "SYSTEM",
-      "target_id": "system",
-      "details": {
-        "version": "2.4.0",
-        "rls_enabled": true,
-        "platform": "Capacity Connect"
-      },
-      "ip_address": "127.0.0.1",
-      "created_at": "2026-07-16T22:52:12.110Z"
-    },
-    {
-      "id": "aud-002",
-      "actor_id": "usr-trainer-001",
-      "actor_name": "Dr. Rajesh Sharma",
-      "actor_role": "trainer",
-      "action": "COURSE_PUBLISHED",
-      "target_type": "COURSE",
-      "target_id": "crs-cloud-001",
-      "details": {
-        "title": "Enterprise Cloud Infrastructure & Kubernetes Orchestration"
-      },
-      "ip_address": "192.168.1.45",
-      "created_at": "2026-08-31T22:52:12.110Z"
-    },
-    {
-      "id": "aud-003",
-      "actor_id": "usr-admin-pending-002",
-      "actor_name": "Marcus Vance",
-      "actor_role": "admin",
-      "action": "ADMIN_REGISTRATION_REQUEST",
-      "target_type": "PROFILE",
-      "target_id": "usr-admin-pending-002",
-      "details": {
-        "status": "pending",
-        "justification": "Regional Skill Directorate audit compliance"
-      },
-      "ip_address": "10.0.4.19",
-      "created_at": "2026-09-12T22:52:12.110Z"
-    },
-    {
-      "id": "aud-004",
-      "actor_id": "usr-trainee-001",
-      "actor_name": "Alex Rivera",
-      "actor_role": "trainee",
-      "action": "BIOMETRIC_ENROLLMENT",
-      "target_type": "BIOMETRIC",
-      "target_id": "bio-alex-001",
-      "details": {
-        "liveness_verified": true,
-        "vector_dimension": 128
-      },
-      "ip_address": "172.16.0.8",
-      "created_at": "2026-08-25T22:52:12.110Z"
+      "status": "success"
     }
   ],
-  "password_resets": [
+  "password_resets": [],
+  "otp_tokens": [],
+  "assignments": [
     {
-      "id": "rst-1789428800095",
-      "email": "alex.trainee@capacityconnect.org",
-      "code": "926520",
-      "expires_at": 1789429700095,
-      "used": true
+      "id": "asg-ocean-01",
+      "course_id": "crs-ocean-001",
+      "course_title": "Operational Oceanography & Coastal Dynamics",
+      "title": "Assignment 1: INCOIS Real-Time Wave & SST Forecast Validation Study",
+      "description": "Download 7-day numerical wave model outputs (WAM/WAVEWATCH III) from INCOIS and perform statistical skill scoring against deployed offshore moored buoy observations (MB11 and BD08). Submit your validation report with bias, RMSE, and scatter plots.",
+      "due_date": "2026-09-21T20:23:40.646Z",
+      "total_points": 100,
+      "rubric": [
+        {
+          "criteria": "Data Preprocessing & Buoy Ingestion",
+          "max_points": 25,
+          "description": "Correct NetCDF parsing, time-series alignment, and quality control filtering."
+        },
+        {
+          "criteria": "Statistical Skill Metrics (Bias, RMSE, Scatter Index)",
+          "max_points": 35,
+          "description": "Rigorous calculation of statistical wave model skill scores."
+        },
+        {
+          "criteria": "Extreme Event Case Analysis",
+          "max_points": 25,
+          "description": "Detailed analysis of high wave swell event propagation across the shelf."
+        },
+        {
+          "criteria": "Code Cleanliness & Visualizations",
+          "max_points": 15,
+          "description": "Production-ready Python code with clear publication-standard oceanographic plots."
+        }
+      ],
+      "created_at": "2026-09-10T20:23:40.646Z"
     },
     {
-      "id": "rst-1789469248120",
-      "email": "alex.trainee@capacityconnect.org",
-      "code": "766800",
-      "expires_at": 1789470148121,
-      "used": true
+      "id": "asg-deepsea-01",
+      "course_id": "crs-deepsea-002",
+      "course_title": "Deep Ocean Mission & Marine Resources Exploration",
+      "title": "Assignment 2: Deep Ocean Mission Polymetallic Nodule Survey & Bathymetric Grid",
+      "description": "Process raw multibeam echo sounder backscatter and bathymetry data from the Central Indian Ocean Basin. Generate 50m spatial resolution terrain grids and delineate high-density polymetallic nodule resource zones.",
+      "due_date": "2026-09-24T20:23:40.646Z",
+      "total_points": 100,
+      "rubric": [
+        {
+          "criteria": "Multibeam Sound Velocity Correction",
+          "max_points": 30,
+          "description": "Applying CTD sound velocity profiles to eliminate ray bending artifacts."
+        },
+        {
+          "criteria": "Acoustic Backscatter Classification",
+          "max_points": 35,
+          "description": "Segmenting hard substrate / nodule fields from soft pelagic sediment."
+        },
+        {
+          "criteria": "Benthic Bathymetric Mapping & Slopes",
+          "max_points": 35,
+          "description": "Producing contour maps and slope stability analysis for submersible navigation."
+        }
+      ],
+      "created_at": "2026-09-11T20:23:40.646Z"
     },
     {
-      "id": "rst-1789469420298",
-      "email": "alex.trainee@capacityconnect.org",
-      "code": "851221",
-      "expires_at": 1789470320298,
-      "used": true
+      "id": "asg-weather-01",
+      "course_id": "crs-weather-003",
+      "course_title": "Numerical Weather Prediction & Monsoon Modeling",
+      "title": "Assignment 3: Doppler Radar Velocity De-Aliasing & Monsoon Depression Trajectory",
+      "description": "Implement a two-dimensional velocity de-aliasing algorithm in Python on raw IMD S-band radar volume data during a severe monsoon depression over the Bay of Bengal.",
+      "due_date": "2026-09-26T20:23:40.646Z",
+      "total_points": 100,
+      "created_at": "2026-09-09T20:23:40.646Z"
     },
     {
-      "id": "rst-1789469458267",
-      "email": "alex.trainee@capacityconnect.org",
-      "code": "710518",
-      "expires_at": 1789470358267,
-      "used": true
+      "id": "asg-polar-01",
+      "course_id": "crs-polar-004",
+      "course_title": "Polar Sciences & Cryosphere Research",
+      "title": "Assignment 4: Antarctic Maitri-Bharati Ice Shelf Calving & Albedo Analysis",
+      "description": "Analyze multi-temporal Sentinel-1 SAR and MODIS optical datasets to compute ice-flow velocities and surface albedo variations near the Schirmacher Oasis and Larsemann Hills.",
+      "due_date": "2026-09-28T20:23:40.646Z",
+      "total_points": 100,
+      "created_at": "2026-09-12T20:23:40.646Z"
     },
     {
-      "id": "rst-1789488787766",
-      "email": "alex.trainee@capacityconnect.org",
-      "code": "831635",
-      "expires_at": 1789489687766,
-      "used": true
-    },
-    {
-      "id": "rst-1789489952458",
-      "email": "alex.trainee@capacityconnect.org",
-      "code": "291728",
-      "expires_at": 1789490852458,
-      "used": true
-    },
-    {
-      "id": "rst-1789492942715",
-      "email": "alex.trainee@capacityconnect.org",
-      "code": "906870",
-      "expires_at": 1789493842715,
-      "used": true
+      "id": "asg-seismo-01",
+      "course_id": "crs-seismo-005",
+      "course_title": "Seismology & Tsunami Early Warning Systems",
+      "title": "Assignment 5: Indian Ocean Tsunami Inundation Modeling & Travel Time Isochrone Mapping",
+      "description": "Simulate tsunami wave propagation for a hypothetical Mw 8.7 megathrust earthquake in the Andaman-Sumatra subduction zone using TUNAMI-N2 shallow-water solver. Produce coastal arrival time isochrones and inundation hazard maps for Chennai and Visakhapatnam.",
+      "due_date": "2026-09-30T20:23:40.646Z",
+      "total_points": 100,
+      "created_at": "2026-09-06T20:23:40.646Z"
     }
   ],
-  "otp_tokens": [
+  "assignment_submissions": [
     {
-      "id": "otp-1789428800094-918",
-      "user_id": "usr-alex",
-      "identifier": "alex.trainee@capacityconnect.org",
-      "code": "237275",
-      "expires_at": 1789429100094,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-14T23:33:20.094Z"
+      "id": "sub-alex-01",
+      "assignment_id": "asg-ocean-01",
+      "assignment_title": "Assignment 1: INCOIS Real-Time Wave & SST Forecast Validation Study",
+      "course_id": "crs-ocean-001",
+      "course_title": "Operational Oceanography & Coastal Dynamics",
+      "user_id": "usr-trainee-001",
+      "user_name": "Alex Rivera",
+      "user_email": "alex.trainee@capacityconnect.org",
+      "submitted_at": "2026-09-14T20:23:40.646Z",
+      "file_name": "incois_wave_validation_analysis.py",
+      "file_size": "345 KB",
+      "file_type": "text/x-python",
+      "notes": "Parsed NetCDF outputs from INCOIS THREDDS server and verified against moored buoy BD08. Computed RMSE: 0.18m, Scatter Index: 0.12, Correlation: 0.94.",
+      "status": "graded",
+      "score": 95,
+      "grader_feedback": "Outstanding validation pipeline with rigorous statistical scoring and clear oceanic wave spectral plots.",
+      "graded_by": "ai",
+      "ai_report": {
+        "score_estimate": 95,
+        "rubric_evaluations": [
+          {
+            "criteria": "Data Preprocessing & Buoy Ingestion",
+            "points": 25,
+            "max_points": 25,
+            "reasoning": "Clean xarray and pandas ingestion with proper handling of missing buoy flags."
+          },
+          {
+            "criteria": "Statistical Skill Metrics",
+            "points": 34,
+            "max_points": 35,
+            "reasoning": "Comprehensive calculation of Bias (-0.04m), RMSE (0.18m), SI (0.12), and Nash-Sutcliffe efficiency."
+          },
+          {
+            "criteria": "Extreme Event Case Analysis",
+            "points": 23,
+            "max_points": 25,
+            "reasoning": "Well-documented capture of 3.8m swell event in Bay of Bengal with accurate peak lag identification."
+          },
+          {
+            "criteria": "Code Cleanliness & Visualizations",
+            "points": 13,
+            "max_points": 15,
+            "reasoning": "Publication-quality matplotlib oceanographic timeseries and Taylor diagram."
+          }
+        ],
+        "key_strengths": [
+          "Robust statistical scoring adhering to WMO oceanographic forecast validation guidelines.",
+          "High execution efficiency using vectorized NumPy and xarray operations."
+        ],
+        "areas_for_improvement": [
+          "Include directional wave spreading validation in addition to significant wave height."
+        ],
+        "summary": "High-caliber research analysis directly applicable to operational ocean state advisory workflows at INCOIS.",
+        "graded_at": "2026-09-15T20:23:40.646Z",
+        "model_used": "Gemini 3.8 Flash (Server-Side Evaluation)"
+      }
+    }
+  ],
+  "experiments": [
+    {
+      "id": "exp-001",
+      "course_id": "crs-ocean-001",
+      "course_title": "Operational Oceanography & Coastal Dynamics",
+      "user_id": "usr-trainee-001",
+      "user_name": "Alex Rivera",
+      "user_email": "alex.trainee@capacityconnect.org",
+      "title": "CTD Profiler Calibration & Sound Velocity Stratification in Arabian Sea",
+      "description": "Demonstration of laboratory calibration procedures for Sea-Bird SBE-911plus CTD conductivity and temperature cells, followed by sound velocity profile (SVP) calculation using Chen-Millero formulation.",
+      "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "video_format": "mp4",
+      "duration_seconds": 195,
+      "lab_parameters": "Salinity standard: IAPSO P-series seawater, Temperature bath: 0.001°C stability, Depth rating: 6800m",
+      "status": "approved",
+      "score": 96,
+      "trainer_feedback": "Impeccable sensor calibration technique. Sound speed profile calculation accurately captured the SOFAR acoustic channel axis at 1,150m.",
+      "reviewed_by": "Dr. Priya Sharma",
+      "reviewed_at": "2026-09-14T20:23:40.646Z",
+      "created_at": "2026-09-12T20:23:40.646Z"
     },
     {
-      "id": "otp-1789467960777-113",
-      "user_id": "usr-1789426625167-213",
-      "identifier": "773968456",
-      "code": "943348",
-      "expires_at": 1789468260777,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T10:26:00.777Z"
+      "id": "exp-002",
+      "course_id": "crs-weather-003",
+      "course_title": "Numerical Weather Prediction & Monsoon Modeling",
+      "user_id": "usr-trainee-priya",
+      "user_name": "Priya Patel",
+      "user_email": "priya.patel@capacityconnect.org",
+      "title": "Doppler Weather Radar S-Band Beam Echo De-Aliasing under Extreme Monsoon Cells",
+      "description": "Live console recording of IMD Chennai S-band radar data processing, displaying radial velocity unfolding under 45 m/s squall line conditions.",
+      "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "video_format": "webm",
+      "duration_seconds": 220,
+      "lab_parameters": "Radar: IMD S-Band 2.8 GHz, PRF: 1200/900 dual-PRF, Elevation angle: 0.5° - 19.5°",
+      "status": "approved",
+      "score": 93,
+      "trainer_feedback": "Clear demonstration of dual-PRF phase unfolding. Dual-polarization hydrometeor classification was well explained.",
+      "reviewed_by": "Dr. Priya Sharma",
+      "reviewed_at": "2026-09-13T20:23:40.646Z",
+      "created_at": "2026-09-11T20:23:40.646Z"
     },
     {
-      "id": "otp-1789468108103-278",
-      "identifier": "7739684564",
-      "code": "668999",
-      "expires_at": 1789468408103,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T10:28:28.103Z"
+      "id": "exp-003",
+      "course_id": "crs-deepsea-002",
+      "course_title": "Deep Ocean Mission & Marine Resources Exploration",
+      "user_id": "usr-trainee-001",
+      "user_name": "Alex Rivera",
+      "user_email": "alex.trainee@capacityconnect.org",
+      "title": "Sub-Bottom Profiler Acoustic Reflection Telemetry for Deep Sea Bed Sediment",
+      "description": "Hydroacoustic lab simulation utilizing chirp sub-bottom profiler (2-7 kHz) penetrating 40m of soft pelagic sediment overlaying basaltic basement in the Central Indian Basin.",
+      "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "video_format": "mov",
+      "duration_seconds": 280,
+      "lab_parameters": "Chirp pulse: 2-7 kHz linear FM, Sampling: 50 kHz, Depth: 5200m simulated",
+      "status": "under_review",
+      "created_at": "2026-09-15T20:23:40.646Z"
     },
     {
-      "id": "otp-1789468139644-532",
-      "identifier": "7739684564",
-      "code": "212996",
-      "expires_at": 1789468439644,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T10:28:59.644Z"
+      "id": "exp-004",
+      "course_id": "crs-seismo-005",
+      "course_title": "Seismology & Tsunami Early Warning Systems",
+      "user_id": "usr-trainee-vikram",
+      "user_name": "Vikramaditya Rao",
+      "user_email": "vikram.rao@capacityconnect.org",
+      "title": "Broadband Seismometer Triaxial Huddle Test & Instrumental Self-Noise PSD Calculation",
+      "description": "Laboratory huddle test comparing three Streckeisen STS-2.5 broadband seismometers installed on isolated seismic pier to compute coherence and Peterson New Low Noise Model (NLNM) baselines.",
+      "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4",
+      "video_format": "mkv",
+      "duration_seconds": 210,
+      "lab_parameters": "Sensors: 3x STS-2.5 broadband, Digitizer: 24-bit 100 sps, Duration: 48 hours noise record",
+      "status": "under_review",
+      "created_at": "2026-09-15T20:23:40.646Z"
     },
     {
-      "id": "otp-1789469248119-212",
-      "user_id": "usr-alex",
-      "identifier": "alex.trainee@capacityconnect.org",
-      "code": "273203",
-      "expires_at": 1789469548119,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T10:47:28.119Z"
-    },
-    {
-      "id": "otp-1789469420296-643",
-      "user_id": "usr-alex",
-      "identifier": "alex.trainee@capacityconnect.org",
-      "code": "692064",
-      "expires_at": 1789469720296,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T10:50:20.296Z"
-    },
-    {
-      "id": "otp-1789469458266-486",
-      "user_id": "usr-alex",
-      "identifier": "alex.trainee@capacityconnect.org",
-      "code": "958353",
-      "expires_at": 1789469758266,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T10:50:58.266Z"
-    },
-    {
-      "id": "otp-1789488787765-182",
-      "user_id": "usr-alex",
-      "identifier": "alex.trainee@capacityconnect.org",
-      "code": "434863",
-      "expires_at": 1789489087765,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T16:13:07.765Z"
-    },
-    {
-      "id": "otp-1789489952457-832",
-      "user_id": "usr-alex",
-      "identifier": "alex.trainee@capacityconnect.org",
-      "code": "281923",
-      "expires_at": 1789490252457,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T16:32:32.457Z"
-    },
-    {
-      "id": "otp-1789492942713-452",
-      "user_id": "usr-alex",
-      "identifier": "alex.trainee@capacityconnect.org",
-      "code": "652420",
-      "expires_at": 1789493242713,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T17:22:22.713Z"
-    },
-    {
-      "id": "otp-1789503522962-737",
-      "identifier": "divyanshurajdear@gmail.com",
-      "code": "783635",
-      "expires_at": 1789503822962,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T20:18:42.962Z"
-    },
-    {
-      "id": "otp-1789503563395-23",
-      "identifier": "divyanshurajdear@gmail.com",
-      "code": "783486",
-      "expires_at": 1789503863395,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T20:19:23.395Z"
-    },
-    {
-      "id": "otp-1789503682082-28",
-      "identifier": "testuser_new@example.com",
-      "code": "587508",
-      "expires_at": 1789503982082,
-      "attempts": 0,
-      "used": true,
-      "created_at": "2026-09-15T20:21:22.082Z"
+      "id": "exp-005",
+      "course_id": "crs-polar-004",
+      "course_title": "Polar Sciences & Cryosphere Research",
+      "title": "Ice Core Density & Electrical Conductivity Measurement (ECM) Cryo-Chamber Experiment",
+      "description": "Cryo-facility experiment at -20°C demonstrating continuous high-resolution electrical conductivity profiling of Antarctic Maitri firn ice cores to detect historic volcanic acidity peaks.",
+      "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      "video_format": "mp4",
+      "duration_seconds": 180,
+      "lab_parameters": "Chamber temperature: -20°C, Voltage: 1250V DC micro-probe, Core diameter: 100mm",
+      "status": "approved",
+      "score": 95,
+      "trainer_feedback": "Excellent cold room safety protocol adherence. Acidity peaks accurately matched the 1815 Tambora volcanic marker horizon.",
+      "reviewed_by": "Dr. Priya Sharma",
+      "reviewed_at": "2026-09-12T20:23:40.646Z",
+      "created_at": "2026-09-10T20:23:40.646Z"
     }
   ]
 }

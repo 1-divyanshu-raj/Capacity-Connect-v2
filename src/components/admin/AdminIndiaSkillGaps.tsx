@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { api } from '../../lib/api';
 import { IndiaSkillGapArea, SkillGapField } from '../../types';
+import { useTheme } from '../../context/ThemeContext';
 import { 
   BarChart, 
   Bar, 
@@ -33,6 +34,7 @@ import {
 } from 'lucide-react';
 
 export const AdminIndiaSkillGaps: React.FC = () => {
+  const { isDark } = useTheme();
   const [data, setData] = useState<{
     regions: IndiaSkillGapArea[];
     fields: SkillGapField[];
@@ -252,49 +254,51 @@ export const AdminIndiaSkillGaps: React.FC = () => {
             <ResponsiveContainer width="100%" height="100%">
               {chartMetric === 'workforce' ? (
                 <BarChart data={fieldChartData} margin={{ top: 10, right: 10, left: -10, bottom: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" opacity={0.15} />
+                  <CartesianGrid strokeDasharray="3 3" stroke={isDark ? '#334155' : '#e2e8f0'} opacity={0.6} />
                   <XAxis 
                     dataKey="field" 
-                    tick={{ fontSize: 10, fill: '#888' }} 
+                    tick={{ fontSize: 10, fill: isDark ? '#94a3b8' : '#475569' }} 
                     interval={0}
                     angle={-15}
                     textAnchor="end"
                   />
-                  <YAxis tick={{ fontSize: 11, fill: '#888' }} />
+                  <YAxis tick={{ fontSize: 11, fill: isDark ? '#94a3b8' : '#475569' }} />
                   <Tooltip 
                     contentStyle={{ 
-                      backgroundColor: '#0f172a', 
+                      backgroundColor: isDark ? '#0f172a' : '#ffffff', 
                       borderRadius: '12px', 
-                      border: '1px solid #334155',
-                      color: '#f8fafc',
-                      fontSize: '12px'
+                      border: isDark ? '1px solid #334155' : '1px solid #e2e8f0',
+                      color: isDark ? '#f8fafc' : '#0f172a',
+                      fontSize: '12px',
+                      boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.2)'
                     }} 
                   />
                   <Legend verticalAlign="top" wrapperStyle={{ paddingBottom: '10px', fontSize: '12px' }} />
-                  <Bar dataKey="demand" name="Annual Demand (000s)" fill="#3b82f6" radius={[6, 6, 0, 0]} />
-                  <Bar dataKey="supply" name="Qualified Supply (000s)" fill="#10b981" radius={[6, 6, 0, 0]} />
+                  <Bar isAnimationActive={false} dataKey="demand" name="Annual Demand (000s)" fill={isDark ? '#38bdf8' : '#0077b6'} radius={[6, 6, 0, 0]} />
+                  <Bar isAnimationActive={false} dataKey="supply" name="Qualified Supply (000s)" fill={isDark ? '#2dd4bf' : '#00a896'} radius={[6, 6, 0, 0]} />
                 </BarChart>
               ) : (
                 <BarChart data={fieldChartData} margin={{ top: 10, right: 10, left: -10, bottom: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" opacity={0.15} />
+                  <CartesianGrid strokeDasharray="3 3" stroke={isDark ? '#334155' : '#e2e8f0'} opacity={0.6} />
                   <XAxis 
                     dataKey="field" 
-                    tick={{ fontSize: 10, fill: '#888' }} 
+                    tick={{ fontSize: 10, fill: isDark ? '#94a3b8' : '#475569' }} 
                     interval={0}
                     angle={-15}
                     textAnchor="end"
                   />
-                  <YAxis unit="%" tick={{ fontSize: 11, fill: '#888' }} />
+                  <YAxis unit="%" tick={{ fontSize: 11, fill: isDark ? '#94a3b8' : '#475569' }} />
                   <Tooltip 
                     contentStyle={{ 
-                      backgroundColor: '#0f172a', 
+                      backgroundColor: isDark ? '#0f172a' : '#ffffff', 
                       borderRadius: '12px', 
-                      border: '1px solid #334155',
-                      color: '#f8fafc',
-                      fontSize: '12px'
+                      border: isDark ? '1px solid #334155' : '1px solid #e2e8f0',
+                      color: isDark ? '#f8fafc' : '#0f172a',
+                      fontSize: '12px',
+                      boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.2)'
                     }} 
                   />
-                  <Bar dataKey="deficit" name="Talent Deficit %" fill="#f43f5e" radius={[6, 6, 0, 0]} />
+                  <Bar isAnimationActive={false} dataKey="deficit" name="Talent Deficit %" fill={isDark ? '#fb7185' : '#e11d48'} radius={[6, 6, 0, 0]} />
                 </BarChart>
               )}
             </ResponsiveContainer>
@@ -318,10 +322,10 @@ export const AdminIndiaSkillGaps: React.FC = () => {
           <div className="h-64 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart data={regionChartData}>
-                <PolarGrid strokeOpacity={0.2} />
-                <PolarAngleAxis dataKey="region" tick={{ fontSize: 10, fill: '#888' }} />
-                <PolarRadiusAxis angle={30} domain={[0, 70]} tick={{ fontSize: 9, fill: '#888' }} />
-                <Radar name="Deficit %" dataKey="gapPercentage" stroke="#10b981" fill="#10b981" fillOpacity={0.4} />
+                <PolarGrid stroke={isDark ? '#334155' : '#e2e8f0'} strokeOpacity={0.6} />
+                <PolarAngleAxis dataKey="region" tick={{ fontSize: 10, fill: isDark ? '#94a3b8' : '#475569' }} />
+                <PolarRadiusAxis angle={30} domain={[0, 70]} tick={{ fontSize: 9, fill: isDark ? '#94a3b8' : '#475569' }} stroke={isDark ? '#334155' : '#e2e8f0'} />
+                <Radar isAnimationActive={false} name="Deficit %" dataKey="gapPercentage" stroke={isDark ? '#2dd4bf' : '#00a896'} fill={isDark ? '#2dd4bf' : '#00a896'} fillOpacity={0.45} />
               </RadarChart>
             </ResponsiveContainer>
           </div>

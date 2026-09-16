@@ -21,6 +21,7 @@ interface AuthContextType {
   setSession: (session: { token: string; user: UserProfile; trainee_details?: TraineeDetails; trainer_details?: TrainerDetails }) => void;
   logout: () => void;
   refreshUser: () => Promise<void>;
+  updateUserSession: (updatedUser: UserProfile, trainee?: TraineeDetails, trainer?: TrainerDetails) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -48,6 +49,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUser(null);
     setTraineeDetails(null);
     setTrainerDetails(null);
+  };
+
+  const updateUserSession = (updatedUser: UserProfile, trainee?: TraineeDetails, trainer?: TrainerDetails) => {
+    setUser(updatedUser);
+    if (trainee !== undefined) setTraineeDetails(trainee);
+    if (trainer !== undefined) setTrainerDetails(trainer);
   };
 
   const refreshUser = useCallback(async () => {
@@ -154,7 +161,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         enrollFace,
         setSession,
         logout,
-        refreshUser
+        refreshUser,
+        updateUserSession
       }}
     >
       {children}

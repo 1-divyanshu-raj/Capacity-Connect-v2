@@ -4,6 +4,8 @@ import { api } from '../../lib/api';
 import { Course, CourseModule, Enrollment, Assessment } from '../../types';
 import { TrainerAiGrader } from './TrainerAiGrader';
 import { TrainerExperimentReviews } from './TrainerExperimentReviews';
+import { TrainerProfileView } from './TrainerProfileView';
+import { useTheme } from '../../context/ThemeContext';
 import { 
   BookOpen, 
   Users, 
@@ -30,6 +32,7 @@ interface TrainerDashboardProps {
 
 export const TrainerDashboard: React.FC<TrainerDashboardProps> = ({ activeTab, onTabChange }) => {
   const { user, trainerDetails } = useAuth();
+  const { isDark } = useTheme();
 
   const [courses, setCourses] = useState<Course[]>([]);
   const [enrollments, setEnrollments] = useState<Enrollment[]>([]);
@@ -175,82 +178,84 @@ export const TrainerDashboard: React.FC<TrainerDashboardProps> = ({ activeTab, o
 
   return (
     <div className="space-y-6">
-      {/* 1. Trainer Header & KPIs */}
-      <div className="liquid-glass-card rounded-3xl border border-slate-200/80 dark:border-white/10 p-6 shadow-xs">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-white/10">
-          <div>
+      {/* 1. Trainer Header & KPIs (Restricted to Courses Overview Route) */}
+      {activeTab === 'courses' && (
+        <div className="liquid-glass-card rounded-3xl border border-slate-200/90 dark:border-slate-800 p-6 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-slate-800">
+            <div>
+              <div className="flex items-center gap-2">
+                <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-display">
+                  Instructor Console: {user?.full_name}
+                </h2>
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+                  Verified Master Trainer
+                </span>
+              </div>
+              <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                {user?.department} • {user?.organization}
+              </p>
+            </div>
+
             <div className="flex items-center gap-2">
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 font-display">
-                Instructor Console: {user?.full_name}
-              </h2>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-300">
-                Verified Master Trainer
-              </span>
+              <button
+                onClick={() => setShowCreateCourseModal(true)}
+                className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-600/20 flex items-center gap-1.5 transition-all"
+              >
+                <Plus className="w-4 h-4" />
+                Create Training Program
+              </button>
+              <button
+                onClick={() => setShowCreateAssessmentModal(true)}
+                className="px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold flex items-center gap-1.5 transition-all"
+              >
+                <FileCheck2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                New Assessment
+              </button>
             </div>
-            <p className="text-xs text-slate-500 mt-1">
-              {user?.department} • {user?.organization}
-            </p>
           </div>
 
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setShowCreateCourseModal(true)}
-              className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-xs shadow-blue-500/20 flex items-center gap-1.5 transition-all"
-            >
-              <Plus className="w-4 h-4" />
-              Create Training Program
-            </button>
-            <button
-              onClick={() => setShowCreateAssessmentModal(true)}
-              className="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition-all"
-            >
-              <FileCheck2 className="w-4 h-4 text-indigo-600" />
-              New Assessment
-            </button>
+          {/* Metric Cards */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
+            <div className="liquid-glass-metric-card p-4 rounded-2xl border border-blue-200 dark:border-blue-900/60">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-blue-700 dark:text-blue-300">Active Programs</span>
+                <BookOpen className="w-4 h-4 text-[#0077B6]" />
+              </div>
+              <p className="text-2xl font-black text-slate-900 dark:text-white mt-2 font-display">{courses.length}</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Under instruction</p>
+            </div>
+
+            <div className="liquid-glass-metric-card p-4 rounded-2xl border border-teal-200 dark:border-teal-900/60">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-teal-700 dark:text-teal-300">Total Trainees</span>
+                <Users className="w-4 h-4 text-[#00A896]" />
+              </div>
+              <p className="text-2xl font-black text-slate-900 dark:text-white mt-2 font-display">{enrollments.length}</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Active candidates</p>
+            </div>
+
+            <div className="liquid-glass-metric-card p-4 rounded-2xl border border-amber-200 dark:border-amber-900/60">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-amber-700 dark:text-amber-300">Program Completions</span>
+                <CheckCircle2 className="w-4 h-4 text-[#FFB703]" />
+              </div>
+              <p className="text-2xl font-black text-slate-900 dark:text-white mt-2 font-display">
+                {enrollments.filter(e => e.status === 'completed').length}
+              </p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Certified trainees</p>
+            </div>
+
+            <div className="liquid-glass-metric-card p-4 rounded-2xl border border-indigo-200 dark:border-indigo-900/60">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-indigo-700 dark:text-indigo-300">Assessments Published</span>
+                <FileCheck2 className="w-4 h-4 text-[#6366F1]" />
+              </div>
+              <p className="text-2xl font-black text-slate-900 dark:text-white mt-2 font-display">{assessments.length}</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Evaluation rubrics</p>
+            </div>
           </div>
         </div>
-
-        {/* Metric Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
-          <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-indigo-700">Active Programs</span>
-              <BookOpen className="w-4 h-4 text-indigo-600" />
-            </div>
-            <p className="text-2xl font-black text-slate-900 mt-2 font-display">{courses.length}</p>
-            <p className="text-[11px] text-indigo-600/80 mt-0.5">Under instruction</p>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-blue-700">Total Enrolled Trainees</span>
-              <Users className="w-4 h-4 text-blue-600" />
-            </div>
-            <p className="text-2xl font-black text-slate-900 mt-2 font-display">{enrollments.length}</p>
-            <p className="text-[11px] text-blue-600/80 mt-0.5">Active candidates</p>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-emerald-700">Program Completions</span>
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-            </div>
-            <p className="text-2xl font-black text-slate-900 mt-2 font-display">
-              {enrollments.filter(e => e.status === 'completed').length}
-            </p>
-            <p className="text-[11px] text-emerald-600/80 mt-0.5">Certified trainees</p>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-amber-50/50 border border-amber-100">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-amber-700">Assessments Published</span>
-              <FileCheck2 className="w-4 h-4 text-amber-600" />
-            </div>
-            <p className="text-2xl font-black text-slate-900 mt-2 font-display">{assessments.length}</p>
-            <p className="text-[11px] text-amber-600/80 mt-0.5">Evaluation rubrics</p>
-          </div>
-        </div>
-      </div>
+      )}
 
       {/* 2. TAB: My Training Programs */}
       {activeTab === 'courses' && (
@@ -331,50 +336,50 @@ export const TrainerDashboard: React.FC<TrainerDashboardProps> = ({ activeTab, o
             </span>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
-              <thead className="bg-slate-50 text-slate-500 font-semibold border-b border-slate-200 uppercase tracking-wider text-[10px]">
+          <div className="overflow-x-auto -mx-6 px-6 sm:mx-0 sm:px-0">
+            <table className="w-full text-left text-xs min-w-[620px] sm:min-w-full">
+              <thead className="bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-semibold border-b border-slate-200 dark:border-slate-700 uppercase tracking-wider text-[10px]">
                 <tr>
-                  <th className="py-3 px-4">Trainee Candidate</th>
-                  <th className="py-3 px-4">Program Track</th>
-                  <th className="py-3 px-4">Modules Completed</th>
-                  <th className="py-3 px-4">Overall Progress</th>
-                  <th className="py-3 px-4">Status</th>
-                  <th className="py-3 px-4">Enrolled Date</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">Trainee Candidate</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">Program Track</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">Modules Completed</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">Overall Progress</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">Status</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">Enrolled Date</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
                 {enrollments.map((enr) => (
-                  <tr key={enr.id} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="py-3 px-4">
-                      <p className="font-bold text-slate-900">{enr.user_name || 'Alex Rivera'}</p>
-                      <p className="text-[11px] text-slate-500">{enr.user_email || 'trainee@capacityconnect.org'}</p>
+                  <tr key={enr.id} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4">
+                      <p className="font-bold text-slate-900 dark:text-white">{enr.user_name || 'Alex Rivera'}</p>
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400">{enr.user_email || 'trainee@capacityconnect.org'}</p>
                     </td>
-                    <td className="py-3 px-4 font-medium text-slate-800">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4 font-medium text-slate-800 dark:text-slate-200">
                       {enr.course?.title || 'Program Track'}
                     </td>
-                    <td className="py-3 px-4">
-                      <span className="font-semibold text-slate-700">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4">
+                      <span className="font-semibold text-slate-700 dark:text-slate-300">
                         {enr.completed_modules.length} / {enr.course?.modules.length || 0}
                       </span>
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="w-32 bg-slate-100 h-2 rounded-full overflow-hidden inline-block align-middle mr-2">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4">
+                      <div className="w-24 sm:w-32 bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden inline-block align-middle mr-2">
                         <div 
                           className={`h-full ${enr.progress_percentage === 100 ? 'bg-emerald-500' : 'bg-blue-600'}`}
                           style={{ width: `${enr.progress_percentage}%` }}
                         />
                       </div>
-                      <span className="font-bold text-[11px] text-slate-700">{enr.progress_percentage}%</span>
+                      <span className="font-bold text-[11px] text-slate-700 dark:text-slate-300">{enr.progress_percentage}%</span>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4">
                       <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                        enr.status === 'completed' ? 'bg-emerald-100 text-emerald-800' : 'bg-blue-100 text-blue-800'
+                        enr.status === 'completed' ? 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300' : 'bg-blue-100 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300'
                       }`}>
                         {enr.status === 'completed' ? 'Graduated' : 'In Progress'}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-slate-500">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4 text-slate-500 dark:text-slate-400">
                       {new Date(enr.enrolled_at).toLocaleDateString()}
                     </td>
                   </tr>
@@ -443,59 +448,48 @@ export const TrainerDashboard: React.FC<TrainerDashboardProps> = ({ activeTab, o
 
       {/* 5. TAB: Program Performance Chart */}
       {activeTab === 'analytics' && (
-        <div className="bg-white rounded-3xl border border-slate-200/80 p-6 space-y-4">
-          <h3 className="text-base font-bold text-slate-900 font-display">
-            Program Enrollment & Completion Analytics
-          </h3>
-          <p className="text-xs text-slate-500">
-            Real-time visual comparison of enrolled participants versus graduated trainees across your curricula.
-          </p>
+        <div className="liquid-glass-card rounded-3xl border border-slate-200/90 dark:border-slate-800 p-6 space-y-4 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-base font-bold text-slate-900 dark:text-white font-display">
+                Program Enrollment & Completion Analytics
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400">
+                Real-time visual comparison of enrolled participants versus graduated trainees across MoES curricula.
+              </p>
+            </div>
+            <span className="text-xs font-bold text-cyan-700 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-200 dark:border-cyan-800">
+              {courses.length} Active Tracks
+            </span>
+          </div>
 
           <div className="h-72 w-full pt-4">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData} margin={{ top: 10, right: 30, left: 0, bottom: 20 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
-                <XAxis dataKey="name" tick={{ fontSize: 11 }} />
-                <YAxis allowDecimals={false} tick={{ fontSize: 11 }} />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={isDark ? '#334155' : '#e2e8f0'} opacity={0.6} />
+                <XAxis dataKey="name" tick={{ fontSize: 11, fill: isDark ? '#94a3b8' : '#475569' }} />
+                <YAxis allowDecimals={false} tick={{ fontSize: 11, fill: isDark ? '#94a3b8' : '#475569' }} />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#1E293B', borderRadius: '12px', color: '#fff', fontSize: '12px' }}
+                  contentStyle={{ 
+                    backgroundColor: isDark ? '#0f172a' : '#ffffff', 
+                    borderRadius: '12px', 
+                    border: isDark ? '1px solid #334155' : '1px solid #e2e8f0',
+                    color: isDark ? '#f8fafc' : '#0f172a', 
+                    fontSize: '12px',
+                    boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.2)'
+                  }}
                 />
-                <Bar dataKey="enrolled" fill="#3B82F6" name="Total Enrolled" radius={[6, 6, 0, 0]} />
-                <Bar dataKey="completed" fill="#10B981" name="Completed Modules" radius={[6, 6, 0, 0]} />
+                <Bar isAnimationActive={false} dataKey="enrolled" fill={isDark ? '#38bdf8' : '#0077b6'} name="Total Enrolled" radius={[6, 6, 0, 0]} />
+                <Bar isAnimationActive={false} dataKey="completed" fill={isDark ? '#2dd4bf' : '#00a896'} name="Completed Modules" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
         </div>
       )}
 
-      {/* 6. TAB: Trainer Profile */}
+      {/* 6. TAB: Trainer Profile (Protected with Re-Authentication) */}
       {activeTab === 'profile' && (
-        <div className="bg-white rounded-3xl border border-slate-200/80 p-6 space-y-4">
-          <h3 className="text-base font-bold text-slate-900 font-display">
-            Trainer Accreditation Profile
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-              <p className="font-bold text-slate-700">Official Credentials</p>
-              <p><span className="text-slate-500">Name:</span> {user?.full_name}</p>
-              <p><span className="text-slate-500">Email:</span> {user?.email}</p>
-              <p><span className="text-slate-500">Organization:</span> {user?.organization}</p>
-              <p><span className="text-slate-500">Department:</span> {user?.department}</p>
-              <p><span className="text-slate-500">Experience:</span> {trainerDetails?.years_experience || 10} Years</p>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-              <p className="font-bold text-slate-700">Specializations</p>
-              <div className="flex flex-wrap gap-1">
-                {(trainerDetails?.expertise_areas || ['Cloud Systems', 'AI & ML', 'DevOps']).map((exp, idx) => (
-                  <span key={idx} className="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 text-[10px] font-semibold">
-                    {exp}
-                  </span>
-                ))}
-              </div>
-              <p className="pt-2 text-slate-500">{trainerDetails?.bio || 'Senior instructor specialized in cloud infrastructure, container orchestration, and neural network deployments.'}</p>
-            </div>
-          </div>
-        </div>
+        <TrainerProfileView />
       )}
 
       {/* MODAL: Create Course */}
@@ -522,13 +516,13 @@ export const TrainerDashboard: React.FC<TrainerDashboardProps> = ({ activeTab, o
                 />
               </div>
 
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <div>
-                  <label className="block font-semibold text-slate-700 mb-1">Category</label>
+                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Category</label>
                   <select
                     value={newCategory}
                     onChange={(e) => setNewCategory(e.target.value)}
-                    className="w-full px-2.5 py-2 border border-slate-300 rounded-xl bg-white"
+                    className="w-full px-2.5 py-2 border border-slate-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                   >
                     <option>Cloud & DevOps</option>
                     <option>Artificial Intelligence</option>
@@ -537,11 +531,11 @@ export const TrainerDashboard: React.FC<TrainerDashboardProps> = ({ activeTab, o
                   </select>
                 </div>
                 <div>
-                  <label className="block font-semibold text-slate-700 mb-1">Level</label>
+                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Level</label>
                   <select
                     value={newLevel}
                     onChange={(e) => setNewLevel(e.target.value as any)}
-                    className="w-full px-2.5 py-2 border border-slate-300 rounded-xl bg-white"
+                    className="w-full px-2.5 py-2 border border-slate-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                   >
                     <option>Beginner</option>
                     <option>Intermediate</option>
@@ -549,13 +543,13 @@ export const TrainerDashboard: React.FC<TrainerDashboardProps> = ({ activeTab, o
                   </select>
                 </div>
                 <div>
-                  <label className="block font-semibold text-slate-700 mb-1">Duration (Hours)</label>
+                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Duration (Hours)</label>
                   <input
                     type="number"
                     min={1}
                     value={newDuration}
                     onChange={(e) => setNewDuration(Number(e.target.value))}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-xl"
+                    className="w-full px-3 py-2 border border-slate-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                   />
                 </div>
               </div>

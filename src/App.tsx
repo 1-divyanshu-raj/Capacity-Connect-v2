@@ -31,7 +31,7 @@ const MainApp: React.FC = () => {
     } else if (role === 'trainer') {
       setActiveTab('courses');
     } else if (role === 'trainee') {
-      setActiveTab('my-courses');
+      setActiveTab('overview');
     }
   }, [role]);
 
@@ -51,6 +51,17 @@ const MainApp: React.FC = () => {
       fetchNotifications();
     }
   }, [user]);
+
+  // Lock body scroll when mobile menu or modal is open to prevent background scrolling
+  useEffect(() => {
+    if (isMobileMenuOpen || showVerifyModal) {
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = prevOverflow;
+      };
+    }
+  }, [isMobileMenuOpen, showVerifyModal]);
 
   // Loading state
   if (isLoading) {
@@ -93,17 +104,22 @@ const MainApp: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Functional Light/Dark Mode Toggle Switch */}
-            <ThemeToggle variant="pill" />
+            <div className="hidden sm:flex items-center">
+              <ThemeToggle variant="pill" />
+            </div>
+            <div className="sm:hidden flex items-center">
+              <ThemeToggle variant="compact" />
+            </div>
 
             <button
               onClick={() => setShowVerifyModal(true)}
-              className="px-3.5 py-1.5 rounded-2xl liquid-glass text-slate-700 dark:text-white text-xs font-bold transition-all hover:scale-102 active:scale-98 flex items-center gap-1.5"
+              className="px-2.5 sm:px-3.5 py-1.5 rounded-2xl liquid-glass text-slate-700 dark:text-white text-xs font-bold transition-all hover:scale-102 active:scale-98 flex items-center gap-1.5 shrink-0"
             >
-              <ShieldCheck className="w-3.5 h-3.5 text-blue-500" />
-              <span className="hidden xs:inline">Verify Credential</span>
-              <span className="xs:hidden">Verify</span>
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+              <span className="hidden sm:inline">Verify Credential</span>
+              <span className="sm:hidden">Verify</span>
             </button>
           </div>
         </div>

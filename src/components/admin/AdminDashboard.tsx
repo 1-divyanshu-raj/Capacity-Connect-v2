@@ -144,63 +144,65 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* 1. Admin Header & Governance KPIs */}
-      <div className="liquid-glass-card rounded-3xl border border-slate-200/80 dark:border-white/10 p-6 shadow-xs">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-white/10">
-          <div>
-            <div className="flex items-center gap-2">
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 font-display">
-                National Governance Dashboard
-              </h2>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">
-                Super Admin Access
-              </span>
+      {/* 1. Admin Header & Governance KPIs (Restricted to Overview Route) */}
+      {activeTab === 'overview' && (
+        <div className="liquid-glass-card rounded-3xl border border-slate-200/90 dark:border-slate-800 p-6 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-slate-800">
+            <div>
+              <div className="flex items-center gap-2">
+                <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-display">
+                  National Governance Dashboard
+                </h2>
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+                  MoES Super Admin Access
+                </span>
+              </div>
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                Logged in as {user?.full_name} • {user?.organization}
+              </p>
             </div>
-            <p className="text-xs text-slate-500 mt-1">
-              Logged in as {user?.full_name} • {user?.organization}
-            </p>
+
+            {/* Pending Approvals quick badge */}
+            {pendingApprovals.length > 0 && (
+              <button
+                onClick={() => onTabChange('approvals')}
+                className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-[11px] sm:text-xs shadow-md shadow-amber-500/20 animate-pulse transition-all"
+              >
+                <ShieldAlert className="w-4 h-4 shrink-0" />
+                <span>{pendingApprovals.length} Admin Approvals Pending</span>
+              </button>
+            )}
           </div>
 
-          {/* Pending Approvals quick badge */}
-          {pendingApprovals.length > 0 && (
-            <button
-              onClick={() => onTabChange('approvals')}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs shadow-md shadow-amber-500/20 animate-pulse transition-all"
-            >
-              <ShieldAlert className="w-4 h-4" />
-              <span>{pendingApprovals.length} Admin Approvals Pending</span>
-            </button>
-          )}
-        </div>
-
-        {/* Governance KPI Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-6">
-          <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-            <span className="text-[11px] font-medium text-slate-500">Trainees</span>
-            <p className="text-xl font-black text-slate-900 mt-1 font-display">{stats?.total_trainees || 0}</p>
-          </div>
-          <div className="p-3.5 rounded-2xl bg-indigo-50/60 border border-indigo-100">
-            <span className="text-[11px] font-medium text-indigo-700">Trainers</span>
-            <p className="text-xl font-black text-indigo-900 mt-1 font-display">{stats?.total_trainers || 0}</p>
-          </div>
-          <div className="p-3.5 rounded-2xl bg-amber-50/60 border border-amber-100">
-            <span className="text-[11px] font-medium text-amber-700">Pending Approvals</span>
-            <p className="text-xl font-black text-amber-900 mt-1 font-display">{pendingApprovals.length}</p>
-          </div>
-          <div className="p-3.5 rounded-2xl bg-blue-50/60 border border-blue-100">
-            <span className="text-[11px] font-medium text-blue-700">Programs</span>
-            <p className="text-xl font-black text-blue-900 mt-1 font-display">{stats?.total_courses || 0}</p>
-          </div>
-          <div className="p-3.5 rounded-2xl bg-emerald-50/60 border border-emerald-100">
-            <span className="text-[11px] font-medium text-emerald-700">Face ID Active</span>
-            <p className="text-xl font-black text-emerald-900 mt-1 font-display">{stats?.biometric_enrolled_count || 0}</p>
-          </div>
-          <div className="p-3.5 rounded-2xl bg-purple-50/60 border border-purple-100">
-            <span className="text-[11px] font-medium text-purple-700">Certificates</span>
-            <p className="text-xl font-black text-purple-900 mt-1 font-display">{stats?.total_certificates || 0}</p>
+          {/* Governance KPI Cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3 pt-6">
+            <div className="liquid-glass-metric-card p-3 sm:p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800">
+              <span className="text-[10px] sm:text-[11px] font-bold text-slate-600 dark:text-slate-400">Trainees</span>
+              <p className="text-lg sm:text-xl font-black text-slate-900 dark:text-white mt-1 font-display">{stats?.total_trainees || 0}</p>
+            </div>
+            <div className="liquid-glass-metric-card p-3 sm:p-3.5 rounded-2xl border border-indigo-200 dark:border-indigo-900/60">
+              <span className="text-[10px] sm:text-[11px] font-bold text-indigo-700 dark:text-indigo-300">Trainers</span>
+              <p className="text-lg sm:text-xl font-black text-slate-900 dark:text-white mt-1 font-display">{stats?.total_trainers || 0}</p>
+            </div>
+            <div className="liquid-glass-metric-card p-3 sm:p-3.5 rounded-2xl border border-amber-200 dark:border-amber-900/60">
+              <span className="text-[10px] sm:text-[11px] font-bold text-amber-700 dark:text-amber-300">Pending Approvals</span>
+              <p className="text-lg sm:text-xl font-black text-slate-900 dark:text-white mt-1 font-display">{pendingApprovals.length}</p>
+            </div>
+            <div className="liquid-glass-metric-card p-3 sm:p-3.5 rounded-2xl border border-blue-200 dark:border-blue-900/60">
+              <span className="text-[10px] sm:text-[11px] font-bold text-blue-700 dark:text-blue-300">Programs</span>
+              <p className="text-lg sm:text-xl font-black text-slate-900 dark:text-white mt-1 font-display">{stats?.total_courses || 0}</p>
+            </div>
+            <div className="liquid-glass-metric-card p-3 sm:p-3.5 rounded-2xl border border-teal-200 dark:border-teal-900/60">
+              <span className="text-[10px] sm:text-[11px] font-bold text-teal-700 dark:text-teal-300">Face ID Active</span>
+              <p className="text-lg sm:text-xl font-black text-slate-900 dark:text-white mt-1 font-display">{stats?.biometric_enrolled_count || 0}</p>
+            </div>
+            <div className="liquid-glass-metric-card p-3 sm:p-3.5 rounded-2xl border border-purple-200 dark:border-purple-900/60">
+              <span className="text-[10px] sm:text-[11px] font-bold text-purple-700 dark:text-purple-300">Certificates</span>
+              <p className="text-lg sm:text-xl font-black text-slate-900 dark:text-white mt-1 font-display">{stats?.total_certificates || 0}</p>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* 2. TAB: Platform Overview */}
       {activeTab === 'overview' && (
@@ -400,96 +402,98 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             </h3>
 
             <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
-              <div className="relative">
+              <div className="relative w-full sm:w-auto">
                 <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
                 <input
                   type="text"
                   value={userSearchQuery}
                   onChange={(e) => setUserSearchQuery(e.target.value)}
                   placeholder="Search user name, email, org..."
-                  className="pl-9 pr-3 py-1.5 text-xs border border-slate-300 rounded-xl w-60"
+                  className="pl-9 pr-3 py-1.5 text-xs border border-slate-300 dark:border-slate-700 rounded-xl w-full sm:w-60 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                 />
               </div>
 
-              <select
-                value={userRoleFilter}
-                onChange={(e) => setUserRoleFilter(e.target.value)}
-                className="px-2.5 py-1.5 text-xs border border-slate-300 rounded-xl bg-white"
-              >
-                <option>All</option>
-                <option value="trainee">Trainees</option>
-                <option value="trainer">Trainers</option>
-                <option value="admin">Administrators</option>
-              </select>
+              <div className="flex items-center gap-2 w-full sm:w-auto">
+                <select
+                  value={userRoleFilter}
+                  onChange={(e) => setUserRoleFilter(e.target.value)}
+                  className="flex-1 sm:flex-initial px-2.5 py-1.5 text-xs border border-slate-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                >
+                  <option>All</option>
+                  <option value="trainee">Trainees</option>
+                  <option value="trainer">Trainers</option>
+                  <option value="admin">Administrators</option>
+                </select>
 
-              <select
-                value={userStatusFilter}
-                onChange={(e) => setUserStatusFilter(e.target.value)}
-                className="px-2.5 py-1.5 text-xs border border-slate-300 rounded-xl bg-white"
-              >
-                <option>All</option>
-                <option value="active">Active</option>
-                <option value="pending">Pending</option>
-                <option value="suspended">Suspended</option>
-              </select>
+                <select
+                  value={userStatusFilter}
+                  onChange={(e) => setUserStatusFilter(e.target.value)}
+                  className="flex-1 sm:flex-initial px-2.5 py-1.5 text-xs border border-slate-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                >
+                  <option>All</option>
+                  <option value="active">Active</option>
+                  <option value="pending">Pending</option>
+                  <option value="suspended">Suspended</option>
+                </select>
+              </div>
             </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
-              <thead className="bg-slate-50 text-slate-500 font-semibold border-b border-slate-200 uppercase tracking-wider text-[10px]">
+          <div className="overflow-x-auto -mx-6 px-6 sm:mx-0 sm:px-0">
+            <table className="w-full text-left text-xs min-w-[600px] sm:min-w-full">
+              <thead className="bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-semibold border-b border-slate-200 dark:border-slate-700 uppercase tracking-wider text-[10px]">
                 <tr>
-                  <th className="py-3 px-4">User</th>
-                  <th className="py-3 px-4">Role</th>
-                  <th className="py-3 px-4">Organization & Dept</th>
-                  <th className="py-3 px-4">Face ID</th>
-                  <th className="py-3 px-4">Status</th>
-                  <th className="py-3 px-4 text-right">Actions</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">User</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">Role</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">Organization & Dept</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">Face ID</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4">Status</th>
+                  <th className="py-2.5 sm:py-3 px-3 sm:px-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
                 {filteredUsers.map((u) => (
-                  <tr key={u.id} className="hover:bg-slate-50/80">
-                    <td className="py-3 px-4">
-                      <p className="font-bold text-slate-900">{u.full_name}</p>
-                      <p className="text-[11px] text-slate-500">{u.email}</p>
+                  <tr key={u.id} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/50">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4">
+                      <p className="font-bold text-slate-900 dark:text-white">{u.full_name}</p>
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400">{u.email}</p>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4">
                       <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${
-                        u.role === 'admin' ? 'bg-amber-100 text-amber-800' : u.role === 'trainer' ? 'bg-indigo-100 text-indigo-800' : 'bg-emerald-100 text-emerald-800'
+                        u.role === 'admin' ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300' : u.role === 'trainer' ? 'bg-indigo-100 dark:bg-indigo-950/60 text-indigo-800 dark:text-indigo-300' : 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300'
                       }`}>
                         {u.role}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-slate-600">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4 text-slate-600 dark:text-slate-300">
                       <p className="font-medium">{u.organization}</p>
-                      <p className="text-[11px] text-slate-400">{u.department}</p>
+                      <p className="text-[11px] text-slate-400 dark:text-slate-500">{u.department}</p>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4">
                       {u.has_biometrics ? (
-                        <span className="text-[10px] font-semibold text-emerald-700 flex items-center gap-1">
+                        <span className="text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 flex items-center gap-1">
                           <ScanFace className="w-3.5 h-3.5" /> Enrolled
                         </span>
                       ) : (
-                        <span className="text-[10px] text-slate-400">Not enrolled</span>
+                        <span className="text-[10px] text-slate-400 dark:text-slate-500">Not enrolled</span>
                       )}
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4">
                       <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                        u.status === 'active' ? 'bg-emerald-100 text-emerald-800' : u.status === 'pending' ? 'bg-amber-100 text-amber-800' : 'bg-red-100 text-red-800'
+                        u.status === 'active' ? 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300' : u.status === 'pending' ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300' : 'bg-red-100 dark:bg-red-950/60 text-red-800 dark:text-red-300'
                       }`}>
                         {u.status}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-right">
+                    <td className="py-2.5 sm:py-3 px-3 sm:px-4 text-right">
                       {u.role !== 'admin' && (
                         <button
                           onClick={() => handleToggleUserStatus(u)}
                           disabled={actionLoadingId === u.id}
-                          className={`px-3 py-1 rounded-lg text-xs font-semibold transition-colors ${
+                          className={`px-2.5 sm:px-3 py-1 rounded-lg text-[11px] sm:text-xs font-semibold transition-colors ${
                             u.status === 'active'
-                              ? 'bg-red-50 text-red-700 hover:bg-red-100'
-                              : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
+                              ? 'bg-red-50 text-red-700 hover:bg-red-100 dark:bg-red-950/40 dark:text-red-300'
+                              : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:text-emerald-300'
                           }`}
                         >
                           {u.status === 'active' ? 'Suspend' : 'Activate'}

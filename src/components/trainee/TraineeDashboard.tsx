@@ -12,6 +12,8 @@ import { CertificateModal } from '../common/CertificateModal';
 import { TraineeAssignments } from './TraineeAssignments';
 import { TraineeQuizzes } from './TraineeQuizzes';
 import { TraineeExperimentLab } from './TraineeExperimentLab';
+import { TraineeProfileView } from './TraineeProfileView';
+import { MoESDatasetsPortal } from '../common/MoESDatasetsPortal';
 import { 
   requestCameraStream, 
   stopCameraStream, 
@@ -35,7 +37,12 @@ import {
   ArrowRight,
   Camera,
   RefreshCw,
-  Loader2
+  Loader2,
+  Database,
+  UploadCloud,
+  HelpCircle,
+  FlaskConical,
+  GraduationCap
 } from 'lucide-react';
 
 interface TraineeDashboardProps {
@@ -209,85 +216,239 @@ export const TraineeDashboard: React.FC<TraineeDashboardProps> = ({ activeTab, o
 
   return (
     <div className="space-y-6">
-      {/* 1. Trainee Overview Header & Metric Cards */}
-      <div className="liquid-glass-card rounded-3xl border border-slate-200/80 dark:border-white/10 p-6 shadow-xs">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-white/10">
-          <div>
-            <div className="flex items-center gap-2">
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 font-display">
-                Welcome back, {user?.full_name}!
-              </h2>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
-                Active Trainee
-              </span>
+      {/* 1. TAB: Trainee Overview (Home Route Only) */}
+      {activeTab === 'overview' && (
+        <div className="space-y-6">
+          {/* Welcome Header & Biometrics Status */}
+          <div className="liquid-glass-card rounded-3xl border border-slate-200/90 dark:border-slate-800 p-6 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-slate-800">
+              <div>
+                <div className="flex items-center gap-2">
+                  <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white font-display">
+                    Welcome back, {user?.full_name}!
+                  </h2>
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                    Active MoES Trainee
+                  </span>
+                </div>
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                  {user?.department} • {user?.organization}
+                </p>
+              </div>
+
+              {/* Quick Biometric Status Card */}
+              <div className="flex items-center gap-3">
+                {user?.has_biometrics ? (
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                    <span>Biometric Face ID Enrolled</span>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => onTabChange('biometrics')}
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/60 text-xs font-semibold transition-colors"
+                  >
+                    <ScanFace className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
+                    <span>Enroll Face Recognition</span>
+                  </button>
+                )}
+              </div>
             </div>
-            <p className="text-xs text-slate-500 mt-1">
-              {user?.department} • {user?.organization}
-            </p>
+
+            {/* Metric Cards */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
+              {/* Enrolled Programs: Ocean Blue (#0077B6) */}
+              <div className="liquid-glass-metric-card p-5 rounded-2xl border border-blue-200 dark:border-blue-900/60">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-blue-700 dark:text-blue-300">Enrolled Programs</span>
+                  <BookOpen className="w-5 h-5 text-[#0077B6]" />
+                </div>
+                <p className="text-2xl font-black text-slate-900 dark:text-white mt-2 font-display">{enrollments.length}</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Active curriculum tracks</p>
+              </div>
+
+              {/* Completed Courses: Marine Teal (#00A896) */}
+              <div className="liquid-glass-metric-card p-5 rounded-2xl border border-teal-200 dark:border-teal-900/60">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-teal-700 dark:text-teal-300">Completed Courses</span>
+                  <CheckCircle2 className="w-5 h-5 text-[#00A896]" />
+                </div>
+                <p className="text-2xl font-black text-slate-900 dark:text-white mt-2 font-display">
+                  {enrollments.filter(e => e.status === 'completed').length}
+                </p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">100% finished modules</p>
+              </div>
+
+              {/* Certificates Earned: Deep Gold/Amber (#FFB703) */}
+              <div className="liquid-glass-metric-card p-5 rounded-2xl border border-amber-200 dark:border-amber-900/60">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-amber-700 dark:text-amber-300">Certificates Earned</span>
+                  <Award className="w-5 h-5 text-[#FFB703]" />
+                </div>
+                <p className="text-2xl font-black text-slate-900 dark:text-white mt-2 font-display">{certificates.length}</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Verified credentials</p>
+              </div>
+
+              {/* Assessments Passed: Purple/Indigo (#7209B7) */}
+              <div className="liquid-glass-metric-card p-5 rounded-2xl border border-purple-200 dark:border-purple-900/60">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-purple-700 dark:text-purple-300">Assessments Passed</span>
+                  <Sparkles className="w-5 h-5 text-[#7209B7] dark:text-[#a855f7]" />
+                </div>
+                <p className="text-2xl font-black text-slate-900 dark:text-white mt-2 font-display">
+                  {results.filter(r => r.passed).length}
+                </p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">High competency standing</p>
+              </div>
+            </div>
           </div>
 
-          {/* Quick Biometric Status Card */}
-          <div className="flex items-center gap-3">
-            {user?.has_biometrics ? (
-              <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Biometric Face ID Enrolled</span>
+          {/* Quick Hub Navigation Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <button
+              onClick={() => onTabChange('datasets')}
+              className="liquid-glass-card p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 text-left hover:border-cyan-500/50 transition-all group"
+            >
+              <div className="w-9 h-9 rounded-xl bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                <Database className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center justify-between">
+                MoES Open Datasets <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
+              </h4>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+                Access INCOIS, IMD, and NCMRWF live telemetry feeds.
+              </p>
+            </button>
+
+            <button
+              onClick={() => onTabChange('my-courses')}
+              className="liquid-glass-card p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 text-left hover:border-blue-500/50 transition-all group"
+            >
+              <div className="w-9 h-9 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                <BookOpen className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center justify-between">
+                My Enrolled Courses <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
+              </h4>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+                Continue progress on your active specialized tracks.
+              </p>
+            </button>
+
+            <button
+              onClick={() => onTabChange('assignments')}
+              className="liquid-glass-card p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 text-left hover:border-indigo-500/50 transition-all group"
+            >
+              <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                <UploadCloud className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center justify-between">
+                Task Submissions <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
+              </h4>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+                Upload reports with AI automated rubric grading.
+              </p>
+            </button>
+
+            <button
+              onClick={() => onTabChange('quizzes')}
+              className="liquid-glass-card p-4 rounded-2xl border border-slate-200/90 dark:border-slate-800 text-left hover:border-amber-500/50 transition-all group"
+            >
+              <div className="w-9 h-9 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                <HelpCircle className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center justify-between">
+                Domain Quizzes <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
+              </h4>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+                Test knowledge on oceanography and atmospheric dynamics.
+              </p>
+            </button>
+          </div>
+
+          {/* Active Training Tracks Overview */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-base font-bold text-slate-900 dark:text-white font-display">
+                Active Training Tracks
+              </h3>
+              <button
+                onClick={() => onTabChange('catalog')}
+                className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+              >
+                Browse Catalog <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+
+            {enrollments.length === 0 ? (
+              <div className="p-8 text-center bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800">
+                <BookOpen className="w-10 h-10 text-slate-300 dark:text-slate-600 mx-auto mb-2" />
+                <p className="text-sm font-bold text-slate-800 dark:text-slate-200">No active training tracks enrolled yet.</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-sm mx-auto">
+                  Explore certified courses in Numerical Weather Prediction, Tsunami Early Warning, and Ocean Modeling.
+                </p>
+                <button
+                  onClick={() => onTabChange('catalog')}
+                  className="mt-4 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors"
+                >
+                  Explore Catalog
+                </button>
               </div>
             ) : (
-              <button
-                onClick={() => onTabChange('biometrics')}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100 text-xs font-semibold transition-colors"
-              >
-                <ScanFace className="w-4 h-4 text-blue-600 shrink-0" />
-                <span>Enroll Face Recognition</span>
-              </button>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {enrollments.slice(0, 4).map(enrollment => {
+                  const course = courses.find(c => c.id === enrollment.course_id);
+                  if (!course) return null;
+                  return (
+                    <div
+                      key={enrollment.id}
+                      className="liquid-glass-card rounded-2xl border border-slate-200/90 dark:border-slate-800 p-5 flex flex-col justify-between space-y-4 hover:border-blue-500/40 transition-all"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                            {course.category}
+                          </span>
+                          <span className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded-full ${
+                            enrollment.status === 'completed'
+                              ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800'
+                              : 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800'
+                          }`}>
+                            {enrollment.status === 'completed' ? 'Completed' : 'In Progress'}
+                          </span>
+                        </div>
+                        <h4 className="text-sm font-bold text-slate-900 dark:text-white line-clamp-1">{course.title}</h4>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">{course.description}</p>
+                      </div>
+
+                      <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-slate-500 dark:text-slate-400">Curriculum Progress</span>
+                          <span className="font-bold text-slate-800 dark:text-slate-200">{enrollment.progress_percentage}%</span>
+                        </div>
+                        <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-gradient-to-r from-blue-600 to-teal-500 transition-all duration-300"
+                            style={{ width: `${enrollment.progress_percentage}%` }}
+                          />
+                        </div>
+                        <div className="flex items-center justify-end pt-2">
+                          <button
+                            onClick={() => setViewingCourse(course)}
+                            className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors"
+                          >
+                            Launch Course Curriculum
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             )}
           </div>
         </div>
-
-        {/* Metric Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
-          <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-blue-700">Enrolled Programs</span>
-              <BookOpen className="w-4 h-4 text-blue-600" />
-            </div>
-            <p className="text-2xl font-black text-slate-900 mt-2 font-display">{enrollments.length}</p>
-            <p className="text-[11px] text-blue-600/80 mt-0.5">Active curriculum tracks</p>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-emerald-700">Completed Courses</span>
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-            </div>
-            <p className="text-2xl font-black text-slate-900 mt-2 font-display">
-              {enrollments.filter(e => e.status === 'completed').length}
-            </p>
-            <p className="text-[11px] text-emerald-600/80 mt-0.5">100% finished modules</p>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-amber-50/50 border border-amber-100">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-amber-700">Certificates Earned</span>
-              <Award className="w-4 h-4 text-amber-600" />
-            </div>
-            <p className="text-2xl font-black text-slate-900 mt-2 font-display">{certificates.length}</p>
-            <p className="text-[11px] text-amber-600/80 mt-0.5">Verified credentials</p>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-indigo-700">Assessments Passed</span>
-              <Sparkles className="w-4 h-4 text-indigo-600" />
-            </div>
-            <p className="text-2xl font-black text-slate-900 mt-2 font-display">
-              {results.filter(r => r.passed).length}
-            </p>
-            <p className="text-[11px] text-indigo-600/80 mt-0.5">High competency standing</p>
-          </div>
-        </div>
-      </div>
+      )}
 
       {/* 2. TAB: My Enrolled Programs */}
       {activeTab === 'my-courses' && (
@@ -748,38 +909,14 @@ export const TraineeDashboard: React.FC<TraineeDashboardProps> = ({ activeTab, o
         </div>
       )}
 
-      {/* 7. TAB: Skills & Profile */}
-      {activeTab === 'profile' && (
-        <div className="bg-white rounded-3xl border border-slate-200/80 p-6 space-y-4">
-          <h3 className="text-base font-bold text-slate-900 font-display">
-            Trainee Professional Credentials
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-              <p className="font-bold text-slate-700">Account Details</p>
-              <p><span className="text-slate-500">Name:</span> {user?.full_name}</p>
-              <p><span className="text-slate-500">Email:</span> {user?.email}</p>
-              <p><span className="text-slate-500">Phone:</span> {user?.phone || 'N/A'}</p>
-              <p><span className="text-slate-500">Organization:</span> {user?.organization}</p>
-              <p><span className="text-slate-500">Department:</span> {user?.department}</p>
-            </div>
+      {/* TAB: MoES Open Datasets Portal */}
+      {activeTab === 'datasets' && (
+        <MoESDatasetsPortal />
+      )}
 
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-              <p className="font-bold text-slate-700">Skills & Target Certifications</p>
-              <p><span className="text-slate-500">Education:</span> {traineeDetails?.education_level || 'Undergraduate'}</p>
-              <div>
-                <span className="text-slate-500">Key Interests:</span>
-                <div className="flex flex-wrap gap-1 mt-1">
-                  {(traineeDetails?.skills_interests || ['Cloud', 'Kubernetes', 'DevOps']).map((s, i) => (
-                    <span key={i} className="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-semibold">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* 7. TAB: Skills & Profile (Protected with Re-Authentication) */}
+      {activeTab === 'profile' && (
+        <TraineeProfileView />
       )}
 
       {/* MODAL: Course Curriculum Viewer */}
@@ -799,10 +936,10 @@ export const TraineeDashboard: React.FC<TraineeDashboardProps> = ({ activeTab, o
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 flex-1 overflow-hidden">
+            <div className="flex flex-col md:flex-row flex-1 overflow-hidden min-h-0">
               {/* Module List sidebar */}
-              <div className="border-r border-slate-200 p-3 overflow-y-auto space-y-1 bg-slate-50/50">
-                <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Curriculum Modules</p>
+              <div className="border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 p-3 max-h-40 md:max-h-none md:w-72 overflow-y-auto space-y-1 bg-slate-50/70 dark:bg-slate-900/50 shrink-0">
+                <p className="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">Curriculum Modules</p>
                 {viewingCourse.modules.map((m, idx) => {
                   const enr = enrollments.find(e => e.course_id === viewingCourse.id);
                   const isDone = enr?.completed_modules.includes(m.id);
@@ -811,12 +948,12 @@ export const TraineeDashboard: React.FC<TraineeDashboardProps> = ({ activeTab, o
                     <button
                       key={m.id}
                       onClick={() => setActiveModuleIndex(idx)}
-                      className={`w-full text-left p-2.5 rounded-xl text-xs transition-colors flex items-start gap-2 ${
-                        activeModuleIndex === idx ? 'bg-blue-600 text-white font-semibold' : 'hover:bg-slate-100 text-slate-700'
+                      className={`w-full text-left p-2 sm:p-2.5 rounded-xl text-[11px] sm:text-xs transition-colors flex items-start gap-2 ${
+                        activeModuleIndex === idx ? 'bg-blue-600 text-white font-semibold' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'
                       }`}
                     >
                       {isDone ? (
-                        <CheckCircle2 className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${activeModuleIndex === idx ? 'text-white' : 'text-emerald-600'}`} />
+                        <CheckCircle2 className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${activeModuleIndex === idx ? 'text-white' : 'text-emerald-600 dark:text-emerald-400'}`} />
                       ) : (
                         <span className={`w-3.5 h-3.5 rounded-full border shrink-0 mt-0.5 ${activeModuleIndex === idx ? 'border-white' : 'border-slate-400'}`} />
                       )}
@@ -827,42 +964,42 @@ export const TraineeDashboard: React.FC<TraineeDashboardProps> = ({ activeTab, o
               </div>
 
               {/* Module Content */}
-              <div className="md:col-span-2 p-6 overflow-y-auto space-y-4">
+              <div className="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4">
                 {viewingCourse.modules[activeModuleIndex] && (
                   <>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-blue-600 uppercase">
+                      <span className="text-[11px] sm:text-xs font-bold text-blue-600 dark:text-blue-400 uppercase">
                         Module {activeModuleIndex + 1} of {viewingCourse.modules.length}
                       </span>
-                      <span className="text-xs text-slate-500">
+                      <span className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
                         {viewingCourse.modules[activeModuleIndex].duration_minutes} Minutes
                       </span>
                     </div>
 
-                    <h4 className="text-lg font-bold text-slate-900 font-display">
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-display">
                       {viewingCourse.modules[activeModuleIndex].title}
                     </h4>
 
-                    <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-700 leading-relaxed space-y-3">
+                    <div className="p-4 bg-slate-50 dark:bg-slate-850 rounded-2xl border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 leading-relaxed space-y-3">
                       <p>{viewingCourse.modules[activeModuleIndex].content}</p>
-                      <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl text-blue-900">
+                      <div className="p-3 bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-xl text-blue-900 dark:text-blue-200 text-xs">
                         <strong>Practical Learning Goal:</strong> Synthesize core competencies, review code architectures, and prepare for the evaluation quiz.
                       </div>
                     </div>
 
-                    <div className="pt-4 flex items-center justify-between border-t border-slate-200">
+                    <div className="pt-4 flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 dark:border-slate-800">
                       <button
                         onClick={() => handleMarkModuleComplete(viewingCourse.id, viewingCourse.modules[activeModuleIndex].id)}
-                        className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center gap-1.5"
+                        className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-[11px] sm:text-xs flex items-center gap-1.5 transition-colors"
                       >
-                        <CheckCircle2 className="w-4 h-4" />
+                        <CheckCircle2 className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                         Mark Module as Completed
                       </button>
 
                       {activeModuleIndex < viewingCourse.modules.length - 1 && (
                         <button
                           onClick={() => setActiveModuleIndex(activeModuleIndex + 1)}
-                          className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs"
+                          className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[11px] sm:text-xs transition-colors"
                         >
                           Next Module
                         </button>
