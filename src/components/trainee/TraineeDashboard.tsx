@@ -9,6 +9,9 @@ import {
   Certificate 
 } from '../../types';
 import { CertificateModal } from '../common/CertificateModal';
+import { TraineeAssignments } from './TraineeAssignments';
+import { TraineeQuizzes } from './TraineeQuizzes';
+import { TraineeExperimentLab } from './TraineeExperimentLab';
 import { 
   requestCameraStream, 
   stopCameraStream, 
@@ -649,6 +652,21 @@ export const TraineeDashboard: React.FC<TraineeDashboardProps> = ({ activeTab, o
             </div>
           )}
         </div>
+      )}
+
+      {/* Trainee Coursework & Project Assignments */}
+      {activeTab === 'assignments' && (
+        <TraineeAssignments courses={courses} />
+      )}
+
+      {/* Interactive Course Quizzes */}
+      {activeTab === 'quizzes' && (
+        <TraineeQuizzes courses={courses} onQuizCompleted={fetchData} />
+      )}
+
+      {/* Video Lab Experiment Demonstrations */}
+      {activeTab === 'experiments' && (
+        <TraineeExperimentLab courses={courses} />
       )}
 
       {/* 6. TAB: Biometric Face ID Enrollment */}

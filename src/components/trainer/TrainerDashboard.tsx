@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { api } from '../../lib/api';
 import { Course, CourseModule, Enrollment, Assessment } from '../../types';
+import { TrainerAiGrader } from './TrainerAiGrader';
+import { TrainerExperimentReviews } from './TrainerExperimentReviews';
 import { 
   BookOpen, 
   Users, 
@@ -427,6 +429,16 @@ export const TrainerDashboard: React.FC<TrainerDashboardProps> = ({ activeTab, o
             </div>
           </div>
         </div>
+      )}
+
+      {/* AI Automated Assignment & Quiz Grader */}
+      {activeTab === 'grader' && (
+        <TrainerAiGrader courses={courses} />
+      )}
+
+      {/* Review & Grade Experiment Videos */}
+      {activeTab === 'experiment-reviews' && (
+        <TrainerExperimentReviews courses={courses} />
       )}
 
       {/* 5. TAB: Program Performance Chart */}

@@ -1,4 +1,21 @@
-import { AuthSession, UserProfile, Course, Enrollment, Assessment, AssessmentResult, Certificate, NotificationItem, AuditLog, AdminApproval } from '../types';
+import { 
+  AuthSession, 
+  UserProfile, 
+  Course, 
+  Enrollment, 
+  Assessment, 
+  AssessmentResult, 
+  Certificate, 
+  NotificationItem, 
+  AuditLog, 
+  AdminApproval,
+  Assignment,
+  AssignmentSubmission,
+  ExperimentVideo,
+  TraineeProfileDetails,
+  TrainerProfileDetails,
+  SkillGapData
+} from '../types';
 
 const BASE_URL = '/api';
 
@@ -399,5 +416,143 @@ export const api = {
   async getAdminStats(): Promise<{ stats: any }> {
     const res = await fetch(`${BASE_URL}/admin/stats`, { headers: getAuthHeaders() });
     return handleResponse(res);
+  },
+
+  // Assignments & Submissions
+  async getAssignments(courseId?: string): Promise<{ assignments: Assignment[] }> {
+    const url = courseId ? `${BASE_URL}/assignments?course_id=${encodeURIComponent(courseId)}` : `${BASE_URL}/assignments`;
+    const res = await fetch(url, { headers: getAuthHeaders() });
+    return handleResponse(res);
+  },
+
+  async getAssignment(id: string): Promise<{ assignment: Assignment }> {
+    const res = await fetch(`${BASE_URL}/assignments/${id}`, { headers: getAuthHeaders() });
+    return handleResponse(res);
+  },
+
+  async createAssignment(data: Partial<Assignment>): Promise<{ assignment: Assignment }> {
+    const res = await fetch(`${BASE_URL}/assignments`, {
+      method: 'POST',
+      headers: getAuthHeaders(),
+      body: JSON.stringify(data)
+    });
+    return handleResponse(res);
+  },
+
+  async getSubmissions(params?: { userId?: string; assignmentId?: string; courseId?: string }): Promise<{ submissions: AssignmentSubmission[] }> {
+    const query = new URLSearchParams();
+    if (params?.userId) query.append('userId', params.userId);
+    if (params?.assignmentId) query.append('assignmentId', params.assignmentId);
+    if (params?.courseId) query.append('courseId', params.courseId);
+    const qs = query.toString();
+    const res = await fetch(`${BASE_URL}/submissions${qs ? `?${qs}` : ''}`, { headers: getAuthHeaders() });
+    return handleResponse(res);
+  },
+
+  async submitAssignment(data: {
+    assignment_id: string;
+    file_name: string;
+    file_size?: string;
+    file_type?: string;
+    file_content?: string;
+    notes?: string;
+  }): Promise<{ submission: AssignmentSubmission }> {
+    const res = await fetch(`${BASE_URL}/submissions`, {
+      method: 'POST',
+      headers: getAuthHeaders(),
+      body: JSON.stringify(data)
+    });
+    return handleResponse(res);
+  },
+
+  async gradeSubmission(id: string, data: { score: number; trainer_feedback?: string }): Promise<{ submission: AssignmentSubmission }> {
+    const res = await fetch(`${BASE_URL}/submissions/${id}/grade`, {
+      method: 'PUT',
+      headers: getAuthHeaders(),
+      body: JSON.stringify(data)
+    });
+    return handleResponse(res);
+  },
+
+  async generateAiGraderReport(id: string): Promise<{ submission: AssignmentSubmission; ai_report: any }> {
+    const res = await fetch(`${BASE_URL}/submissions/${id}/ai-grade`, {
+      method: 'POST',
+      headers: getAuthHeaders()
+    });
+    return handleResponse(res);
+  },
+
+  // Experiment Videos
+  async getExperiments(params?: { userId?: string; courseId?: string; status?: string }): Promise<{ experiments: ExperimentVideo[] }> {
+    const query = new URLSearchParams();
+    if (params?.userId) query.append('userId', params.userId);
+    if (params?.courseId) query.append('courseId', params.courseId);
+    if (params?.status) query.append('status', params.status);
+    const qs = query.toString();
+    const res = await fetch(`${BASE_URL}/experiments${qs ? `?${qs}` : ''}`, { headers: getAuthHeaders() });
+    return handleResponse(res);
+  },
+
+  async getExperiment(id: string): Promise<{ experiment: ExperimentVideo }> {
+    const res = await fetch(`${BASE_URL}/experiments/${id}`, { headers: getAuthHeaders() });
+    return handleResponse(res);
+  },
+
+  async uploadExperiment(data: {
+    course_id: string;
+    title: string;
+    description: string;
+    video_url?: string;
+    video_format: string;
+    duration_seconds?: number;
+    lab_parameters?: string;
+  }): Promise<{ experiment: ExperimentVideo }> {
+    const res = await fetch(`${BASE_URL}/experiments`, {
+      method: 'POST',
+      headers: getAuthHeaders(),
+      body: JSON.stringify(data)
+    });
+    return handleResponse(res);
+  },
+
+  async gradeExperiment(id: string, data: {
+    score?: number;
+    status: 'approved' | 'revision_needed' | 'under_review';
+    trainer_feedback?: string;
+  }): Promise<{ experiment: ExperimentVideo }> {
+    const res = await fetch(`${BASE_URL}/experiments/${id}/grade`, {
+      method: 'PUT',
+      headers: getAuthHeaders(),
+      body: JSON.stringify(data)
+    });
+    return handleResponse(res);
+  },
+
+  // Admin Profiles & Skill Gap Analytics
+  async getAdminTraineeProfiles(): Promise<{ trainees: TraineeProfileDetails[] }> {
+    const res = await fetch(`${BASE_URL}/admin/trainee-profiles`, { headers: getAuthHeaders() });
+    return handleResponse(res);
+  },
+
+  async getAdminTrainees(): Promise<{ trainees: TraineeProfileDetails[] }> {
+    return this.getAdminTraineeProfiles();
+  },
+
+  async getAdminTrainerProfiles(): Promise<{ trainers: TrainerProfileDetails[] }> {
+    const res = await fetch(`${BASE_URL}/admin/trainer-profiles`, { headers: getAuthHeaders() });
+    return handleResponse(res);
+  },
+
+  async getAdminTrainers(): Promise<{ trainers: TrainerProfileDetails[] }> {
+    return this.getAdminTrainerProfiles();
+  },
+
+  async getAdminSkillGaps(): Promise<SkillGapData> {
+    const res = await fetch(`${BASE_URL}/admin/skill-gaps`, { headers: getAuthHeaders() });
+    return handleResponse(res);
+  },
+
+  async getAdminAnalytics(): Promise<SkillGapData> {
+    return this.getAdminSkillGaps();
   }
 };

@@ -1,6 +1,6 @@
 {
   "name": "Capacity Connect",
-  "description": "Enterprise capacity building and training platform with multi-role access (Trainee, Trainer, Admin), secure biometric face recognition login, course management, assessments, and SIH-ready governance.",
+  "description": "Enterprise capacity building and training platform with multi-role access (Trainee, Trainer, Admin), course catalog, assignments, interactive quizzes, video experiment lab, AI-automated grader reports, trainer experiment reviews, trainee and trainer profiles with grade progress, and India regional skill gap analytics.",
   "requestFramePermissions": ["camera"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

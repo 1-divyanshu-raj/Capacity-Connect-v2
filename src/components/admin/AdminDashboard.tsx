@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { api } from '../../lib/api';
 import { UserProfile, Course, AuditLog } from '../../types';
+import { AdminIndiaSkillGaps } from './AdminIndiaSkillGaps';
+import { AdminTraineeProfiles } from './AdminTraineeProfiles';
+import { AdminTrainerProfiles } from './AdminTrainerProfiles';
 import { 
   ShieldCheck, 
   ShieldAlert, 
@@ -301,6 +304,21 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             </div>
           </div>
         </div>
+      )}
+
+      {/* India Skill Gap Analytics Dashboard */}
+      {activeTab === 'skill-gaps' && (
+        <AdminIndiaSkillGaps />
+      )}
+
+      {/* Trainee Profiles, Grade Progress & Specializations */}
+      {activeTab === 'trainee-profiles' && (
+        <AdminTraineeProfiles />
+      )}
+
+      {/* Trainer Profiles, Ratings & Specializations */}
+      {activeTab === 'trainer-profiles' && (
+        <AdminTrainerProfiles />
       )}
 
       {/* 3. TAB: Pending Approvals Full View */}

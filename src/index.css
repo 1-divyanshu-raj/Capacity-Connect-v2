@@ -20,17 +20,17 @@
 
   html.dark,
   :root.dark {
-    --bg-main: #000000;
-    --bg-surface: #050508;
-    --bg-subtle: #08080c;
-    --text-primary: #ffffff;
+    --bg-main: #0a0f1d;
+    --bg-surface: #111827;
+    --bg-subtle: #1e293b;
+    --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --glass-bg: rgba(8, 8, 12, 0.75);
-    --glass-border: rgba(255, 255, 255, 0.12);
-    --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8);
-    --glass-specular: inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+    --border-color: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(17, 24, 39, 0.82);
+    --glass-border: rgba(255, 255, 255, 0.14);
+    --glass-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.6);
+    --glass-specular: inset 0 1px 1px 0 rgba(255, 255, 255, 0.16);
     color-scheme: dark;
   }
 
@@ -44,8 +44,8 @@
 
   html.dark body,
   body.dark {
-    color: #ffffff;
-    background-color: #000000;
+    color: #f8fafc;
+    background-color: #0a0f1d;
   }
   
   h1, h2, h3, .font-display {
@@ -76,11 +76,11 @@
 }
 
 html.dark .liquid-glass-card {
-  background: rgba(8, 8, 12, 0.85);
+  background: rgba(17, 24, 39, 0.88);
   backdrop-filter: blur(20px) saturate(200%);
   -webkit-backdrop-filter: blur(20px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 40px -4px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .liquid-glass-pill {
@@ -92,11 +92,11 @@ html.dark .liquid-glass-card {
 }
 
 html.dark .liquid-glass-pill {
-  background: rgba(18, 18, 24, 0.75);
+  background: rgba(30, 41, 59, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 /* Ambient Liquid Gradient Refraction Backdrops */
@@ -120,36 +120,36 @@ html.dark .liquid-glass-pill {
 }
 
 /* ==========================================================================
-   Dark Mode True-Black Synchronization
+   Dark Mode Layered Surface Hierarchy & High Contrast
    ========================================================================== */
 
 /* Surfaces and Cards */
 html.dark .bg-white {
-  background-color: #050508 !important;
-  color: #ffffff !important;
+  background-color: #111827 !important;
+  color: #f8fafc !important;
 }
 
 html.dark .bg-slate-50,
 html.dark .bg-slate-50\/70,
 html.dark .bg-slate-50\/50 {
-  background-color: #000000 !important;
+  background-color: #0d1322 !important;
 }
 
 html.dark .bg-slate-100,
 html.dark .bg-slate-100\/80 {
-  background-color: #0e0e14 !important;
+  background-color: #1e293b !important;
 }
 
 html.dark .border-slate-200,
 html.dark .border-slate-100,
 html.dark .border-slate-200\/80,
 html.dark .border-slate-300 {
-  border-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 html.dark .text-slate-900,
 html.dark .text-slate-800 {
-  color: #ffffff !important;
+  color: #f8fafc !important;
 }
 
 html.dark .text-slate-700,

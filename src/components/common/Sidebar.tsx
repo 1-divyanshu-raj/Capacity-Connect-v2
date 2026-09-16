@@ -14,7 +14,14 @@ import {
   X, 
   Compass, 
   CheckCircle, 
-  GraduationCap 
+  GraduationCap,
+  UploadCloud,
+  HelpCircle,
+  Video,
+  Sparkles,
+  TrendingUp,
+  MapPin,
+  Flame
 } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 
@@ -41,6 +48,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return [
           { id: 'overview', label: 'Platform Overview', icon: BarChart3 },
           { 
+            id: 'skill-gaps', 
+            label: 'India Skill Gap Analytics', 
+            icon: TrendingUp,
+            badge: 'National',
+            badgeColor: 'bg-emerald-600 dark:bg-emerald-500 text-white' 
+          },
+          { id: 'trainee-profiles', label: 'Trainee Profiles & Progress', icon: GraduationCap },
+          { id: 'trainer-profiles', label: 'Trainer Specializations', icon: Users },
+          { 
             id: 'approvals', 
             label: 'Pending Approvals', 
             icon: ShieldAlert, 
@@ -55,6 +71,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return [
           { id: 'courses', label: 'My Training Programs', icon: BookOpen },
           { id: 'trainees', label: 'Trainees & Attendance', icon: Users },
+          { 
+            id: 'grader', 
+            label: 'AI Assignment & Quiz Grader', 
+            icon: Sparkles,
+            badge: 'AI Rubric',
+            badgeColor: 'bg-indigo-600 dark:bg-indigo-500 text-white'
+          },
+          { 
+            id: 'experiment-reviews', 
+            label: 'Grade Experiment Videos', 
+            icon: Video,
+            badge: 'Lab Video',
+            badgeColor: 'bg-cyan-600 dark:bg-cyan-500 text-white'
+          },
           { id: 'assessments', label: 'Assessments Builder', icon: FileCheck2 },
           { id: 'analytics', label: 'Program Performance', icon: BarChart3 },
           { id: 'profile', label: 'Trainer Profile', icon: GraduationCap },
@@ -64,6 +94,27 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return [
           { id: 'my-courses', label: 'My Enrolled Programs', icon: BookOpen },
           { id: 'catalog', label: 'Browse Training Catalog', icon: Compass },
+          { 
+            id: 'assignments', 
+            label: 'Upload Assignments', 
+            icon: UploadCloud,
+            badge: 'Projects',
+            badgeColor: 'bg-blue-600 dark:bg-blue-500 text-white'
+          },
+          { 
+            id: 'quizzes', 
+            label: 'Play Course Quizzes', 
+            icon: HelpCircle,
+            badge: 'Interactive',
+            badgeColor: 'bg-purple-600 dark:bg-purple-500 text-white'
+          },
+          { 
+            id: 'experiments', 
+            label: 'Video Lab Experiments', 
+            icon: Video,
+            badge: 'All Formats',
+            badgeColor: 'bg-emerald-600 dark:bg-emerald-500 text-white'
+          },
           { id: 'assessments', label: 'Assessments & Tests', icon: FileCheck2 },
           { id: 'certificates', label: 'My Certificates', icon: Award },
           { id: 'biometrics', label: 'Biometric Face ID', icon: ScanFace },
