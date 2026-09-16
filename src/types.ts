@@ -307,7 +307,8 @@ export interface AuditLog {
 export interface AuthSession {
   user: UserProfile;
   token: string;
-  expires_at: number;
+  expires_at?: number;
+  message?: string;
   trainee_details?: TraineeDetails;
   trainer_details?: TrainerDetails;
 }

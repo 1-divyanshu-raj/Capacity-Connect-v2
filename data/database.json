@@ -1142,6 +1142,447 @@
           "content": "Aragonite saturation states, degree heating weeks (DHW) calculation from NOAA/INCOIS satellite telemetry, and Gulf of Mannar coral reef impact assessments."
         }
       ]
+    },
+    {
+      "id": "crs-cloud-001",
+      "title": "Enterprise Cloud Infrastructure & Kubernetes Orchestration",
+      "description": "Master high-availability microservices deployment, VPC networking, Istio service mesh, and infrastructure automation using Terraform and Kubernetes on multi-cloud environments.",
+      "category": "Cloud & DevOps",
+      "level": "Intermediate",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Rajesh Sharma",
+      "duration_hours": 36,
+      "capacity": 60,
+      "enrolled_count": 24,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "Kubernetes",
+        "Docker",
+        "CI/CD Pipelines",
+        "Terraform",
+        "Observability (Prometheus)"
+      ],
+      "created_at": "2026-09-02T20:29:48.070Z",
+      "modules": [
+        {
+          "id": "mod-c1-1",
+          "title": "Containerization Fundamentals & OCI Standards",
+          "duration_minutes": 90,
+          "type": "video",
+          "content": "Deep dive into cgroups, namespaces, image layers, multi-stage builds, and container runtime security practices."
+        },
+        {
+          "id": "mod-c1-2",
+          "title": "Kubernetes Architecture: Control Plane & Worker Nodes",
+          "duration_minutes": 120,
+          "type": "reading",
+          "content": "Detailed breakdown of kube-apiserver, etcd quorum consensus, kube-controller-manager, and kube-proxy IPVS load balancing."
+        },
+        {
+          "id": "mod-c1-3",
+          "title": "Hands-on Lab: Deploying Microservices with Helm Charts",
+          "duration_minutes": 150,
+          "type": "practical",
+          "content": "Building configurable templates with values.yaml, dependency management, and release versioning in staging environments."
+        },
+        {
+          "id": "mod-c1-4",
+          "title": "Service Mesh & Zero-Trust Security Policies",
+          "duration_minutes": 110,
+          "type": "assignment",
+          "content": "Enforcing mTLS communication between microservices, traffic routing canary deployments, and Calico network policies."
+        }
+      ]
+    },
+    {
+      "id": "crs-ai-002",
+      "title": "Applied Generative AI & Deep Learning Systems",
+      "description": "Build production-ready LLM agents, vector embeddings search with pgvector, fine-tuning pipelines, and semantic retrieval-augmented generation (RAG) frameworks.",
+      "category": "Artificial Intelligence",
+      "level": "Advanced",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Rajesh Sharma",
+      "duration_hours": 45,
+      "capacity": 50,
+      "enrolled_count": 38,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "Generative AI",
+        "Vector DBs",
+        "RAG Pipelines",
+        "Prompt Optimization",
+        "Model Evaluation"
+      ],
+      "created_at": "2026-08-26T20:29:48.071Z",
+      "modules": [
+        {
+          "id": "mod-c2-1",
+          "title": "Transformer Architecture & Self-Attention Mechanics",
+          "duration_minutes": 120,
+          "type": "video",
+          "content": "Mathematical formulation of scaled dot-product attention, positional encodings, and multi-head attention blocks."
+        },
+        {
+          "id": "mod-c2-2",
+          "title": "Vector Search, Embeddings, & pgvector Indexing",
+          "duration_minutes": 100,
+          "type": "reading",
+          "content": "HNSW vs IVFFlat index strategies, cosine distance metrics, and scaling dense vector search over millions of documents."
+        },
+        {
+          "id": "mod-c2-3",
+          "title": "End-to-End Enterprise RAG System Engineering",
+          "duration_minutes": 180,
+          "type": "practical",
+          "content": "Document chunking, hybrid keyword-vector retrieval, re-ranking with cross-encoders, and hallucination guardrails."
+        }
+      ]
+    },
+    {
+      "id": "crs-cyber-003",
+      "title": "Cyber Threat Intelligence & Incident Response Defense",
+      "description": "Comprehensive cyber defense training covering MITRE ATT&CK frameworks, SIEM log analysis, digital forensics, reverse engineering basic malware, and automated playbook orchestration.",
+      "category": "Cybersecurity",
+      "level": "Intermediate",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Rajesh Sharma",
+      "duration_hours": 32,
+      "capacity": 40,
+      "enrolled_count": 18,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "Threat Hunting",
+        "SIEM / Splunk",
+        "Network Forensics",
+        "MITRE ATT&CK",
+        "Incident Response"
+      ],
+      "created_at": "2026-08-17T20:29:48.071Z",
+      "modules": [
+        {
+          "id": "mod-c3-1",
+          "title": "Threat Actor TTPs & MITRE ATT&CK Matrix Navigation",
+          "duration_minutes": 90,
+          "type": "video",
+          "content": "Mapping adversarial techniques across reconnaissance, initial access, privilege escalation, and lateral movement."
+        },
+        {
+          "id": "mod-c3-2",
+          "title": "Security Operations Center (SOC) Log Analytics",
+          "duration_minutes": 120,
+          "type": "practical",
+          "content": "Correlating Zeek network telemetry, Windows Event IDs (4624, 4688, Sysmon), and Linux auth logs."
+        }
+      ]
+    },
+    {
+      "id": "crs-sdg-004",
+      "title": "Renewable Energy Grid Analytics & Smart Infrastructure",
+      "description": "Capacity building program designed for public sector engineers and sustainability teams on smart grid IoT telemetry, predictive load balancing, and battery storage optimization.",
+      "category": "Sustainable Infrastructure",
+      "level": "Beginner",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Rajesh Sharma",
+      "duration_hours": 20,
+      "capacity": 80,
+      "enrolled_count": 45,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "Smart Grids",
+        "IoT Telemetry",
+        "Energy Storage",
+        "Sustainability Audits"
+      ],
+      "created_at": "2026-08-07T20:29:48.071Z",
+      "modules": [
+        {
+          "id": "mod-c4-1",
+          "title": "Smart Meter Protocols & SCADA Data Integration",
+          "duration_minutes": 75,
+          "type": "video",
+          "content": "Modbus TCP, DNP3, and IEC 61850 protocol ingestion architectures for edge substation monitors."
+        },
+        {
+          "id": "mod-c4-2",
+          "title": "Predictive Load Forecasting with Time-Series Models",
+          "duration_minutes": 110,
+          "type": "practical",
+          "content": "Forecasting peak demand profiles using seasonal decomposition and neural forecasting algorithms."
+        }
+      ]
+    },
+    {
+      "id": "crs-drone-005",
+      "title": "Autonomous Drone Systems, DGCA Regulations & GIS Photogrammetry",
+      "description": "Comprehensive UAV pilot and aerial remote sensing curriculum covering Pix4D photogrammetry, multispectral vegetation mapping, DGCA airspace compliances, and automated waypoint pathing.",
+      "category": "Aviation & Remote Sensing",
+      "level": "Intermediate",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Rajesh Sharma",
+      "duration_hours": 36,
+      "capacity": 55,
+      "enrolled_count": 29,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "UAV Flight Control",
+        "GIS Mapping",
+        "Photogrammetry (Pix4D)",
+        "DGCA Airspace Rules",
+        "Multispectral Sensors"
+      ],
+      "created_at": "2026-08-29T20:29:48.071Z",
+      "modules": [
+        {
+          "id": "mod-c5-1",
+          "title": "UAV Aerodynamics, Propeller Dynamics & Avionics Bus",
+          "duration_minutes": 80,
+          "type": "video",
+          "content": "Thrust-to-weight ratios, brushless DC motors, electronic speed controllers (ESC), and telemetry links."
+        },
+        {
+          "id": "mod-c5-2",
+          "title": "DGCA Indian Civil Aviation Regulations & Digital Sky Protocols",
+          "duration_minutes": 90,
+          "type": "reading",
+          "content": "Green/Yellow/Red zone airspace classifications, No Permission No Takeoff (NPNT) compliance, and remote pilot certificate logging."
+        },
+        {
+          "id": "mod-c5-3",
+          "title": "Practical Lab: Orthomosaic & 3D Point Cloud Modeling in Pix4D",
+          "duration_minutes": 130,
+          "type": "practical",
+          "content": "Ground Control Points (GCP) alignment, camera calibration, digital surface model (DSM) generation, and volumetric calculations."
+        },
+        {
+          "id": "mod-c5-4",
+          "title": "Autonomous Survey Mission Execution with QGroundControl",
+          "duration_minutes": 100,
+          "type": "assignment",
+          "content": "Planning grid flights with overlap buffers, terrain-following lidar paths, and emergency fail-safe RTL triggers."
+        }
+      ]
+    },
+    {
+      "id": "crs-semi-006",
+      "title": "Semiconductor Fabrication, Cleanroom Operations & VLSI Packaging",
+      "description": "Hands-on semiconductor manufacturing technology covering silicon wafer planarization, Deep UV photolithography, ISO 14644 cleanroom contamination control, and modern 2.5D/3D chiplet packaging.",
+      "category": "Semiconductor & Electronics",
+      "level": "Advanced",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Rajesh Sharma",
+      "duration_hours": 42,
+      "capacity": 45,
+      "enrolled_count": 32,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "Wafer Processing",
+        "Photolithography",
+        "Cleanroom Protocols (ISO 14644)",
+        "Wire Bonding",
+        "Flip-Chip Packaging"
+      ],
+      "created_at": "2026-08-22T20:29:48.071Z",
+      "modules": [
+        {
+          "id": "mod-c6-1",
+          "title": "Czochralski Crystal Growth & Silicon Ingot Slicing",
+          "duration_minutes": 85,
+          "type": "video",
+          "content": "Polycrystalline silicon melting, seed crystal pulling, chemical mechanical polishing (CMP), and crystal defect spectroscopy."
+        },
+        {
+          "id": "mod-c6-2",
+          "title": "Photolithography, Chemical Etching & Ion Implantation",
+          "duration_minutes": 120,
+          "type": "reading",
+          "content": "Spin-coating photoresist, stepper mask exposure, reactive ion etching (RIE), and atomic layer deposition (ALD)."
+        },
+        {
+          "id": "mod-c6-3",
+          "title": "Cleanroom Class 10/100 Microcontamination Protocol Lab",
+          "duration_minutes": 110,
+          "type": "practical",
+          "content": "HEPA laminar airflow dynamics, airborne particulate counting, ESD gowning sequences, and DI water resistivity monitoring."
+        },
+        {
+          "id": "mod-c6-4",
+          "title": "Heterogeneous 3D Chiplet & Ball Grid Array (BGA) Packaging",
+          "duration_minutes": 95,
+          "type": "assignment",
+          "content": "Silicon interposers, through-silicon vias (TSV), automated wire-bonding precision, and thermal interface material testing."
+        }
+      ]
+    },
+    {
+      "id": "crs-ev-007",
+      "title": "Electric Vehicle Powertrain Engineering & Battery Management Systems (BMS)",
+      "description": "Master EV powertrain electrification, high-voltage battery architecture, cell state-of-charge (SoC) Kalman filters, CAN bus diagnostics, and thermal runaway prevention.",
+      "category": "Clean Mobility & Automotive",
+      "level": "Intermediate",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Rajesh Sharma",
+      "duration_hours": 38,
+      "capacity": 65,
+      "enrolled_count": 48,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1558441719-8b489c634a10?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "BMS State-of-Charge (SoC)",
+        "Thermal Runaway Mitigation",
+        "Permanent Magnet Motors",
+        "CAN Bus Telemetry",
+        "High-Voltage Safety"
+      ],
+      "created_at": "2026-08-19T20:29:48.071Z",
+      "modules": [
+        {
+          "id": "mod-c7-1",
+          "title": "Cell Chemistries: NMC vs LFP & Degradation Kinetics",
+          "duration_minutes": 90,
+          "type": "video",
+          "content": "Electrochemical impedance spectroscopy, solid electrolyte interphase (SEI) growth, and volumetric energy density trade-offs."
+        },
+        {
+          "id": "mod-c7-2",
+          "title": "BMS Hardware Architecture & Active Cell Balancing",
+          "duration_minutes": 115,
+          "type": "reading",
+          "content": "High-side current shunt sensing, isolated SPI communication daisy-chains, and flyback transformer active balancing circuits."
+        },
+        {
+          "id": "mod-c7-3",
+          "title": "Traction Inverters & Field-Oriented Control (FOC)",
+          "duration_minutes": 125,
+          "type": "practical",
+          "content": "Park and Clarke transformations, space vector PWM, SiC MOSFET switching dynamics, and regenerative braking loops."
+        }
+      ]
+    },
+    {
+      "id": "crs-agri-008",
+      "title": "Precision Agriculture IoT, Soil Hydrology & Autonomous Hydroponics",
+      "description": "Modern agricultural capacity building focusing on LoRaWAN edge sensors, soil volumetric water content telemetry, automated fertigation valves, and multispectral crop stress detection.",
+      "category": "Agri-Tech & Biosystems",
+      "level": "Beginner",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Rajesh Sharma",
+      "duration_hours": 24,
+      "capacity": 70,
+      "enrolled_count": 51,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "LoRaWAN Soil Probes",
+        "NDVI Vegetation Indexing",
+        "Automated Fertigation",
+        "Microclimate Telemetry"
+      ],
+      "created_at": "2026-08-15T20:29:48.071Z",
+      "modules": [
+        {
+          "id": "mod-c8-1",
+          "title": "Edge Soil Telemetry & LoRaWAN Radio Networks",
+          "duration_minutes": 75,
+          "type": "video",
+          "content": "Frequency-domain reflectometry probes, soil salinity compensation, and long-range sub-GHz mesh deployments."
+        },
+        {
+          "id": "mod-c8-2",
+          "title": "Normalized Difference Vegetation Index (NDVI) Telemetry",
+          "duration_minutes": 85,
+          "type": "reading",
+          "content": "Red vs Near-Infrared reflectance spectral formulas, chlorophyll absorption curves, and early drought detection."
+        },
+        {
+          "id": "mod-c8-3",
+          "title": "Closed-Loop Closed-System Hydroponic Automation",
+          "duration_minutes": 105,
+          "type": "practical",
+          "content": "pH balancing stepper dosing, EC nutrient control PID loops, and solar-powered edge pump controls."
+        }
+      ]
+    },
+    {
+      "id": "crs-health-009",
+      "title": "Digital Healthcare Informatics, HL7/FHIR & Telemedicine Telemetry",
+      "description": "Standards and technical architectures powering modern national digital health missions (ABDM), clinical EHR interoperability, encrypted telemedicine WebRTC channels, and wearable IoT monitors.",
+      "category": "HealthTech & Informatics",
+      "level": "Intermediate",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Rajesh Sharma",
+      "duration_hours": 30,
+      "capacity": 60,
+      "enrolled_count": 36,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "HL7/FHIR Standards",
+        "EHR Integration",
+        "Tele-ICU Streaming",
+        "Medical Device Cybersecurity",
+        "DISHA Compliance"
+      ],
+      "created_at": "2026-08-12T20:29:48.071Z",
+      "modules": [
+        {
+          "id": "mod-c9-1",
+          "title": "FHIR JSON Resources & Ayushman Bharat Digital Mission (ABDM)",
+          "duration_minutes": 90,
+          "type": "video",
+          "content": "Patient, Observation, Condition, and DiagnosticReport FHIR bundles and consent manager token APIs."
+        },
+        {
+          "id": "mod-c9-2",
+          "title": "Low-Latency Encrypted WebRTC for Remote ICU & Diagnostics",
+          "duration_minutes": 110,
+          "type": "practical",
+          "content": "End-to-end SRTP encryption, TURN relay fallback on 4G rural bandwidth, and multi-lead ECG waveform canvas rendering."
+        }
+      ]
+    },
+    {
+      "id": "crs-ics-010",
+      "title": "Critical Infrastructure Defense: SCADA, PLC & Industrial IoT Security",
+      "description": "National infrastructure protection against state-sponsored attacks, isolating operational technology (OT) networks, hardening programmable logic controllers (PLCs), and detecting SCADA protocol anomalies.",
+      "category": "Cybersecurity & OT Defense",
+      "level": "Advanced",
+      "trainer_id": "usr-trainer-001",
+      "trainer_name": "Dr. Rajesh Sharma",
+      "duration_hours": 40,
+      "capacity": 40,
+      "enrolled_count": 22,
+      "status": "published",
+      "cover_image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+      "skills_acquired": [
+        "Purdue Model Architecture",
+        "Modbus/DNP3 Packet Analysis",
+        "PLC Logic Hardening",
+        "OT Anomaly Detection",
+        "Zero-Trust SCADA"
+      ],
+      "created_at": "2026-08-05T20:29:48.071Z",
+      "modules": [
+        {
+          "id": "mod-c10-1",
+          "title": "Purdue Model & Air-Gapped Industrial Network Topologies",
+          "duration_minutes": 95,
+          "type": "video",
+          "content": "Separating Level 0-2 shop floor devices from Level 3 enterprise DMZ, unidirectional data diodes, and jump hosts."
+        },
+        {
+          "id": "mod-c10-2",
+          "title": "Deep Packet Inspection on Industrial Modbus & DNP3 Traffic",
+          "duration_minutes": 120,
+          "type": "practical",
+          "content": "Function code filtering, illegal register read/write mitigation, and baseline anomaly detection in Wireshark and Zeek."
+        }
+      ]
     }
   ],
   "enrollments": [
@@ -1390,6 +1831,234 @@
           "explanation": "CO2 + H2O <-> H2CO3 <-> H+ + HCO3-. The excess H+ ions bind with carbonate ions (CO3 2-), reducing aragonite saturation needed for calcifying marine organisms."
         }
       ]
+    },
+    {
+      "id": "asm-c1",
+      "course_id": "crs-cloud-001",
+      "course_title": "Enterprise Cloud Infrastructure & Kubernetes Orchestration",
+      "title": "Cloud & Kubernetes Technical Certification Assessment",
+      "description": "Evaluate your understanding of container orchestration, network policies, declarative configuration, and distributed fault tolerance.",
+      "time_limit_minutes": 15,
+      "passing_score": 75,
+      "created_at": "2026-09-06T20:29:48.071Z",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "In Kubernetes, which component is the only one that communicates directly with the etcd key-value datastore?",
+          "options": [
+            "kube-scheduler",
+            "kube-controller-manager",
+            "kube-apiserver",
+            "kubelet"
+          ],
+          "correct_index": 2,
+          "explanation": "The kube-apiserver acts as the gateway and single source of truth; all other control plane components query and update state through it."
+        },
+        {
+          "id": "q2",
+          "question": "What is the primary function of a Pod Readiness Probe?",
+          "options": [
+            "To restart a crashed container immediately",
+            "To determine whether a container is ready to accept user network traffic",
+            "To monitor CPU throttling limits",
+            "To encrypt container root filesystems at rest"
+          ],
+          "correct_index": 1,
+          "explanation": "Readiness probes indicate when a container is ready to receive traffic from Kubernetes Services. If it fails, the pod is removed from Service endpoints."
+        },
+        {
+          "id": "q3",
+          "question": "Which deployment strategy brings up a complete new identical environment alongside the old one before shifting 100% of traffic?",
+          "options": [
+            "Rolling Update",
+            "Blue/Green Deployment",
+            "Canary Deployment",
+            "Shadow Deployment"
+          ],
+          "correct_index": 1,
+          "explanation": "Blue/Green deployment provisions an identical secondary environment and switches DNS or load balancer routing instantaneously."
+        },
+        {
+          "id": "q4",
+          "question": "Under what circumstances does Kubernetes evict pods based on Node Pressure?",
+          "options": [
+            "When node disk space or memory breaches defined eviction thresholds",
+            "When a pod runs for longer than 24 continuous hours",
+            "When the ingress controller receives high HTTP 404 responses",
+            "When secret tokens expire in etcd"
+          ],
+          "correct_index": 0,
+          "explanation": "Kubelet constantly checks system memory and disk thresholds (e.g. imagefs.available < 15%) and proactively evicts best-effort or burstable pods."
+        }
+      ]
+    },
+    {
+      "id": "asm-c2",
+      "course_id": "crs-ai-002",
+      "course_title": "Applied Generative AI & Deep Learning Systems",
+      "title": "Generative AI & LLM Systems Competency Exam",
+      "description": "Test your understanding of vector similarity metrics, retrieval architectures, and agentic tool-use protocols.",
+      "time_limit_minutes": 20,
+      "passing_score": 80,
+      "created_at": "2026-09-01T20:29:48.071Z",
+      "questions": [
+        {
+          "id": "q2-1",
+          "question": "Which mathematical metric is most commonly used to measure semantic similarity between two normalized text embeddings?",
+          "options": [
+            "Manhattan distance",
+            "Cosine similarity",
+            "Levenshtein edit distance",
+            "Hamming weight"
+          ],
+          "correct_index": 1,
+          "explanation": "Cosine similarity computes the dot product of normalized vectors, evaluating the cosine of the angle between them regardless of magnitude."
+        },
+        {
+          "id": "q2-2",
+          "question": "What is the primary benefit of Hierarchical Navigable Small World (HNSW) graphs in vector search?",
+          "options": [
+            "Zero disk space consumption",
+            "Logarithmic time complexity O(log N) approximate nearest neighbor lookups",
+            "Guaranteed 100% exact brute force retrieval",
+            "Direct token decompression into prompt memory"
+          ],
+          "correct_index": 1,
+          "explanation": "HNSW builds multi-layer skip graphs to achieve fast sub-linear approximate nearest neighbor queries at scale."
+        },
+        {
+          "id": "q2-3",
+          "question": "In a RAG system, what is the role of a cross-encoder re-ranker?",
+          "options": [
+            "To translate SQL queries into English",
+            "To rescore top-K retrieved candidate chunks jointly with the user query for higher precision",
+            "To compress PDF files before vectorization",
+            "To eliminate duplicate user database accounts"
+          ],
+          "correct_index": 1,
+          "explanation": "Re-rankers evaluate query and document simultaneously with deep cross-attention, boosting the most pertinent passages into the context window."
+        }
+      ]
+    },
+    {
+      "id": "asm-c5",
+      "course_id": "crs-drone-005",
+      "course_title": "Autonomous Drone Systems, DGCA Regulations & GIS Photogrammetry",
+      "title": "DGCA Remote Pilot Certification & GIS Quiz",
+      "description": "Assess understanding of Digital Sky zones, photogrammetric GSD, and failsafe RTK flight protocols.",
+      "time_limit_minutes": 15,
+      "passing_score": 75,
+      "created_at": "2026-09-08T20:29:48.071Z",
+      "questions": [
+        {
+          "id": "q5-1",
+          "question": "Under DGCA Indian airspace classifications, which zone requires prior permission from the Air Traffic Control (ATC)?",
+          "options": [
+            "Green Zone",
+            "Yellow Zone",
+            "Blue Zone",
+            "Open Air Corridor"
+          ],
+          "correct_index": 1,
+          "explanation": "Yellow zone designates controlled airspace (within airport perimeters or designated defense areas) where ATC approval is strictly mandatory before takeoff."
+        },
+        {
+          "id": "q5-2",
+          "question": "What does GSD (Ground Sample Distance) represent in drone photogrammetry?",
+          "options": [
+            "The battery consumption per kilometer flown",
+            "The real-world ground distance represented by the distance between two consecutive pixel centers",
+            "The altitude limit prescribed by civilian radar",
+            "The wind resistance threshold of carbon fiber propellers"
+          ],
+          "correct_index": 1,
+          "explanation": "GSD defines mapping spatial resolution: a GSD of 2.0 cm/pixel means one pixel in the digital orthomosaic corresponds to 2.0 square centimeters on the ground."
+        },
+        {
+          "id": "q5-3",
+          "question": "What is the recommended longitudinal (forward) camera overlap for creating accurate 3D digital surface models (DSM)?",
+          "options": [
+            "20-30%",
+            "40-50%",
+            "75-80%",
+            "95-99%"
+          ],
+          "correct_index": 2,
+          "explanation": "High forward overlap (75-80%) and lateral sidelap (65-70%) guarantee sufficient tie points across photos for stereo reconstruction in Pix4D."
+        }
+      ]
+    },
+    {
+      "id": "asm-c6",
+      "course_id": "crs-semi-006",
+      "course_title": "Semiconductor Fabrication, Cleanroom Operations & VLSI Packaging",
+      "title": "Semiconductor Cleanroom & Wafer Fab Competency Quiz",
+      "description": "Test knowledge on photolithography, wafer defect prevention, and ISO cleanroom airborne particulate tolerances.",
+      "time_limit_minutes": 15,
+      "passing_score": 75,
+      "created_at": "2026-09-10T20:29:48.071Z",
+      "questions": [
+        {
+          "id": "q6-1",
+          "question": "According to ISO 14644-1, how many particles >= 0.5 um per cubic meter are allowed in an ISO Class 5 (Class 100) cleanroom?",
+          "options": [
+            "3,520",
+            "35,200",
+            "352,000",
+            "10,000,000"
+          ],
+          "correct_index": 0,
+          "explanation": "ISO Class 5 permits no more than 3,520 particles of size 0.5 micrometers or greater per cubic meter of air."
+        },
+        {
+          "id": "q6-2",
+          "question": "What is the purpose of Chemical Mechanical Planarization (CMP) in semiconductor fabrication?",
+          "options": [
+            "To dope silicon wafers with boron atoms",
+            "To smooth and globally flatten the wafer surface after dielectric or metal deposition",
+            "To burn away defective dies with laser pulses",
+            "To clean photoresist using deionized steam"
+          ],
+          "correct_index": 1,
+          "explanation": "CMP utilizes abrasive slurries and mechanical polishing to eliminate topography variations, ensuring planar focus for subsequent photolithography layers."
+        }
+      ]
+    },
+    {
+      "id": "asm-c7",
+      "course_id": "crs-ev-007",
+      "course_title": "Electric Vehicle Powertrain Engineering & Battery Management Systems (BMS)",
+      "title": "EV Battery Management & High-Voltage Systems Quiz",
+      "description": "Test competency on cell balancing algorithms, thermal runaway triggers, and State-of-Charge estimation.",
+      "time_limit_minutes": 15,
+      "passing_score": 75,
+      "created_at": "2026-09-11T20:29:48.071Z",
+      "questions": [
+        {
+          "id": "q7-1",
+          "question": "Why is active cell balancing more energy-efficient than passive balancing in large EV battery packs?",
+          "options": [
+            "Passive balancing burns excess energy as waste heat through resistors, whereas active balancing shuttles energy between cells",
+            "Active balancing eliminates the need for contactor switches",
+            "Passive balancing requires liquid nitrogen cooling",
+            "Active balancing increases the motor RPM directly"
+          ],
+          "correct_index": 0,
+          "explanation": "Passive balancing dissipates higher-voltage cell charge across bleed resistors as heat; active balancing uses capacitive or inductive circuits to transfer energy to lower cells."
+        },
+        {
+          "id": "q7-2",
+          "question": "Which sensor technology is standard for high-accuracy, zero-drift DC current measurement in automotive BMS?",
+          "options": [
+            "Ferrite bead choke",
+            "Precision shunt resistor with isolated delta-sigma ADC / Hall Effect transducer",
+            "Piezoelectric crystal",
+            "Infrared phototransistor"
+          ],
+          "correct_index": 1,
+          "explanation": "Manganin alloy shunt resistors coupled with isolated delta-sigma modulators provide sub-milliamp resolution required for accurate Coulomb counting."
+        }
+      ]
     }
   ],
   "assessment_results": [
@@ -1459,6 +2128,110 @@
     }
   ],
   "audit_logs": [
+    {
+      "id": "aud-1789592824027-791",
+      "actor_id": "usr-trainee-001",
+      "actor_name": "Alex Rivera",
+      "actor_role": "trainee",
+      "action": "DEMO_LOGIN_ACCESSED",
+      "target_type": "SESSION",
+      "target_id": "usr-trainee-001",
+      "details": {
+        "role": "trainee",
+        "is_demo": true
+      },
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-16T21:07:04.027Z"
+    },
+    {
+      "id": "aud-1789592664950-984",
+      "actor_id": "usr-admin-001",
+      "actor_name": "Sarah Chen",
+      "actor_role": "admin",
+      "action": "DEMO_LOGIN_ACCESSED",
+      "target_type": "SESSION",
+      "target_id": "usr-admin-001",
+      "details": {
+        "role": "admin",
+        "is_demo": true
+      },
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-16T21:04:24.950Z"
+    },
+    {
+      "id": "aud-1789592664935-563",
+      "actor_id": "usr-trainer-001",
+      "actor_name": "Dr. Priya Sharma",
+      "actor_role": "trainer",
+      "action": "DEMO_LOGIN_ACCESSED",
+      "target_type": "SESSION",
+      "target_id": "usr-trainer-001",
+      "details": {
+        "role": "trainer",
+        "is_demo": true
+      },
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-16T21:04:24.935Z"
+    },
+    {
+      "id": "aud-1789592664920-817",
+      "actor_id": "usr-trainee-001",
+      "actor_name": "Alex Rivera",
+      "actor_role": "trainee",
+      "action": "DEMO_LOGIN_ACCESSED",
+      "target_type": "SESSION",
+      "target_id": "usr-trainee-001",
+      "details": {
+        "role": "trainee",
+        "is_demo": true
+      },
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-16T21:04:24.920Z"
+    },
+    {
+      "id": "aud-1789592575938-259",
+      "actor_id": "usr-trainee-001",
+      "actor_name": "Alex Rivera",
+      "actor_role": "trainee",
+      "action": "DEMO_LOGIN_ACCESSED",
+      "target_type": "SESSION",
+      "target_id": "usr-trainee-001",
+      "details": {
+        "role": "trainee",
+        "is_demo": true
+      },
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-16T21:02:55.938Z"
+    },
+    {
+      "id": "aud-1789591208573-852",
+      "actor_id": "usr-trainee-001",
+      "actor_name": "Alex Rivera",
+      "actor_role": "trainee",
+      "action": "PROFILE_REAUTH_FAILED",
+      "target_type": "AUTH",
+      "target_id": "usr-trainee-001",
+      "details": {
+        "reason": "Incorrect password attempt"
+      },
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-16T20:40:08.573Z"
+    },
+    {
+      "id": "aud-1789590731112-111",
+      "actor_id": "usr-trainee-001",
+      "actor_name": "Alex Rivera",
+      "actor_role": "trainee",
+      "action": "DEMO_LOGIN_ACCESSED",
+      "target_type": "SESSION",
+      "target_id": "usr-trainee-001",
+      "details": {
+        "role": "trainee",
+        "is_demo": true
+      },
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-16T20:32:11.112Z"
+    },
     {
       "id": "log-001",
       "timestamp": "2026-09-16T20:23:40.647Z",
