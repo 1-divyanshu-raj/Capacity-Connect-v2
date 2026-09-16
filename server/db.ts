@@ -69,8 +69,6 @@ interface DatabaseSchema {
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const DB_FILES = [
-  path.join(DATA_DIR, 'database.jason'),
-  path.join(process.cwd(), 'database.jason'),
   path.join(DATA_DIR, 'database.json'),
   path.join(process.cwd(), 'database.json')
 ];
