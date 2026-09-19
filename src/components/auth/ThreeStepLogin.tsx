@@ -494,11 +494,18 @@ export const ThreeStepLogin: React.FC<ThreeStepLoginProps> = ({
                 const isSelected = selectedRole === item.role;
                 const Icon = item.icon;
                 return (
-                  <button
+                  <div
                     key={item.role}
-                    type="button"
+                    role="button"
+                    tabIndex={0}
                     onClick={() => handleSelectRole(item.role)}
-                    className={`p-4 rounded-xl text-left border-2 transition-all flex flex-col justify-between group hover:border-blue-500 ${
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleSelectRole(item.role);
+                      }
+                    }}
+                    className={`p-4 rounded-xl text-left border-2 transition-all flex flex-col justify-between group hover:border-blue-500 cursor-pointer ${
                       isSelected
                         ? 'border-blue-600 bg-blue-50/50 shadow-sm'
                         : 'border-slate-200 bg-white hover:bg-slate-50'
@@ -540,7 +547,7 @@ export const ThreeStepLogin: React.FC<ThreeStepLoginProps> = ({
                         <span>Quick Demo Login</span>
                       </button>
                     </div>
-                  </button>
+                  </div>
                 );
               })}
             </div>
