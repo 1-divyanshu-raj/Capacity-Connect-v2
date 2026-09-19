@@ -32,6 +32,7 @@ import {
   Send,
   ShieldCheck
 } from 'lucide-react';
+import { SocialAuthButton } from './SocialAuthButton';
 
 interface RegisterWizardProps {
   onSuccess?: () => void;
@@ -403,6 +404,45 @@ export const RegisterWizard: React.FC<RegisterWizardProps> = ({
                   </span>
                 </div>
               )}
+            </div>
+
+            {/* Social Registration / Auth 2.0 Option */}
+            <div className="p-3 sm:p-3.5 rounded-2xl bg-gradient-to-r from-blue-50/70 via-indigo-50/40 to-slate-50 dark:from-blue-950/30 dark:via-indigo-950/20 dark:to-slate-900/40 border border-blue-200/80 dark:border-blue-800/50 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="min-w-0 flex-1">
+                <span className="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  Quick Registration via Auth 2.0
+                </span>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">
+                  Register as <span className="font-semibold text-blue-700 dark:text-blue-400 capitalize">{role}</span> with verified Google, Apple, or Microsoft identity.
+                </p>
+              </div>
+
+              <div className="shrink-0 w-full sm:w-auto flex items-center justify-start sm:justify-end">
+                <SocialAuthButton
+                  mode="register"
+                  selectedRole={role}
+                  onSuccess={onSuccess}
+                  className="w-full sm:w-auto"
+                  onProviderSelect={(provider) => {
+                    const providerName = provider.charAt(0).toUpperCase() + provider.slice(1);
+                    if (!fullName) setFullName(`${providerName} Verified Scholar`);
+                    if (!email) setEmail(`${provider}.${role}@capacityconnect.org`);
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="relative my-1">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-slate-200"></div>
+              </div>
+              <div className="relative flex justify-center text-xs">
+                <span className="bg-white px-2.5 text-[10px] uppercase font-bold tracking-wider text-slate-400">
+                  Or complete manual form
+                </span>
+              </div>
             </div>
 
             {/* Account Details */}

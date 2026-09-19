@@ -35,16 +35,30 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [trainerDetails, setTrainerDetails] = useState<TrainerDetails | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const USER_KEY = 'cc_user_profile';
+  const TRAINEE_KEY = 'cc_trainee_details';
+  const TRAINER_KEY = 'cc_trainer_details';
+
   const setAuthSession = (newToken: string, newUser: UserProfile, trainee?: TraineeDetails, trainer?: TrainerDetails) => {
     localStorage.setItem(TOKEN_KEY, newToken);
+    localStorage.setItem(USER_KEY, JSON.stringify(newUser));
     setToken(newToken);
     setUser(newUser);
-    if (trainee) setTraineeDetails(trainee);
-    if (trainer) setTrainerDetails(trainer);
+    if (trainee) {
+      localStorage.setItem(TRAINEE_KEY, JSON.stringify(trainee));
+      setTraineeDetails(trainee);
+    }
+    if (trainer) {
+      localStorage.setItem(TRAINER_KEY, JSON.stringify(trainer));
+      setTrainerDetails(trainer);
+    }
   };
 
   const clearSession = () => {
     localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(TRAINEE_KEY);
+    localStorage.removeItem(TRAINER_KEY);
     setToken(null);
     setUser(null);
     setTraineeDetails(null);
@@ -53,8 +67,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const updateUserSession = (updatedUser: UserProfile, trainee?: TraineeDetails, trainer?: TrainerDetails) => {
     setUser(updatedUser);
-    if (trainee !== undefined) setTraineeDetails(trainee);
-    if (trainer !== undefined) setTrainerDetails(trainer);
+    localStorage.setItem(USER_KEY, JSON.stringify(updatedUser));
+    if (trainee !== undefined) {
+      if (trainee) localStorage.setItem(TRAINEE_KEY, JSON.stringify(trainee));
+      setTraineeDetails(trainee);
+    }
+    if (trainer !== undefined) {
+      if (trainer) localStorage.setItem(TRAINER_KEY, JSON.stringify(trainer));
+      setTrainerDetails(trainer);
+    }
   };
 
   const refreshUser = useCallback(async () => {
@@ -70,9 +91,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setUser(data.user);
       if (data.trainee_details) setTraineeDetails(data.trainee_details);
       if (data.trainer_details) setTrainerDetails(data.trainer_details);
-    } catch (err) {
-      console.warn('Session verification failed, logging out:', err);
-      clearSession();
+    } catch (err: any) {
+      console.warn('Live session check encountered an error:', err);
+      // Fall back to stored local profile if available (supports offline and static deployments)
+      const cachedUser = localStorage.getItem(USER_KEY);
+      if (cachedUser) {
+        try {
+          const parsedUser = JSON.parse(cachedUser);
+          setUser(parsedUser);
+          const cachedTrainee = localStorage.getItem(TRAINEE_KEY);
+          if (cachedTrainee) setTraineeDetails(JSON.parse(cachedTrainee));
+          const cachedTrainer = localStorage.getItem(TRAINER_KEY);
+          if (cachedTrainer) setTrainerDetails(JSON.parse(cachedTrainer));
+        } catch {
+          clearSession();
+        }
+      } else {
+        clearSession();
+      }
     } finally {
       setIsLoading(false);
     }
