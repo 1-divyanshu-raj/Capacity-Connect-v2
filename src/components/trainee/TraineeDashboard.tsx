@@ -205,10 +205,11 @@ export const TraineeDashboard: React.FC<TraineeDashboardProps> = ({ activeTab, o
   const filteredCourses = courses.filter((c) => {
     const matchesCategory = selectedCategory === 'All' || c.category === selectedCategory;
     const matchesLevel = selectedLevel === 'All' || c.level === selectedLevel;
-    const matchesSearch = !searchQuery || 
-      c.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      c.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      c.skills_acquired.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
+    const q = (searchQuery || '').trim().toLowerCase();
+    const matchesSearch = !q || 
+      (c.title || '').toLowerCase().includes(q) ||
+      (c.description || '').toLowerCase().includes(q) ||
+      (c.skills_acquired || []).some(s => s && s.toLowerCase().includes(q));
     return matchesCategory && matchesLevel && matchesSearch;
   });
 

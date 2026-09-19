@@ -169,6 +169,20 @@ export interface ExperimentVideo {
 }
 
 export interface TraineeProfileDetails extends UserProfile {
+  name?: string;
+  grade_level?: string;
+  overall_gpa?: number;
+  overall_progress_percentage?: number;
+  attendance_percentage?: number;
+  state?: string;
+  specializations?: string[];
+  enrolled_courses?: {
+    course_id: string;
+    course_title: string;
+    attendance_count: number;
+    status: string;
+    progress: number;
+  }[];
   skills_interests: string[];
   education_level: string;
   target_certifications: string[];
@@ -186,6 +200,9 @@ export interface TraineeProfileDetails extends UserProfile {
 }
 
 export interface TrainerProfileDetails extends UserProfile {
+  name?: string;
+  specializations?: string[];
+  rating?: number;
   expertise_areas: string[];
   years_experience: number;
   bio: string;

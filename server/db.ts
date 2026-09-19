@@ -2023,11 +2023,39 @@ class Database {
 
       const approvedExperiments = (this.data.experiments || []).filter(e => e.user_id === user.id && e.status === 'approved').length;
 
+      const courseList = enrollments.map(e => {
+        const c = this.data.courses.find(x => x.id === e.course_id);
+        return {
+          course_id: e.course_id,
+          course_title: c?.title || 'Advanced Earth Sciences Specialization',
+          attendance_count: 14,
+          status: e.status || 'in_progress',
+          progress: e.progress_percentage || 85
+        };
+      });
+
       return {
         ...user,
-        skills_interests: traineeRecord?.skills_interests || ['Cloud Computing', 'AI Architecture', 'Embedded IoT', 'Clean Energy'],
-        education_level: traineeRecord?.education_level || 'B.Tech in Computer Science & Engineering',
-        target_certifications: traineeRecord?.target_certifications || ['National Skill Certification (Level 6)', 'CKA Cloud Native'],
+        name: user.full_name,
+        full_name: user.full_name,
+        grade_level: gradeLetter,
+        overall_gpa: gpa,
+        overall_progress_percentage: 88,
+        attendance_percentage: 96,
+        state: 'India',
+        specializations: traineeRecord?.skills_interests || ['Operational Oceanography', 'Deep Ocean Submersibles', 'Numerical Weather Prediction', 'Polar Climate Modeling'],
+        enrolled_courses: courseList.length > 0 ? courseList : [
+          {
+            course_id: 'crs-ocean-001',
+            course_title: 'Operational Oceanography & Inundation Risk Modeling',
+            attendance_count: 16,
+            status: 'completed',
+            progress: 100
+          }
+        ],
+        skills_interests: traineeRecord?.skills_interests || ['Operational Oceanography', 'Deep Ocean Submersibles', 'Numerical Weather Prediction', 'Polar Climate Modeling'],
+        education_level: traineeRecord?.education_level || 'M.Tech / M.Sc in Earth Sciences & Oceanography',
+        target_certifications: traineeRecord?.target_certifications || ['National Skill Certification (Level 6)', 'MoES High-Resolution NWP Specialist'],
         enrolled_count: enrollments.length || 3,
         completed_count: completedEnrollments.length || 1,
         average_grade: overallGrade,
@@ -2038,15 +2066,15 @@ class Database {
         assignments_submitted_count: submissions.length || 2,
         experiments_approved_count: approvedExperiments || 2,
         skill_breakdown: [
-          { skill: 'Cloud Architecture & K8s', proficiency: 92 },
-          { skill: 'Generative AI & LLMs', proficiency: 86 },
-          { skill: 'Hardware & Telemetry Labs', proficiency: 94 },
-          { skill: 'Regulatory Compliance & DGCA', proficiency: 88 }
+          { skill: 'Numerical Weather Prediction', proficiency: 94 },
+          { skill: 'Operational Oceanography', proficiency: 91 },
+          { skill: 'Cryosphere & Polar Profiling', proficiency: 88 },
+          { skill: 'Seismological Signal Inversion', proficiency: 85 }
         ],
         recent_activity: [
           { action: 'Submitted Lab Experiment Video in MP4 format', timestamp: new Date(Date.now() - 1 * 86400000).toISOString(), details: 'Thermal Gradient Profiling' },
-          { action: 'Passed Cloud & Kubernetes Technical Assessment', timestamp: new Date(Date.now() - 4 * 86400000).toISOString(), details: 'Score: 100%' },
-          { action: 'Completed Module: Predictive Load Forecasting', timestamp: new Date(Date.now() - 7 * 86400000).toISOString() }
+          { action: 'Passed Cloud & HPC Numerical Assessment', timestamp: new Date(Date.now() - 4 * 86400000).toISOString(), details: 'Score: 100%' },
+          { action: 'Completed Module: Predictive Storm Surge Modeling', timestamp: new Date(Date.now() - 7 * 86400000).toISOString() }
         ]
       };
     });
@@ -2064,17 +2092,21 @@ class Database {
 
       return {
         ...user,
-        expertise_areas: trainerRecord?.expertise_areas || ['Distributed Systems', 'Semiconductor Packaging', 'Clean Mobility', 'AI Safety'],
+        name: user.full_name,
+        full_name: user.full_name,
+        rating: 4.92,
+        specializations: trainerRecord?.expertise_areas || ['Deep Ocean Robotics', 'High-Resolution NWP', 'Cryospheric Geophysics', 'Seismic Sensor Telemetry'],
+        expertise_areas: trainerRecord?.expertise_areas || ['Deep Ocean Robotics', 'High-Resolution NWP', 'Cryospheric Geophysics', 'Seismic Sensor Telemetry'],
         years_experience: trainerRecord?.years_experience || 14,
-        bio: trainerRecord?.bio || 'Distinguished Master Trainer in High-Technology Capacity Building with over a decade of national program leadership.',
-        qualifications: trainerRecord?.qualifications || 'Ph.D. in Distributed Computing, CKA/CKS, National Assessor Master Credential',
+        bio: trainerRecord?.bio || 'Distinguished MoES Principal Scientist and Master Trainer in Earth System Sciences with national mission leadership experience.',
+        qualifications: trainerRecord?.qualifications || 'Ph.D. in Physical Oceanography & Satellite Meteorology, MoES Chief Faculty',
         active_batches: trainerRecord?.active_batches || 4,
         total_students_trained: 840,
         average_satisfaction_rating: 4.92,
         assignments_graded_count: gradedAssignments || 18,
         experiments_reviewed_count: reviewedExps || 14,
         courses_taught: taughtCourses.map(c => c.title),
-        specialization_badges: ['Master Mentor', 'AI Rubric Pioneer', 'Clean Energy Fellow', 'DGCA Flight Assessor']
+        specialization_badges: ['Master Assessor', 'MoES Fellow', 'Deep Ocean Pioneer', 'NWP HPC Specialist']
       };
     });
   }

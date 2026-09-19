@@ -455,20 +455,20 @@ export const FaceLoginModal: React.FC<FaceLoginModalProps> = ({ onSuccess }) => 
           className={`p-3.5 rounded-xl border text-xs flex items-start gap-2.5 ${
             resultMessage.success
               ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
-              : resultMessage.text.toLowerCase().includes('not enrolled')
+              : (resultMessage.text || '').toLowerCase().includes('not enrolled')
               ? 'bg-rose-50 border-rose-200 text-rose-900'
               : 'bg-amber-50 border-amber-200 text-amber-900'
           }`}
         >
           {resultMessage.success ? (
             <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-          ) : resultMessage.text.toLowerCase().includes('not enrolled') ? (
+          ) : (resultMessage.text || '').toLowerCase().includes('not enrolled') ? (
             <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
           ) : (
             <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
           )}
           <div className="flex-1">
-            {resultMessage.text.toLowerCase().includes('not enrolled') && (
+            {(resultMessage.text || '').toLowerCase().includes('not enrolled') && (
               <span className="inline-block font-extrabold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-rose-100 text-rose-800 mb-1">
                 Face Recognition not enrolled
               </span>

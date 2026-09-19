@@ -38,17 +38,23 @@ export const AdminTrainerProfiles: React.FC = () => {
   }, []);
 
   const allSpecializations = Array.from(
-    new Set(trainers.flatMap(t => t.specializations || []))
+    new Set(trainers.flatMap(t => t.specializations || t.expertise_areas || []))
   );
 
   const filteredTrainers = trainers.filter(t => {
-    const matchesSearch = 
-      t.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      t.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (t.organization && t.organization.toLowerCase().includes(searchQuery.toLowerCase()));
+    const name = t.name || t.full_name || '';
+    const email = t.email || '';
+    const org = t.organization || '';
+    const q = (searchQuery || '').trim().toLowerCase();
 
+    const matchesSearch = !q ||
+      name.toLowerCase().includes(q) ||
+      email.toLowerCase().includes(q) ||
+      org.toLowerCase().includes(q);
+
+    const specs = t.specializations || t.expertise_areas || [];
     const matchesSpec = selectedSpecialization === 'all'
-      || (t.specializations && t.specializations.includes(selectedSpecialization));
+      || specs.includes(selectedSpecialization);
 
     return matchesSearch && matchesSpec;
   });
@@ -142,11 +148,11 @@ export const AdminTrainerProfiles: React.FC = () => {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 text-white font-bold flex items-center justify-center text-base shadow-sm">
-                      {t.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                      {(t.name || t.full_name || 'TR').split(' ').map(n => n[0]).join('').slice(0, 2)}
                     </div>
                     <div>
                       <h3 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                        {t.name}
+                        {t.name || t.full_name || 'Trainer'}
                       </h3>
                       <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
                         <Mail className="w-3 h-3" />
@@ -157,7 +163,7 @@ export const AdminTrainerProfiles: React.FC = () => {
 
                   <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800 text-xs font-black">
                     <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
-                    {t.rating || '4.92'}
+                    {t.rating || t.average_satisfaction_rating || '4.92'}
                   </div>
                 </div>
 
@@ -175,7 +181,7 @@ export const AdminTrainerProfiles: React.FC = () => {
 
                 {/* Specializations Badges */}
                 <div className="mt-3.5 flex flex-wrap gap-1.5">
-                  {(t.specializations || ['AI Robotics', 'Industrial SCADA']).map((spec, i) => (
+                  {(t.specializations || t.expertise_areas || ['AI Robotics', 'Industrial SCADA']).map((spec, i) => (
                     <span 
                       key={i}
                       className="text-[10px] font-bold px-2.5 py-0.5 rounded-lg bg-purple-50 dark:bg-purple-950/50 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/60"

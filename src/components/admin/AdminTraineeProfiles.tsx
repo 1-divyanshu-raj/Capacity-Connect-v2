@@ -44,17 +44,23 @@ export const AdminTraineeProfiles: React.FC = () => {
 
   // Collect all unique specializations
   const allSpecializations = Array.from(
-    new Set(trainees.flatMap(t => t.specializations || []))
+    new Set(trainees.flatMap(t => t.specializations || t.skills_interests || []))
   );
 
   const filteredTrainees = trainees.filter(t => {
-    const matchesSearch = 
-      t.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      t.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (t.organization && t.organization.toLowerCase().includes(searchQuery.toLowerCase()));
+    const name = t.name || t.full_name || '';
+    const email = t.email || '';
+    const org = t.organization || '';
+    const q = (searchQuery || '').trim().toLowerCase();
 
+    const matchesSearch = !q ||
+      name.toLowerCase().includes(q) ||
+      email.toLowerCase().includes(q) ||
+      org.toLowerCase().includes(q);
+
+    const specs = t.specializations || t.skills_interests || [];
     const matchesSpec = selectedSpecialization === 'all' 
-      || (t.specializations && t.specializations.includes(selectedSpecialization));
+      || specs.includes(selectedSpecialization);
 
     return matchesSearch && matchesSpec;
   });
@@ -147,11 +153,11 @@ export const AdminTraineeProfiles: React.FC = () => {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-bold flex items-center justify-center text-base shadow-sm">
-                      {t.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                      {(t.name || t.full_name || 'TR').split(' ').map(n => n[0]).join('').slice(0, 2)}
                     </div>
                     <div>
                       <h3 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        {t.name}
+                        {t.name || t.full_name || 'Trainee'}
                       </h3>
                       <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
                         <Mail className="w-3 h-3" />
@@ -253,7 +259,7 @@ export const AdminTraineeProfiles: React.FC = () => {
                   Certified Trainee Transcript
                 </span>
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-                  {activeDossier.name}
+                  {activeDossier.name || activeDossier.full_name}
                 </h2>
                 <p className="text-xs text-slate-500">
                   {activeDossier.email} | {activeDossier.organization}

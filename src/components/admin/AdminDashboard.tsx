@@ -123,22 +123,27 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
   // Filtered users
   const filteredUsers = users.filter((u) => {
-    const matchesRole = userRoleFilter === 'All' || u.role === userRoleFilter.toLowerCase();
-    const matchesStatus = userStatusFilter === 'All' || u.status === userStatusFilter.toLowerCase();
-    const matchesSearch = !userSearchQuery ||
-      u.full_name.toLowerCase().includes(userSearchQuery.toLowerCase()) ||
-      u.email.toLowerCase().includes(userSearchQuery.toLowerCase()) ||
-      u.organization.toLowerCase().includes(userSearchQuery.toLowerCase());
+    const roleStr = (u.role || '').toLowerCase();
+    const statusStr = (u.status || '').toLowerCase();
+    const targetRole = (userRoleFilter || 'All').toLowerCase();
+    const targetStatus = (userStatusFilter || 'All').toLowerCase();
+    const matchesRole = userRoleFilter === 'All' || roleStr === targetRole;
+    const matchesStatus = userStatusFilter === 'All' || statusStr === targetStatus;
+    const q = (userSearchQuery || '').trim().toLowerCase();
+    const matchesSearch = !q ||
+      (u.full_name || '').toLowerCase().includes(q) ||
+      (u.email || '').toLowerCase().includes(q) ||
+      (u.organization || '').toLowerCase().includes(q);
     return matchesRole && matchesStatus && matchesSearch;
   });
 
   // Filtered audit logs
   const filteredAuditLogs = auditLogs.filter((log) => {
     if (!auditSearchQuery) return true;
-    const q = auditSearchQuery.toLowerCase();
-    return log.action.toLowerCase().includes(q) ||
+    const q = auditSearchQuery.trim().toLowerCase();
+    return (log.action || '').toLowerCase().includes(q) ||
       (log.actor_email && log.actor_email.toLowerCase().includes(q)) ||
-      log.ip_address.toLowerCase().includes(q) ||
+      (log.ip_address || '').toLowerCase().includes(q) ||
       (log.status && log.status.toLowerCase().includes(q));
   });
 

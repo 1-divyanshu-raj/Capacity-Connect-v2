@@ -159,10 +159,11 @@ export const MoESDatasetsPortal: React.FC = () => {
 
   const filteredDatasets = DATASETS.filter(ds => {
     const matchesOrg = selectedOrg === 'ALL' || ds.organization === selectedOrg;
-    const matchesSearch = 
-      ds.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      ds.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      ds.parameters.some(p => p.toLowerCase().includes(searchQuery.toLowerCase()));
+    const q = (searchQuery || '').trim().toLowerCase();
+    const matchesSearch = !q ||
+      (ds.title || '').toLowerCase().includes(q) ||
+      (ds.category || '').toLowerCase().includes(q) ||
+      (ds.parameters || []).some(p => p && p.toLowerCase().includes(q));
     return matchesOrg && matchesSearch;
   });
 
